@@ -9,5 +9,6 @@ target 'drpepper-finder' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
 end
