@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  AccountViewController.swift
 //  drpepper-finder
 //
 //  Created by nullworkbench on 2021/04/12.
@@ -10,7 +10,7 @@ import FirebaseCore
 import FirebaseAuth
 import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class AccountViewController: UIViewController {
     
     @IBOutlet var authStateLabel: UILabel!
     
