@@ -25,13 +25,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         // locationManagerセットアップ
         locationManager.delegate = self
-        
+        // MapKitセットアップ
         mapView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         DispatchQueue(label: "showAllCustomPins", qos: .default).async {
             self.showAllCustomPins()
+        }
+    }
+    
+    // 画面遷移準備
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailView" {
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.docId = sender as? String
         }
     }
     
@@ -65,6 +73,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
 // MARK: Custom Class
 class CustomPin: MKPointAnnotation {
+    var docId: String?
     var pinImage: UIImage?
 }
 
@@ -159,6 +168,9 @@ extension MapViewController {
             } else {
                 for document in querySnapshot!.documents {
                     let newCustomPin = CustomPin()
+                    // id設定
+                    newCustomPin.docId = document.documentID
+                    // 座標設定
                     let geoPoint = document["coordinate"] as! GeoPoint
                     newCustomPin.coordinate = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude)
                     
@@ -171,6 +183,20 @@ extension MapViewController {
         semaphore.wait()
         print("pins downloaded")
         return pins
+    }
+    
+    
+    // MARK: ピンをタップしたときの設定
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print("pin tapped")
+        // docIdをsenderへ渡す
+        let docId = (view.annotation as! CustomPin).docId
+        
+        // 画面遷移
+        performSegue(withIdentifier: "toDetailView", sender: docId)
+        
+        // 選択解除
+        mapView.deselectAnnotation(view.annotation, animated: true)
     }
 
 }
