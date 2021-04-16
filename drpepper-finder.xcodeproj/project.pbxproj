@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7CCDA29013C9B85163DC5207 /* Pods_drpepper_finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301AF65694C63676EC7652AF /* Pods_drpepper_finder.framework */; };
 		8B1ACC5B26234B13000B8C87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACC5A26234B13000B8C87 /* AppDelegate.swift */; };
 		8B1ACC5D26234B13000B8C87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACC5C26234B13000B8C87 /* SceneDelegate.swift */; };
 		8B1ACC5F26234B13000B8C87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACC5E26234B13000B8C87 /* ViewController.swift */; };
@@ -19,6 +18,7 @@
 		8B1ACCDC26245E83000B8C87 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACCDB26245E83000B8C87 /* User.swift */; };
 		8B1ACCE0262461C3000B8C87 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACCDF262461C3000B8C87 /* MapViewController.swift */; };
 		8B1ACCE7262474B5000B8C87 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACCE6262474B5000B8C87 /* SettingsViewController.swift */; };
+		F4AA94513DEB29E98A95327F /* Pods_drpepper_finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301AF65694C63676EC7652AF /* Pods_drpepper_finder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CCDA29013C9B85163DC5207 /* Pods_drpepper_finder.framework in Frameworks */,
+				F4AA94513DEB29E98A95327F /* Pods_drpepper_finder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

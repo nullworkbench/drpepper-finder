@@ -10,6 +10,7 @@ import FirebaseCore
 import FirebaseAuth
 import GoogleSignIn
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -26,11 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         // Firebase Config
         FirebaseApp.configure()
+        let db = Firestore.firestore()
         
         // FirebaseAuth Config
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
+        // 認証状態のリッスンを開始するため
         self.applicationWillEnterForeground(application)
         
         return true

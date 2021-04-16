@@ -111,7 +111,6 @@
         <!--Settings-->
         <scene sceneID="U46-X3-O2r">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2YY-fK-KHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController title="Settings" id="hf9-oq-N73" customClass="SettingsViewController" customModule="drpepper_finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nXw-bj-2vV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -147,6 +146,7 @@
                         <segue destination="MD0-wk-1hr" kind="show" identifier="toAccountView" id="pjU-Bt-jHP"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2YY-fK-KHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1499" y="842"/>
         </scene>
