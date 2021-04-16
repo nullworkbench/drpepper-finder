@@ -66,6 +66,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 print("Document added with ID: \(ref!.documentID)")
             }
         }
+        // ログを保存
+        Ex.loggingToFirestore(ref!.documentID, 0)
     }
 
 }

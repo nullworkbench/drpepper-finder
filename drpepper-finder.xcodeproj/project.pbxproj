@@ -19,6 +19,7 @@
 		8B1ACCE0262461C3000B8C87 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACCDF262461C3000B8C87 /* MapViewController.swift */; };
 		8B1ACCE7262474B5000B8C87 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACCE6262474B5000B8C87 /* SettingsViewController.swift */; };
 		8B2BF4582629950E00E8BFA3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BF4572629950E00E8BFA3 /* DetailViewController.swift */; };
+		8B2BF4742629B55E00E8BFA3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BF4732629B55E00E8BFA3 /* Extensions.swift */; };
 		F4AA94513DEB29E98A95327F /* Pods_drpepper_finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301AF65694C63676EC7652AF /* Pods_drpepper_finder.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		8B1ACCDF262461C3000B8C87 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8B1ACCE6262474B5000B8C87 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8B2BF4572629950E00E8BFA3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8B2BF4732629B55E00E8BFA3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				8B1ACC5A26234B13000B8C87 /* AppDelegate.swift */,
 				8B1ACC5C26234B13000B8C87 /* SceneDelegate.swift */,
 				8B1ACC6026234B13000B8C87 /* Main.storyboard */,
+				8B2BF4732629B55E00E8BFA3 /* Extensions.swift */,
 				8B1ACC6326234B14000B8C87 /* Assets.xcassets */,
 				8B1ACC6526234B14000B8C87 /* LaunchScreen.storyboard */,
 				8B1ACC6826234B14000B8C87 /* Info.plist */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B1ACC9D2623544B000B8C87 /* AccountViewController.swift in Sources */,
+				8B2BF4742629B55E00E8BFA3 /* Extensions.swift in Sources */,
 				8B1ACCE0262461C3000B8C87 /* MapViewController.swift in Sources */,
 				8B1ACCE7262474B5000B8C87 /* SettingsViewController.swift in Sources */,
 				8B1ACC5F26234B13000B8C87 /* ViewController.swift in Sources */,
