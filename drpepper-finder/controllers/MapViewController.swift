@@ -75,6 +75,7 @@ extension MapViewController {
         switch manager.authorizationStatus {
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
+            break
         case .authorizedWhenInUse:
             // 位置情報の取得開始
             locationManager.startUpdatingLocation()
@@ -96,12 +97,11 @@ extension MapViewController {
     func setToCurrentLocation() {
         if locationManager.authorizationStatus == .denied || locationManager.authorizationStatus == .restricted || locationManager.authorizationStatus == .notDetermined {
             locationManager.requestWhenInUseAuthorization()
-        } else {
-            // Mapを現在地にセット
-            let mapSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-            let mapRegion = MKCoordinateRegion(center: mapView.userLocation.coordinate, span: mapSpan)
-            mapView.setRegion(mapRegion, animated: true)
         }
+        // Mapを現在地にセット
+        let mapSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let mapRegion = MKCoordinateRegion(center: mapView.userLocation.coordinate, span: mapSpan)
+        mapView.setRegion(mapRegion, animated: true)
     }
 }
 

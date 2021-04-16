@@ -64,7 +64,7 @@
                                 <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hyk-0y-Rqq">
-                                <rect key="frame" x="196.5" y="482" width="21.5" height="21"/>
+                                <rect key="frame" x="196.5" y="465" width="21.5" height="21"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hyk-0y-Rqq" secondAttribute="height" multiplier="1:1" id="dx8-tS-N1V"/>
@@ -86,7 +86,7 @@
                         <viewLayoutGuide key="safeArea" id="22x-p8-hay"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hyk-0y-Rqq" firstAttribute="centerY" secondItem="bcc-xv-9QQ" secondAttribute="centerY" id="2qA-Ce-luf"/>
+                            <constraint firstItem="hyk-0y-Rqq" firstAttribute="centerY" secondItem="22x-p8-hay" secondAttribute="centerY" id="2qA-Ce-luf"/>
                             <constraint firstAttribute="bottom" secondItem="bcc-xv-9QQ" secondAttribute="bottom" id="Awn-h8-DD7"/>
                             <constraint firstItem="22x-p8-hay" firstAttribute="trailing" secondItem="bcc-xv-9QQ" secondAttribute="trailing" id="DNX-Yh-rhu"/>
                             <constraint firstItem="arF-D3-9Kf" firstAttribute="top" secondItem="22x-p8-hay" secondAttribute="top" constant="10" id="EKY-u0-ZuP"/>
