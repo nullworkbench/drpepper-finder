@@ -34,14 +34,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-    }
-    
     // 画面遷移準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetailView" {
+        switch segue.identifier {
+        // 新規追加画面
+        case "toAddNewPinView":
+            let addNewPinViewController = segue.destination as! addNewPinViewController
+            addNewPinViewController.coordinate = sender as? CLLocationCoordinate2D
+        // ピンタップ後の詳細画面
+        case "toDetailView":
             let detailViewController = segue.destination as! DetailViewController
             detailViewController.docId = sender as? String
+        default:
+            break
         }
     }
     
@@ -55,21 +60,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // MapViewの中心座標
         let coordinate = mapView.centerCoordinate
         
-        // Firestoreに登録
-        var ref: DocumentReference?
-        ref = db.collection("pins").addDocument(data: [
-            "coordinate": GeoPoint(latitude: coordinate.latitude, longitude: coordinate.longitude),
-            "createdAt": FieldValue.serverTimestamp(),
-            "note": ""
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-            }
-        }
-        // ログを保存
-        Ex.loggingToFirestore(ref!.documentID, 0)
+        performSegue(withIdentifier: "toAddNewPinView", sender: coordinate)
     }
 
 }

@@ -79,7 +79,7 @@
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" image="plus.circle.fill" catalog="system"/>
                                 <connections>
-                                    <segue destination="Njx-4b-C6S" kind="presentation" id="8A1-qD-yhN"/>
+                                    <action selector="addNewPinButton" destination="4Zb-Ha-lUh" eventType="touchUpInside" id="UVv-qt-ds8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -103,6 +103,7 @@
                     <connections>
                         <outlet property="mapView" destination="bcc-xv-9QQ" id="Z5S-Rb-rMf"/>
                         <segue destination="uox-hE-tek" kind="presentation" identifier="toDetailView" id="10x-BY-9cx"/>
+                        <segue destination="Njx-4b-C6S" kind="presentation" id="GiP-N4-OVo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7q-Pw-cVA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
