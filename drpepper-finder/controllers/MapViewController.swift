@@ -27,12 +27,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locationManager.delegate = self
         // MapKitセットアップ
         mapView.delegate = self
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+        
+        // カスタムピン取得＆表示
         DispatchQueue(label: "showAllCustomPins", qos: .default).async {
             self.showAllCustomPins()
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
     }
     
     // 画面遷移準備
