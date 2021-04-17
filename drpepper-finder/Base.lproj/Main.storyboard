@@ -249,7 +249,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="foundDateLabel" destination="ial-oe-Tix" id="aQi-E1-Kzx"/>
+                        <outlet property="latestUpdateLabel" destination="PyS-kx-3QB" id="eci-70-cCh"/>
                         <outlet property="mapView" destination="0ez-zl-pOn" id="89H-LD-QBy"/>
+                        <outlet property="noteTextView" destination="Odd-RB-OVm" id="MOa-zC-SJw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scn-pj-BXk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
