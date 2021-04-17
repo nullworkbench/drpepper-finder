@@ -28,33 +28,33 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         // docIdからピンの詳細を取得
-        db.collection("pins").document(docId).getDocument { (document, error) in
-            if let document = document, document.exists {
-                let data = document.data()!
-                let geopoint = data["coordinate"] as! GeoPoint
-                self.setMapCenter(CLLocationCoordinate2DMake(geopoint.latitude, geopoint.longitude)) // Mapの中心点を設定
-                self.noteTextView.text = data["note"] as? String
-            } else {
-                print("Document does not exist")
-            }
-        }
+//        db.collection("pins").document(docId).getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                let data = document.data()!
+//                let geopoint = data["coordinate"] as! GeoPoint
+//                self.setMapCenter(CLLocationCoordinate2DMake(geopoint.latitude, geopoint.longitude)) // Mapの中心点を設定
+//                self.noteTextView.text = data["note"] as? String
+//            } else {
+//                print("Document does not exist")
+//            }
+//        }
         
         // logを取得
-        db.collection("pins").document(docId).collection("logs").order(by: "timestamp").limit(to: 1).getDocuments { (querySnapshot, error) in
-            if let err = error {
-                print("Error getting documents: \(err)")
-            } else {
-                let data = querySnapshot?.documents[0].data()
-                let timestamp = (data!["timestamp"] as! Timestamp).dateValue()
-                
-                switch data!["type"] as! Int {
-                case 0:
-                    self.latestUpdateLabel.text = "発見 \(timestamp)"
-                default:
-                    break
-                }
-            }
-        }
+//        db.collection("pins").document(docId).collection("logs").order(by: "timestamp").limit(to: 1).getDocuments { (querySnapshot, error) in
+//            if let err = error {
+//                print("Error getting documents: \(err)")
+//            } else {
+//                let data = querySnapshot?.documents[0].data()
+//                let timestamp = (data!["timestamp"] as! Timestamp).dateValue()
+//
+//                switch data!["type"] as! Int {
+//                case 0:
+//                    self.latestUpdateLabel.text = "発見 \(timestamp)"
+//                default:
+//                    break
+//                }
+//            }
+//        }
     }
     
     func setMapCenter(_ coordinate: CLLocationCoordinate2D) {
