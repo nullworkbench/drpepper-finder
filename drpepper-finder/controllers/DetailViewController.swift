@@ -32,7 +32,7 @@ class DetailViewController: UIViewController {
             if let document = document, document.exists {
                 let data = document.data()!
                 let geopoint = data["coordinate"] as! GeoPoint
-                self.setMapCenter(CLLocationCoordinate2DMake(geopoint.latitude, geopoint.longitude)) // Mapの中心点を設定
+                self.setMapCenter(CLLocationCoordinate2DMake(geopoint.latitude, geopoint.longitude)) // Mapの中心点を設定してピンを置く
                 let note = (data["note"] as? String)
                 if note == "" { self.noteTextView.text = "noteはありません。" } else { self.noteTextView.text = note }
             } else {
@@ -59,9 +59,15 @@ class DetailViewController: UIViewController {
     }
     
     func setMapCenter(_ coordinate: CLLocationCoordinate2D) {
+        // マップの中心点設定
         let mapSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let mapRegion = MKCoordinateRegion(center: coordinate, span: mapSpan)
         mapView.setRegion(mapRegion, animated: true)
+        
+        // ピンを置く
+        let pin = MKPointAnnotation()
+        pin.coordinate = coordinate
+        mapView.addAnnotation(pin)
     }
 
 }
