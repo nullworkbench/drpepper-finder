@@ -31,8 +31,16 @@ class DetailViewController: UIViewController {
         db.collection("pins").document(docId).getDocument { (document, error) in
             if let document = document, document.exists {
                 let data = document.data()!
+                
+                // Map
                 let geopoint = data["coordinate"] as! GeoPoint
                 self.setMapCenter(CLLocationCoordinate2DMake(geopoint.latitude, geopoint.longitude)) // Mapの中心点を設定してピンを置く
+                
+                // 発見日時
+                let createdAt = (data["createdAt"] as! Timestamp).dateValue()
+                self.foundDateLabel.text = "発見日時: \(Ex.dateToString(createdAt))"
+                
+                // note
                 let note = (data["note"] as? String)
                 if note == "" { self.noteTextView.text = "noteはありません。" } else { self.noteTextView.text = note }
             } else {
@@ -41,21 +49,25 @@ class DetailViewController: UIViewController {
         }
         
         // logを取得
-//        db.collection("pins").document(docId).collection("logs").order(by: "timestamp").limit(to: 1).getDocuments { (querySnapshot, error) in
-//            if let err = error {
-//                print("Error getting documents: \(err)")
-//            } else {
-//                let data = querySnapshot?.documents[0].data()
-//                let timestamp = (data!["timestamp"] as! Timestamp).dateValue()
-//
-//                switch data!["type"] as! Int {
-//                case 0:
-//                    self.latestUpdateLabel.text = "発見 \(timestamp)"
-//                default:
-//                    break
-//                }
-//            }
-//        }
+        db.collection("pins").document(docId).collection("logs").order(by: "timestamp").limit(to: 1).getDocuments { (querySnapshot, error) in
+            if let err = error {
+                print("Error getting documents: \(err)")
+            } else {
+                let data = querySnapshot?.documents[0].data()
+                let timestamp = Ex.dateToString((data!["timestamp"] as! Timestamp).dateValue())
+
+                switch data!["type"] as! Int {
+                case 0:
+                    self.latestUpdateLabel.text = "最近の更新: 発見 \(timestamp)"
+                case 1:
+                    self.latestUpdateLabel.text = "最近の更新: まだあった！ \(timestamp)"
+                case 2:
+                    self.latestUpdateLabel.text = "最近の更新: なくなってた… \(timestamp)"
+                default:
+                    break
+                }
+            }
+        }
     }
     
     func setMapCenter(_ coordinate: CLLocationCoordinate2D) {

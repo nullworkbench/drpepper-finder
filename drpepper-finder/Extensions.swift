@@ -20,4 +20,14 @@ class Ex {
             "timestamp": FieldValue.serverTimestamp()
         ])
     }
+    
+    // Date型をString型に変換する
+    class func dateToString(_ date: Date) -> String {
+        let f = DateFormatter()
+        f.timeStyle = .medium
+        f.dateStyle = .medium
+        f.locale = Locale(identifier: "ja_JP")
+        
+        return f.string(from: date)
+    }
 }

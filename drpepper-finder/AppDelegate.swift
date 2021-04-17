@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         // Firebase Config
         FirebaseApp.configure()
-        let db = Firestore.firestore()
         
         // FirebaseAuth Config
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
