@@ -38,6 +38,23 @@ class DetailViewController: UIViewController {
                 print("Document does not exist")
             }
         }
+        
+        // logを取得
+        db.collection("pins").document(docId).collection("logs").order(by: "timestamp").limit(to: 1).getDocuments { (querySnapshot, error) in
+            if let err = error {
+                print("Error getting documents: \(err)")
+            } else {
+                let data = querySnapshot?.documents[0].data()
+                let timestamp = (data!["timestamp"] as! Timestamp).dateValue()
+                
+                switch data!["type"] as! Int {
+                case 0:
+                    self.latestUpdateLabel.text = "発見 \(timestamp)"
+                default:
+                    break
+                }
+            }
+        }
     }
     
     func setMapCenter(_ coordinate: CLLocationCoordinate2D) {

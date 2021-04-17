@@ -190,15 +190,19 @@ extension MapViewController {
     
     // MARK: ピンをタップしたときの設定
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print("pin tapped")
-        // docIdをsenderへ渡す
-        let docId = (view.annotation as! CustomPin).docId
-        
-        // 画面遷移
-        performSegue(withIdentifier: "toDetailView", sender: docId)
-        
-        // 選択解除
-        mapView.deselectAnnotation(view.annotation, animated: true)
+        if view.annotation is MKUserLocation {
+            return
+        } else {
+            print("pin tapped")
+            // docIdをsenderへ渡す
+            let docId = (view.annotation as! CustomPin).docId
+            
+            // 画面遷移
+            performSegue(withIdentifier: "toDetailView", sender: docId)
+            
+            // 選択解除
+            mapView.deselectAnnotation(view.annotation, animated: true)
+        }
     }
 
 }

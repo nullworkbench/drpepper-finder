@@ -10,7 +10,9 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+// グローバル関数
 class Ex {
+    // Firestoreにログを保存する。
     class func loggingToFirestore(_ docId: String, _ type: Int) {
         let db = Firestore.firestore()
         db.collection("pins").document(docId).collection("logs").addDocument(data: [
