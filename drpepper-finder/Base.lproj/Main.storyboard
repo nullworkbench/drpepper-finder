@@ -79,7 +79,7 @@
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" image="plus.circle.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="addNewPinButton" destination="4Zb-Ha-lUh" eventType="touchUpInside" id="bBH-Ig-QOH"/>
+                                    <segue destination="Njx-4b-C6S" kind="presentation" id="8A1-qD-yhN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -150,6 +150,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2YY-fK-KHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1499" y="842"/>
+        </scene>
+        <!--Add New Pin View Controller-->
+        <scene sceneID="08i-J2-gk7">
+            <objects>
+                <viewController id="Njx-4b-C6S" customClass="addNewPinViewController" customModule="drpepper_finder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eFk-yq-KTN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="v1X-BC-Rba"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZR-WY-P64" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55" y="1572"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="ssk-uL-7y1">
@@ -347,7 +362,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvt-48-9O0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-178.2608695652174" y="841.74107142857144"/>
+            <point key="canvasLocation" x="-55" y="842"/>
         </scene>
     </scenes>
     <resources>
