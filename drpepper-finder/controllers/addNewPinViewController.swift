@@ -61,5 +61,9 @@ class addNewPinViewController: UIViewController {
     @IBAction func postButton() {
         self.postToFireStore()
     }
+    
+    @IBAction func dismissButton() {
+        self.dismiss(animated: true, completion: nil)
+    }
 
 }

@@ -172,7 +172,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
                                     <navigationItem title="発見報告を投稿" id="3H7-P5-MnM">
-                                        <barButtonItem key="leftBarButtonItem" title="キャンセル" image="multiply" catalog="system" id="Ucp-kO-la7"/>
+                                        <barButtonItem key="leftBarButtonItem" title="キャンセル" image="multiply" catalog="system" id="Ucp-kO-la7">
+                                            <connections>
+                                                <action selector="dismissButton" destination="Njx-4b-C6S" id="Jyq-Kz-U6G"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="投稿" style="plain" id="LUU-go-AlX">
                                             <connections>
                                                 <action selector="postButton" destination="Njx-4b-C6S" id="r3c-zs-pek"/>
