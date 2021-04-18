@@ -12,18 +12,35 @@ import FirebaseFirestoreSwift
 import CoreLocation
 import MapKit
 
-class addNewPinViewController: UIViewController {
+class addNewPinViewController: UIViewController, UITextViewDelegate {
     
     var coordinate: CLLocationCoordinate2D!
     
     let db = Firestore.firestore()
     
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet var noteTextView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // placeholder設定
+        noteTextView.delegate = self
+        noteTextView.text = "駅前の自動販売機にあった！など"
+        noteTextView.textColor = .lightGray
 
         self.setMapCenter(coordinate)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.selectedRange.location = 0
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text != "" {
+            noteTextView.text = ""
+            noteTextView.textColor = .label
+        }
     }
     
     func setMapCenter(_ coordinate: CLLocationCoordinate2D) {
