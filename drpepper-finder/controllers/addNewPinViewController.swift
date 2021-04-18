@@ -10,19 +10,33 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import CoreLocation
+import MapKit
 
 class addNewPinViewController: UIViewController {
     
     var coordinate: CLLocationCoordinate2D!
     
     let db = Firestore.firestore()
+    
+    @IBOutlet var mapView: MKMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.setMapCenter(coordinate)
     }
     
+    func setMapCenter(_ coordinate: CLLocationCoordinate2D) {
+        // マップの中心点設定
+        let mapSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let mapRegion = MKCoordinateRegion(center: coordinate, span: mapSpan)
+        mapView.setRegion(mapRegion, animated: true)
+        
+        // ピンを置く
+        let pin = MKPointAnnotation()
+        pin.coordinate = coordinate
+        mapView.addAnnotation(pin)
+    }
 
     func postToFireStore() {
         // Firestoreに登録
@@ -40,6 +54,12 @@ class addNewPinViewController: UIViewController {
         }
         // ログを保存
         Ex.loggingToFirestore(ref!.documentID, 0)
+    }
+    
+    
+    
+    @IBAction func postButton() {
+        self.postToFireStore()
     }
 
 }

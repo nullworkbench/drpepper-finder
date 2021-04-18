@@ -134,7 +134,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J3W-uQ-LHn"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="J3W-uQ-LHn" firstAttribute="trailing" secondItem="Gfd-62-vFr" secondAttribute="trailing" id="6LU-43-hxX"/>
                             <constraint firstItem="Gfd-62-vFr" firstAttribute="leading" secondItem="J3W-uQ-LHn" secondAttribute="leading" id="LmI-ug-hJh"/>
@@ -159,13 +159,73 @@
                     <view key="view" contentMode="scaleToFill" id="eFk-yq-KTN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYL-Pf-iw2">
+                                <rect key="frame" x="20" y="390" width="374" height="418"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eb5-cu-gPK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="発見報告を投稿" id="3H7-P5-MnM">
+                                        <barButtonItem key="leftBarButtonItem" title="キャンセル" image="multiply" catalog="system" id="Ucp-kO-la7"/>
+                                        <barButtonItem key="rightBarButtonItem" title="投稿" style="plain" id="LUU-go-AlX">
+                                            <connections>
+                                                <action selector="postButton" destination="Njx-4b-C6S" id="r3c-zs-pek"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mcw-5E-5rB">
+                                <rect key="frame" x="0.0" y="112" width="414" height="207"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Mcw-5E-5rB" secondAttribute="height" multiplier="2:1" id="Z4H-yy-Phk"/>
+                                </constraints>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ドクターペッパーを見つけた場所" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yu4-A8-N2j">
+                                <rect key="frame" x="77" y="81" width="260" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="発見場所に関するメモ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAu-H5-vOE">
+                                <rect key="frame" x="120" y="359" width="174" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="v1X-BC-Rba"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="v1X-BC-Rba" firstAttribute="trailing" secondItem="MYL-Pf-iw2" secondAttribute="trailing" constant="20" id="Djh-7s-MVB"/>
+                            <constraint firstItem="Eb5-cu-gPK" firstAttribute="trailing" secondItem="v1X-BC-Rba" secondAttribute="trailing" id="F7n-XB-XFW"/>
+                            <constraint firstItem="v1X-BC-Rba" firstAttribute="bottom" secondItem="MYL-Pf-iw2" secondAttribute="bottom" id="KCn-Hg-igO"/>
+                            <constraint firstItem="MYL-Pf-iw2" firstAttribute="leading" secondItem="v1X-BC-Rba" secondAttribute="leading" constant="20" id="fEa-IJ-cwq"/>
+                            <constraint firstItem="Eb5-cu-gPK" firstAttribute="top" secondItem="v1X-BC-Rba" secondAttribute="top" id="gS8-LL-2ZK"/>
+                            <constraint firstItem="MYL-Pf-iw2" firstAttribute="top" secondItem="hAu-H5-vOE" secondAttribute="bottom" constant="10" id="goS-ub-hmI"/>
+                            <constraint firstItem="hAu-H5-vOE" firstAttribute="centerX" secondItem="eFk-yq-KTN" secondAttribute="centerX" id="hkQ-7u-BJL"/>
+                            <constraint firstItem="hAu-H5-vOE" firstAttribute="top" secondItem="Mcw-5E-5rB" secondAttribute="bottom" constant="40" id="i34-bn-utG"/>
+                            <constraint firstItem="Yu4-A8-N2j" firstAttribute="centerX" secondItem="eFk-yq-KTN" secondAttribute="centerX" id="kIy-F0-xTa"/>
+                            <constraint firstItem="Yu4-A8-N2j" firstAttribute="top" secondItem="Eb5-cu-gPK" secondAttribute="bottom" constant="25" id="nE5-bp-pDq"/>
+                            <constraint firstItem="Mcw-5E-5rB" firstAttribute="leading" secondItem="v1X-BC-Rba" secondAttribute="leading" id="rJp-iA-9K7"/>
+                            <constraint firstItem="Eb5-cu-gPK" firstAttribute="leading" secondItem="v1X-BC-Rba" secondAttribute="leading" id="s3M-3B-Mcu"/>
+                            <constraint firstItem="v1X-BC-Rba" firstAttribute="trailing" secondItem="Mcw-5E-5rB" secondAttribute="trailing" id="tAb-0Q-M7B"/>
+                            <constraint firstItem="Mcw-5E-5rB" firstAttribute="top" secondItem="Yu4-A8-N2j" secondAttribute="bottom" constant="10" id="tqs-KM-rqk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="Mcw-5E-5rB" id="dbI-5W-0cC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZR-WY-P64" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="1572"/>
+            <point key="canvasLocation" x="-55.072463768115945" y="1571.6517857142856"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="ssk-uL-7y1">
@@ -371,6 +431,7 @@
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="location.north.fill" catalog="system" width="108" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
@@ -378,6 +439,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
