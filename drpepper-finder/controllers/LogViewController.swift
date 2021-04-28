@@ -41,6 +41,13 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     
+    @IBAction func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+}
+
+extension LogViewController {
     // FireStoreからログ一覧を取得
     class FBLog {
         var type: Int?
@@ -65,12 +72,10 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
                     let log = FBLog.init(data["type"] as! Int, (data["timestamp"] as! Timestamp).dateValue())
                     logs.append(log)
                 }
+//                self.tableView1.reloadData() // FireStore情報取得が遅いためリロード
             }
         }
         
         return logs
     }
-    
-
-
 }

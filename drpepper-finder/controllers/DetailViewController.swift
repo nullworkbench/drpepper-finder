@@ -74,7 +74,6 @@ class DetailViewController: UIViewController {
         switch segue.identifier {
         case "toLogView":
             let logViewController = segue.destination as! LogViewController
-//            let logViewController = segue.destination as! LogViewController
             logViewController.docId = docId
         default:
             break
