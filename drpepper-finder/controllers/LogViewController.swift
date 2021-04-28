@@ -42,7 +42,6 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         if logs.count != 0 {
             cellLabel.text = Ex.dateToString(logs[indexPath.row].timestamp!)
-            print(Ex.dateToString(logs[indexPath.row].timestamp!))
         } else {
             cellLabel.text = "ログはありません"
         }
@@ -60,8 +59,8 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
 extension LogViewController {
     // FireStoreからログ一覧を取得
     class FBLog {
-        var type: Int?
-        var timestamp: Date?
+        var type: Int!
+        var timestamp: Date!
         
         init(_ type: Int, _ timestamp: Date) {
             self.type = type
@@ -70,17 +69,16 @@ extension LogViewController {
     }
     
     func getAllLogs() -> [FBLog] {
-        var logs = [FBLog]()
         
         let db = Firestore.firestore()
-        db.collection("pins").document(docId!).collection("logs").limit(to: 50).getDocuments {(querySnapshot, error) in
+        db.collection("pins").document(docId!).collection("logs").order(by: "timestamp").limit(to: 50).getDocuments {(querySnapshot, error) in
             if let err = error {
                 print("Error getting documents: \(err)")
             } else {
                 for doc in querySnapshot!.documents {
                     let data = doc.data()
                     let log = FBLog.init(data["type"] as! Int, (data["timestamp"] as! Timestamp).dateValue())
-                    logs.append(log)
+                    self.logs.append(log)
                 }
                 self.tableView1.reloadData() // FireStore情報取得が遅いためリロード
             }
