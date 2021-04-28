@@ -29,14 +29,23 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
 
     // MARK: - Table view data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return logs.count
+        if logs.count == 0 {
+            return 1
+        } else {
+            return logs.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cellLabel = cell.contentView.viewWithTag(1) as! UILabel
         
-        cell.textLabel?.text = Ex.dateToString(logs[indexPath.row].timestamp!)
-        print(Ex.dateToString(logs[indexPath.row].timestamp!))
+        if logs.count != 0 {
+            cellLabel.text = Ex.dateToString(logs[indexPath.row].timestamp!)
+            print(Ex.dateToString(logs[indexPath.row].timestamp!))
+        } else {
+            cellLabel.text = "ログはありません"
+        }
 
         return cell
     }
