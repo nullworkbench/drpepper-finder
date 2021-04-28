@@ -73,7 +73,8 @@ class DetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "toLogView":
-            let logViewController = segue.destination as! LogViewController
+            let logNavigationController = segue.destination as! UINavigationController
+            let logViewController = logNavigationController.topViewController as! LogViewController
             logViewController.docId = docId
         default:
             break

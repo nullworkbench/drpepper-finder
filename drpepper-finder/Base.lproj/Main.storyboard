@@ -300,7 +300,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="さらに詳細なログを確認"/>
                                 <connections>
-                                    <segue destination="xBv-Tx-Ktm" kind="showDetail" identifier="toLogVIew" id="aW2-OM-4O7"/>
+                                    <segue destination="xBv-Tx-Ktm" kind="showDetail" identifier="toLogView" id="aW2-OM-4O7"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aU-5F-he0">

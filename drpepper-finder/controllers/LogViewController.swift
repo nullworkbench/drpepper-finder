@@ -24,7 +24,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         tableView1.dataSource = self
         tableView1.delegate = self
         
-//        logs = getAllLogs()
+        logs = getAllLogs()
     }
 
     // MARK: - Table view data source
@@ -36,6 +36,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         cell.textLabel?.text = Ex.dateToString(logs[indexPath.row].timestamp!)
+        print(Ex.dateToString(logs[indexPath.row].timestamp!))
 
         return cell
     }
@@ -63,7 +64,7 @@ extension LogViewController {
         var logs = [FBLog]()
         
         let db = Firestore.firestore()
-        db.collection("pins").document(docId).collection("logs").limit(to: 50).getDocuments {(querySnapshot, error) in
+        db.collection("pins").document(docId!).collection("logs").limit(to: 50).getDocuments {(querySnapshot, error) in
             if let err = error {
                 print("Error getting documents: \(err)")
             } else {
@@ -72,7 +73,7 @@ extension LogViewController {
                     let log = FBLog.init(data["type"] as! Int, (data["timestamp"] as! Timestamp).dateValue())
                     logs.append(log)
                 }
-//                self.tableView1.reloadData() // FireStore情報取得が遅いためリロード
+                self.tableView1.reloadData() // FireStore情報取得が遅いためリロード
             }
         }
         
