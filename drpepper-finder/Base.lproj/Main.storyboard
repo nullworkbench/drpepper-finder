@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JHx-S0-KPY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JHx-S0-KPY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -123,7 +123,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="0Rd-fw-3ud">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Rd-fw-3ud" id="T2V-7q-Aje">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -300,7 +300,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="さらに詳細なログを確認"/>
                                 <connections>
-                                    <segue destination="xBv-Tx-Ktm" kind="showDetail" id="AvI-Ke-GkL"/>
+                                    <segue destination="FFm-dI-pPD" kind="showDetail" id="fHF-oU-lMe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aU-5F-he0">
@@ -353,17 +353,17 @@
         <!--ログ-->
         <scene sceneID="Ihg-UX-TRF">
             <objects>
-                <viewController id="FFm-dI-pPD" sceneMemberID="viewController">
+                <viewController id="FFm-dI-pPD" customClass="LogViewController" customModule="drpepper_finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ucg-lf-jVP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ntc-Et-RYD">
-                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="758"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hQD-yB-urU">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="hQD-yB-urU">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hQD-yB-urU" id="iVO-T5-QEI">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -391,19 +391,20 @@
                             <constraint firstItem="GmA-bY-u6p" firstAttribute="bottom" secondItem="Ntc-Et-RYD" secondAttribute="bottom" id="EY3-GM-3PF"/>
                             <constraint firstItem="GmA-bY-u6p" firstAttribute="trailing" secondItem="Ntc-Et-RYD" secondAttribute="trailing" id="J2n-Lj-qx9"/>
                             <constraint firstItem="Ntc-Et-RYD" firstAttribute="leading" secondItem="GmA-bY-u6p" secondAttribute="leading" id="Xla-ZZ-ohG"/>
-                            <constraint firstItem="Ntc-Et-RYD" firstAttribute="top" secondItem="GmA-bY-u6p" secondAttribute="top" id="eE2-a8-VdB"/>
+                            <constraint firstItem="Ntc-Et-RYD" firstAttribute="top" secondItem="GmA-bY-u6p" secondAttribute="top" constant="50" id="eE2-a8-VdB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ログ" id="L79-Vu-lLJ">
                         <barButtonItem key="leftBarButtonItem" image="multiply" catalog="system" id="Q5V-6O-9Rr"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="8ex-zm-eoy" kind="show" id="qiJ-dK-oz2"/>
+                        <outlet property="tableView1" destination="Ntc-Et-RYD" id="Hau-WN-wfe"/>
+                        <segue destination="8ex-zm-eoy" kind="showDetail" id="63O-vv-1XS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tpb-RZ-vO6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="728.98550724637687" y="2959.8214285714284"/>
+            <point key="canvasLocation" x="729" y="2307"/>
         </scene>
         <!--詳細-->
         <scene sceneID="5P9-yM-kYi">
@@ -419,7 +420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qw7-Oh-Snn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1499" y="2960"/>
+            <point key="canvasLocation" x="1499" y="2307"/>
         </scene>
         <!--Search-->
         <scene sceneID="gZr-Jq-RGg">
@@ -430,7 +431,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Nn9-TW-DMn">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -517,7 +518,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xBv-Tx-Ktm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ISg-Ef-WFY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -527,9 +528,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EGa-Vq-mK7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729" y="2257"/>
+            <point key="canvasLocation" x="-55" y="2307"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fHF-oU-lMe"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="drpepper" width="650" height="647"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>

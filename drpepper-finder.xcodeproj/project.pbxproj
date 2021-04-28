@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B10020B262DAF55006E6CFC /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B10020A262DAF55006E6CFC /* LogViewController.swift */; };
 		8B1ACC5B26234B13000B8C87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACC5A26234B13000B8C87 /* AppDelegate.swift */; };
 		8B1ACC5D26234B13000B8C87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACC5C26234B13000B8C87 /* SceneDelegate.swift */; };
 		8B1ACC5F26234B13000B8C87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACC5E26234B13000B8C87 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		301AF65694C63676EC7652AF /* Pods_drpepper_finder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_drpepper_finder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		376DD733A73C2ABD67670CE0 /* Pods-drpepper-finder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drpepper-finder.debug.xcconfig"; path = "Target Support Files/Pods-drpepper-finder/Pods-drpepper-finder.debug.xcconfig"; sourceTree = "<group>"; };
 		457F314694625010004DA314 /* Pods-drpepper-finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drpepper-finder.release.xcconfig"; path = "Target Support Files/Pods-drpepper-finder/Pods-drpepper-finder.release.xcconfig"; sourceTree = "<group>"; };
+		8B10020A262DAF55006E6CFC /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		8B1ACC5726234B13000B8C87 /* drpepper-finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "drpepper-finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1ACC5A26234B13000B8C87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B1ACC5C26234B13000B8C87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				8B1ACCE6262474B5000B8C87 /* SettingsViewController.swift */,
 				8B2BF4572629950E00E8BFA3 /* DetailViewController.swift */,
 				8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */,
+				8B10020A262DAF55006E6CFC /* LogViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B10020B262DAF55006E6CFC /* LogViewController.swift in Sources */,
 				8B1ACC9D2623544B000B8C87 /* AccountViewController.swift in Sources */,
 				8B2BF4742629B55E00E8BFA3 /* Extensions.swift in Sources */,
 				8B1ACCE0262461C3000B8C87 /* MapViewController.swift in Sources */,

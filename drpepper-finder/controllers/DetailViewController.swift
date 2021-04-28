@@ -70,6 +70,17 @@ class DetailViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "toLogView":
+            let logViewController = segue.destination as! LogViewController
+//            let logViewController = segue.destination as! LogViewController
+            logViewController.docId = docId
+        default:
+            break
+        }
+    }
+    
     func setMapCenter(_ coordinate: CLLocationCoordinate2D) {
         // マップの中心点設定
         let mapSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
