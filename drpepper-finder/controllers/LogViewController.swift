@@ -41,7 +41,18 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         let cellLabel = cell.contentView.viewWithTag(1) as! UILabel
         
         if logs.count != 0 {
-            cellLabel.text = Ex.dateToString(logs[indexPath.row].timestamp!)
+            let timestamp = Ex.dateToString(logs[indexPath.row].timestamp!)
+            
+            switch logs[indexPath.row].type {
+            case 0:
+                cellLabel.text = "発見：\(timestamp)"
+            case 1:
+                cellLabel.text = "まだあった！：\(timestamp)"
+            case 2:
+                cellLabel.text = "なくなってた…：\(timestamp)"
+            default:
+                break
+            }
         } else {
             cellLabel.text = "ログはありません"
         }
