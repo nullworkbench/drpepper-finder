@@ -249,8 +249,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Odd-RB-OVm">
-                                <rect key="frame" x="40" y="530" width="334" height="138"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odd-RB-OVm">
+                                <rect key="frame" x="40" y="530" width="334" height="228"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -341,6 +341,7 @@
                             <constraint firstItem="0ez-zl-pOn" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" id="WVr-gX-h0X"/>
                             <constraint firstItem="ial-oe-Tix" firstAttribute="top" secondItem="PyS-kx-3QB" secondAttribute="bottom" constant="10" id="dHu-64-qvV"/>
                             <constraint firstItem="xqv-Qd-Exv" firstAttribute="centerX" secondItem="7Iu-xT-7kF" secondAttribute="centerX" id="g3G-mj-nhG"/>
+                            <constraint firstItem="yAC-Wh-qdA" firstAttribute="bottom" secondItem="Odd-RB-OVm" secondAttribute="bottom" constant="50" id="ixX-dX-FbT"/>
                             <constraint firstItem="6mE-o6-q9f" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="20" id="jZd-6a-tbP"/>
                             <constraint firstItem="ZjQ-NZ-lrP" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="l1z-Gg-IdA"/>
                             <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="XuX-Qj-RbK" secondAttribute="trailing" constant="20" id="lHK-EX-dxn"/>
@@ -362,7 +363,7 @@
                         <outlet property="latestUpdateLabel" destination="PyS-kx-3QB" id="eci-70-cCh"/>
                         <outlet property="mapView" destination="0ez-zl-pOn" id="89H-LD-QBy"/>
                         <outlet property="notStillThereButton" destination="6mE-o6-q9f" id="ZeG-DI-inZ"/>
-                        <outlet property="noteTextView" destination="Odd-RB-OVm" id="MOa-zC-SJw"/>
+                        <outlet property="noteTextView" destination="Odd-RB-OVm" id="dPi-49-qwB"/>
                         <outlet property="stillThereButton" destination="XuX-Qj-RbK" id="BjU-nr-OyJ"/>
                     </connections>
                 </viewController>

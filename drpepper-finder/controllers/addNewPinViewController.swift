@@ -59,7 +59,7 @@ class addNewPinViewController: UIViewController, UITextViewDelegate {
         ref = db.collection("pins").addDocument(data: [
             "coordinate": GeoPoint(latitude: coordinate.latitude, longitude: coordinate.longitude),
             "createdAt": FieldValue.serverTimestamp(),
-            "note": ""
+            "note": noteTextView.text!
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
