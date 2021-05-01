@@ -23,6 +23,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var foundDateLabel: UILabel!
     @IBOutlet weak var noteTextView: UITextView!
     
+    @IBOutlet weak var stillThereButton: UIButton!
+    @IBOutlet weak var notStillThereButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,6 +113,7 @@ extension DetailViewController {
             } else {
                 // success
                 self.thanksAlert()
+                self.preventRepeat()
             }
         }
     }
@@ -119,6 +123,16 @@ extension DetailViewController {
         let alert = UIAlertController(title: "報告ありがとうございます！", message: "この自動販売機の情報をログへ保存しました", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    // 連打防止（ボタンをグレーアウト）
+    func preventRepeat() {
+        stillThereButton.isUserInteractionEnabled = false
+        stillThereButton.isEnabled = false
+        stillThereButton.backgroundColor = .lightGray
+        notStillThereButton.isUserInteractionEnabled = false
+        notStillThereButton.isEnabled = false
+        notStillThereButton.backgroundColor = .lightGray
     }
     
     // まだあった

@@ -244,12 +244,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="265"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ドクターペッパー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjQ-NZ-lrP">
-                                <rect key="frame" x="40" y="359" width="163.5" height="24"/>
+                                <rect key="frame" x="40" y="359" width="334" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Odd-RB-OVm">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Odd-RB-OVm">
                                 <rect key="frame" x="40" y="530" width="334" height="138"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -275,28 +275,34 @@
                                 <color key="textColor" white="0.62494091277426866" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAn-7Y-C1G">
-                                <rect key="frame" x="153" y="728" width="108" height="30"/>
-                                <state key="normal" title="まだあったよ！"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XuX-Qj-RbK">
-                                <rect key="frame" x="297" y="289" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XuX-Qj-RbK">
+                                <rect key="frame" x="285" y="290" width="109" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="まだあった！">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="stillThere" destination="uox-hE-tek" eventType="touchUpInside" id="Tdy-ek-Beb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mE-o6-q9f">
-                                <rect key="frame" x="24" y="289" width="105" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mE-o6-q9f">
+                                <rect key="frame" x="20" y="290" width="109" height="34"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.33869485290000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="なくなってた...">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="notStillThere" destination="uox-hE-tek" eventType="touchUpInside" id="n70-VQ-Jsi"/>
                                 </connections>
@@ -321,10 +327,11 @@
                         <constraints>
                             <constraint firstItem="xqv-Qd-Exv" firstAttribute="top" secondItem="0ez-zl-pOn" secondAttribute="bottom" constant="-70" id="4Qw-yH-4a1"/>
                             <constraint firstItem="9aU-5F-he0" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="4bg-6h-6cp"/>
-                            <constraint firstItem="gAn-7Y-C1G" firstAttribute="top" secondItem="Odd-RB-OVm" secondAttribute="bottom" constant="60" id="6db-hU-Y83"/>
+                            <constraint firstItem="ZjQ-NZ-lrP" firstAttribute="top" secondItem="6mE-o6-q9f" secondAttribute="bottom" constant="35" id="7Qc-yy-YQD"/>
                             <constraint firstItem="ial-oe-Tix" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="Abc-0C-vMn"/>
                             <constraint firstItem="Odd-RB-OVm" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="ELX-ae-AnT"/>
                             <constraint firstItem="0ez-zl-pOn" firstAttribute="top" secondItem="yAC-Wh-qdA" secondAttribute="top" id="FKy-tg-X2u"/>
+                            <constraint firstItem="XuX-Qj-RbK" firstAttribute="top" secondItem="0ez-zl-pOn" secondAttribute="bottom" constant="25" id="GEP-K2-c4h"/>
                             <constraint firstItem="ZjQ-NZ-lrP" firstAttribute="top" secondItem="xqv-Qd-Exv" secondAttribute="bottom" constant="40" id="Hwu-Lm-RAl"/>
                             <constraint firstItem="PyS-kx-3QB" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="IAD-DT-FvB"/>
                             <constraint firstItem="PyS-kx-3QB" firstAttribute="top" secondItem="ZjQ-NZ-lrP" secondAttribute="bottom" constant="20" id="QR4-G0-a2I"/>
@@ -334,22 +341,29 @@
                             <constraint firstItem="0ez-zl-pOn" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" id="WVr-gX-h0X"/>
                             <constraint firstItem="ial-oe-Tix" firstAttribute="top" secondItem="PyS-kx-3QB" secondAttribute="bottom" constant="10" id="dHu-64-qvV"/>
                             <constraint firstItem="xqv-Qd-Exv" firstAttribute="centerX" secondItem="7Iu-xT-7kF" secondAttribute="centerX" id="g3G-mj-nhG"/>
+                            <constraint firstItem="6mE-o6-q9f" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="20" id="jZd-6a-tbP"/>
                             <constraint firstItem="ZjQ-NZ-lrP" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="l1z-Gg-IdA"/>
+                            <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="XuX-Qj-RbK" secondAttribute="trailing" constant="20" id="lHK-EX-dxn"/>
                             <constraint firstItem="vU4-UW-XfN" firstAttribute="top" secondItem="ial-oe-Tix" secondAttribute="bottom" constant="5" id="lYK-em-Dd9"/>
-                            <constraint firstItem="gAn-7Y-C1G" firstAttribute="centerX" secondItem="7Iu-xT-7kF" secondAttribute="centerX" id="ld3-ml-F1D"/>
+                            <constraint firstItem="6mE-o6-q9f" firstAttribute="top" secondItem="0ez-zl-pOn" secondAttribute="bottom" constant="25" id="llW-Qy-1Sp"/>
                             <constraint firstItem="xqv-Qd-Exv" firstAttribute="width" secondItem="7Iu-xT-7kF" secondAttribute="width" multiplier="0.3" id="nLB-Tm-kEU"/>
+                            <constraint firstItem="xqv-Qd-Exv" firstAttribute="leading" secondItem="6mE-o6-q9f" secondAttribute="trailing" constant="16" id="q5e-z6-AII"/>
+                            <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="ZjQ-NZ-lrP" secondAttribute="trailing" constant="40" id="s4y-o3-DAe"/>
                             <constraint firstItem="vU4-UW-XfN" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="s7n-ob-ryc"/>
+                            <constraint firstItem="ZjQ-NZ-lrP" firstAttribute="top" secondItem="XuX-Qj-RbK" secondAttribute="bottom" constant="35" id="u1C-l4-f5o"/>
                             <constraint firstItem="Odd-RB-OVm" firstAttribute="top" secondItem="9aU-5F-he0" secondAttribute="bottom" constant="10" id="v5r-al-yjm"/>
-                            <constraint firstItem="yAC-Wh-qdA" firstAttribute="bottom" secondItem="gAn-7Y-C1G" secondAttribute="bottom" constant="50" id="vq1-gJ-h8L"/>
                             <constraint firstItem="9aU-5F-he0" firstAttribute="top" secondItem="vU4-UW-XfN" secondAttribute="bottom" constant="20" id="xii-VZ-Zej"/>
                             <constraint firstItem="Odd-RB-OVm" firstAttribute="centerX" secondItem="7Iu-xT-7kF" secondAttribute="centerX" id="y2u-JN-MGp"/>
+                            <constraint firstItem="XuX-Qj-RbK" firstAttribute="leading" secondItem="xqv-Qd-Exv" secondAttribute="trailing" constant="16" id="zil-k3-plY"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="foundDateLabel" destination="ial-oe-Tix" id="aQi-E1-Kzx"/>
                         <outlet property="latestUpdateLabel" destination="PyS-kx-3QB" id="eci-70-cCh"/>
                         <outlet property="mapView" destination="0ez-zl-pOn" id="89H-LD-QBy"/>
+                        <outlet property="notStillThereButton" destination="6mE-o6-q9f" id="ZeG-DI-inZ"/>
                         <outlet property="noteTextView" destination="Odd-RB-OVm" id="MOa-zC-SJw"/>
+                        <outlet property="stillThereButton" destination="XuX-Qj-RbK" id="BjU-nr-OyJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scn-pj-BXk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
