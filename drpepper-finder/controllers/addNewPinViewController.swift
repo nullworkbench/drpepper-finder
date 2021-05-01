@@ -34,13 +34,11 @@ class addNewPinViewController: UIViewController, UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.selectedRange.location = 0
+        noteTextView.text = ""
+        noteTextView.textColor = .label
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        if textView.text != "" {
-            noteTextView.text = ""
-            noteTextView.textColor = .label
-        }
     }
     
     func setMapCenter(_ coordinate: CLLocationCoordinate2D) {
