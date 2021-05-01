@@ -44,8 +44,12 @@ class DetailViewController: UIViewController {
                 self.foundDateLabel.text = "発見日時: \(Ex.dateToString(createdAt))"
                 
                 // note
-                let note = (data["note"] as? String)
-                if note == "" { self.noteTextView.text = "noteはありません。" } else { self.noteTextView.text = note }
+                let note = (data["note"] as? String)!
+                if note.isEmpty {
+                    self.noteTextView.text = "メモは書かれていません…"
+                } else {
+                    self.noteTextView.text = note
+                }
             } else {
                 print("Document does not exist")
             }
