@@ -14,6 +14,7 @@ class AccountViewController: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var SignInWithGoogleButton: UIButton!
     
@@ -22,7 +23,13 @@ class AccountViewController: UIViewController {
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
         
-        userNameLabel.text = appDelegate.currentUser!.displayName
+        // ログインしているかによって分岐
+        if appDelegate.currentUser != nil {
+            userNameLabel.text = appDelegate.currentUser!.displayName
+            self.setUserImage(appDelegate.currentUser!.photoURL!)
+        } else {
+            userNameLabel.text = "ログインしていません"
+        }
         
         // SignInボタンの見た目変更
         self.changeAllSignInButtonStyle()
@@ -40,6 +47,14 @@ class AccountViewController: UIViewController {
         }
     }
 
+}
+
+// MARK: Set User Image
+extension AccountViewController {
+    func setUserImage(_ url: URL) {
+        let imageData = try! Data(contentsOf: url)
+        userImageView.image = UIImage(data: imageData)
+    }
 }
 
 // MARK: SignInButton Style

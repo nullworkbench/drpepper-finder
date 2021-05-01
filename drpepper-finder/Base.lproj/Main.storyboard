@@ -528,6 +528,7 @@
                     <navigationItem key="navigationItem" title="Account" id="22i-XM-w8i"/>
                     <connections>
                         <outlet property="SignInWithGoogleButton" destination="th2-QY-Mj6" id="7rQ-xs-s2e"/>
+                        <outlet property="userImageView" destination="Z04-Ti-aYN" id="fnB-co-rKR"/>
                         <outlet property="userNameLabel" destination="KQD-c9-GQd" id="fRX-MN-xcm"/>
                     </connections>
                 </viewController>
