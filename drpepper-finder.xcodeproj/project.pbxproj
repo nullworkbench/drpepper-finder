@@ -16,7 +16,6 @@
 		8B1ACC6726234B14000B8C87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1ACC6526234B14000B8C87 /* LaunchScreen.storyboard */; };
 		8B1ACC7526234CCD000B8C87 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B1ACC7426234CCD000B8C87 /* GoogleService-Info.plist */; };
 		8B1ACC9D2623544B000B8C87 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACC9C2623544B000B8C87 /* AccountViewController.swift */; };
-		8B1ACCDC26245E83000B8C87 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACCDB26245E83000B8C87 /* User.swift */; };
 		8B1ACCE0262461C3000B8C87 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACCDF262461C3000B8C87 /* MapViewController.swift */; };
 		8B1ACCE7262474B5000B8C87 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACCE6262474B5000B8C87 /* SettingsViewController.swift */; };
 		8B2BF4582629950E00E8BFA3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BF4572629950E00E8BFA3 /* DetailViewController.swift */; };
@@ -40,7 +39,6 @@
 		8B1ACC6826234B14000B8C87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B1ACC7426234CCD000B8C87 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8B1ACC9C2623544B000B8C87 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		8B1ACCDB26245E83000B8C87 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8B1ACCDF262461C3000B8C87 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8B1ACCE6262474B5000B8C87 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8B2BF4572629950E00E8BFA3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 		8B1ACCDA26245E76000B8C87 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				8B1ACCDB26245E83000B8C87 /* User.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -274,7 +271,6 @@
 				8B1ACCE7262474B5000B8C87 /* SettingsViewController.swift in Sources */,
 				8B1ACC5F26234B13000B8C87 /* ViewController.swift in Sources */,
 				8B1ACC5B26234B13000B8C87 /* AppDelegate.swift in Sources */,
-				8B1ACCDC26245E83000B8C87 /* User.swift in Sources */,
 				8B1ACC5D26234B13000B8C87 /* SceneDelegate.swift in Sources */,
 				8B2BF4582629950E00E8BFA3 /* DetailViewController.swift in Sources */,
 				8BDC519D262B485B003A03D4 /* addNewPinViewController.swift in Sources */,

@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     // FirebaseAuthの認証状態を保持する変数
     var authStateHandle: AuthStateDidChangeListenerHandle?
     // FirebaseAuthの認証済みユーザー
-    var currentUser: User = User.init(name: "ログインしていません")
+    var currentUser: User? = nil
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -90,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             if let authedUser = user {
                 print("Logged in as \(authedUser.displayName!)")
                 
-                self.currentUser = User.init(name: authedUser.displayName!)
+                self.currentUser = authedUser
             } else {
                 print("Logged out.")
             }

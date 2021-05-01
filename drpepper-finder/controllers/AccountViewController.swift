@@ -22,7 +22,7 @@ class AccountViewController: UIViewController {
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
         
-        userNameLabel.text = appDelegate.currentUser.name
+        userNameLabel.text = appDelegate.currentUser!.displayName
         
         // SignInボタンの見た目変更
         self.changeAllSignInButtonStyle()
