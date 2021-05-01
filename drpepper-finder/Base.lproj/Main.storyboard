@@ -482,10 +482,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="th2-QY-Mj6">
-                                <rect key="frame" x="184" y="569" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="th2-QY-Mj6">
+                                <rect key="frame" x="101" y="560" width="216" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="Sign in with Google   " image="Google">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
                                 <connections>
                                     <action selector="signInWithGoogle" destination="MD0-wk-1hr" eventType="touchUpInside" id="fXz-xg-xIZ"/>
                                 </connections>
@@ -498,20 +501,34 @@
                                     <action selector="signOut" destination="MD0-wk-1hr" eventType="touchUpInside" id="07O-DF-e8N"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHv-B3-Q3o">
-                                <rect key="frame" x="104" y="145" width="206" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Z04-Ti-aYN">
+                                <rect key="frame" x="145" y="138.5" width="124" height="123"/>
+                                <color key="tintColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Z04-Ti-aYN" secondAttribute="height" multiplier="1:1" id="bwP-7X-l83"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user.displayName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQD-c9-GQd">
+                                <rect key="frame" x="126" y="287" width="162" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QJn-RZ-vFy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Z04-Ti-aYN" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="DYH-D6-pVP"/>
+                            <constraint firstItem="KQD-c9-GQd" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="ROn-Px-MHp"/>
+                            <constraint firstItem="Z04-Ti-aYN" firstAttribute="top" secondItem="QJn-RZ-vFy" secondAttribute="top" constant="50" id="S4F-TD-39R"/>
+                            <constraint firstItem="KQD-c9-GQd" firstAttribute="top" secondItem="Z04-Ti-aYN" secondAttribute="bottom" constant="25" id="TMJ-ri-cXR"/>
+                            <constraint firstItem="Z04-Ti-aYN" firstAttribute="width" secondItem="foA-1L-aaF" secondAttribute="width" multiplier="0.3" id="eQr-pp-oZc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Account" id="22i-XM-w8i"/>
                     <connections>
-                        <outlet property="authStateLabel" destination="nHv-B3-Q3o" id="ogg-32-UHW"/>
+                        <outlet property="SignInWithGoogleButton" destination="th2-QY-Mj6" id="7rQ-xs-s2e"/>
+                        <outlet property="userNameLabel" destination="KQD-c9-GQd" id="fRX-MN-xcm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t44-KX-RaL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -557,11 +574,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Google" width="48" height="48"/>
         <image name="drpepper" width="650" height="647"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="location.north.fill" catalog="system" width="108" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="multiply" catalog="system" width="128" height="111"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
@@ -569,6 +588,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

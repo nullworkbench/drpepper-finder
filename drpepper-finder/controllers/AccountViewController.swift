@@ -12,16 +12,20 @@ import GoogleSignIn
 
 class AccountViewController: UIViewController {
     
-    @IBOutlet var authStateLabel: UILabel!
-    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
+    
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var SignInWithGoogleButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
         
-        authStateLabel.text = appDelegate.currentUser.name
+        userNameLabel.text = appDelegate.currentUser.name
+        
+        // SignInボタンの見た目変更
+        self.changeAllSignInButtonStyle()
     }
     
     @IBAction func signInWithGoogle() {
@@ -36,4 +40,20 @@ class AccountViewController: UIViewController {
         }
     }
 
+}
+
+// MARK: SignInButton Style
+extension AccountViewController {
+    
+    func changeAllSignInButtonStyle() {
+        self.applySignInButtonStyle(SignInWithGoogleButton)
+    }
+    
+    func applySignInButtonStyle(_ target: UIButton!) {
+        target.layer.cornerRadius = 5
+        target.layer.shadowColor = UIColor.gray.cgColor
+        target.layer.shadowRadius = 1
+        target.layer.shadowOffset = CGSize(width: 0, height: 1)
+        target.layer.shadowOpacity = 0.5
+    }
 }
