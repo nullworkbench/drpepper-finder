@@ -82,7 +82,7 @@ extension LogViewController {
     func getAllLogs() -> [FBLog] {
         
         let db = Firestore.firestore()
-        db.collection("pins").document(docId!).collection("logs").order(by: "timestamp").limit(to: 50).getDocuments {(querySnapshot, error) in
+        db.collection("pins").document(docId!).collection("logs").order(by: "timestamp", descending: true).limit(to: 50).getDocuments {(querySnapshot, error) in
             if let err = error {
                 print("Error getting documents: \(err)")
             } else {
