@@ -92,5 +92,34 @@ class DetailViewController: UIViewController {
         pin.coordinate = coordinate
         mapView.addAnnotation(pin)
     }
+    
+    
+    // ログ投稿
+    
+    // 保存完了アラート
+    func thanksAlert() {
+        let alert = UIAlertController(title: "報告ありがとうございます！", message: "この自動販売機の情報をログへ保存しました", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    // まだあった
+    @IBAction func stillThere() {
+        db.collection("pins").document(docId).collection("logs").addDocument(data: [
+                "type": 1,
+                "timestamp": FieldValue.serverTimestamp()
+        ]) { err in
+            if let err = err {
+                print("Error Adding Document: \(err)")
+            } else {
+                // success
+                self.thanksAlert()
+            }
+        }
+    }
+    
+    // なくなってた
+    @IBAction func notStillThere() {
+        
+    }
 
 }

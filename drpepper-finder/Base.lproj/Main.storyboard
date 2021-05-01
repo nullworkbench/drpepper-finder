@@ -286,6 +286,9 @@
                                 <state key="normal" title="まだあった！">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="stillThere" destination="uox-hE-tek" eventType="touchUpInside" id="Tdy-ek-Beb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mE-o6-q9f">
                                 <rect key="frame" x="24" y="289" width="105" height="30"/>
@@ -294,6 +297,9 @@
                                 <state key="normal" title="なくなってた...">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="notStillThere" destination="uox-hE-tek" eventType="touchUpInside" id="n70-VQ-Jsi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vU4-UW-XfN">
                                 <rect key="frame" x="40" y="452" width="135" height="27"/>
