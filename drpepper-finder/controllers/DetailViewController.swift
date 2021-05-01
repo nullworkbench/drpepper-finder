@@ -93,19 +93,16 @@ class DetailViewController: UIViewController {
         mapView.addAnnotation(pin)
     }
     
+}
+
+
+// MARK: ログ投稿
+extension DetailViewController {
     
     // ログ投稿
-    
-    // 保存完了アラート
-    func thanksAlert() {
-        let alert = UIAlertController(title: "報告ありがとうございます！", message: "この自動販売機の情報をログへ保存しました", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-    // まだあった
-    @IBAction func stillThere() {
+    func addLogToFireStore(_ type: Int) {
         db.collection("pins").document(docId).collection("logs").addDocument(data: [
-                "type": 1,
+                "type": type,
                 "timestamp": FieldValue.serverTimestamp()
         ]) { err in
             if let err = err {
@@ -117,9 +114,20 @@ class DetailViewController: UIViewController {
         }
     }
     
+    // 保存完了アラート
+    func thanksAlert() {
+        let alert = UIAlertController(title: "報告ありがとうございます！", message: "この自動販売機の情報をログへ保存しました", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // まだあった
+    @IBAction func stillThere() {
+        self.addLogToFireStore(1)
+    }
+    
     // なくなってた
     @IBAction func notStillThere() {
-        
+        self.addLogToFireStore(2)
     }
-
 }
