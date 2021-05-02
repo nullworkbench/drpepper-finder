@@ -23,13 +23,8 @@ class AccountViewController: UIViewController {
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
         
-        // ログインしているかによって分岐
-        if appDelegate.currentUser != nil {
-            userNameLabel.text = appDelegate.currentUser!.displayName
-            self.setUserImage(appDelegate.currentUser!.photoURL!)
-        } else {
-            userNameLabel.text = "ログインしていません"
-        }
+        // ユーザーの情報を代入
+        self.setUserData()
         
         // SignInボタンの見た目変更
         self.changeAllSignInButtonStyle()
@@ -59,8 +54,17 @@ class AccountViewController: UIViewController {
 
 }
 
-// MARK: Set User Image
+// MARK: Set User Data
 extension AccountViewController {
+    func setUserData() {
+        // ログインしているかによって分岐
+        if appDelegate.currentUser != nil {
+            userNameLabel.text = appDelegate.currentUser!.displayName
+            self.setUserImage(appDelegate.currentUser!.photoURL!)
+        } else {
+            userNameLabel.text = "ログインしていません"
+        }
+    }
     func setUserImage(_ url: URL) {
         let imageData = try! Data(contentsOf: url)
         userImageView.image = UIImage(data: imageData)
