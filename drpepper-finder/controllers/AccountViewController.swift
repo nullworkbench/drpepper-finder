@@ -40,11 +40,21 @@ class AccountViewController: UIViewController {
     }
     
     @IBAction func signOut() {
-        do {
-            try Auth.auth().signOut()
-        } catch let signOutError as NSError {
-          print ("Error signing out: %@", signOutError)
-        }
+        let alert = UIAlertController(title: "サインアウトしますか？", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
+        alert.addAction(
+            UIAlertAction(title: "サインアウト", style: .default) { (action) in
+                do {
+                    try Auth.auth().signOut()
+                    self.dismiss(animated: true, completion: nil)
+                    self.self.dismiss(animated: true, completion: nil)
+                } catch let signOutError as NSError {
+                  print ("Error signing out: %@", signOutError)
+                }
+        })
+        
+        present(alert, animated: true)
+        
     }
 
 }
