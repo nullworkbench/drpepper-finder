@@ -58,7 +58,7 @@ class AccountViewController: UIViewController {
 extension AccountViewController {
     func setUserData() {
         // ログインしているかによって分岐
-        if appDelegate.currentUser != nil {
+        if appDelegate.currentUser != nil && !appDelegate.currentUser!.isAnonymous {
             userNameLabel.text = appDelegate.currentUser!.displayName
             self.setUserImage(appDelegate.currentUser!.photoURL!)
         } else {

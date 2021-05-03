@@ -12,13 +12,11 @@ import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
     @IBOutlet weak var SignInWithGoogleButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         GIDSignIn.sharedInstance()?.presentingViewController = self
         
         changeAllSignInButtonStyle()
@@ -34,6 +32,7 @@ class LoginViewController: UIViewController {
                 print("Error logging in as Anonymoous: \(err)")
             } else {
                 // success
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }

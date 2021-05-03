@@ -22,6 +22,7 @@
 		8B2BF4742629B55E00E8BFA3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BF4732629B55E00E8BFA3 /* Extensions.swift */; };
 		8BDC519D262B485B003A03D4 /* addNewPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */; };
 		8BF5A82C263EC5860084097F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5A82B263EC5860084097F /* LoginViewController.swift */; };
+		8BF5A82E263FBCD10084097F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5A82D263FBCD10084097F /* FirstViewController.swift */; };
 		F4AA94513DEB29E98A95327F /* Pods_drpepper_finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301AF65694C63676EC7652AF /* Pods_drpepper_finder.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		8B2BF4732629B55E00E8BFA3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNewPinViewController.swift; sourceTree = "<group>"; };
 		8BF5A82B263EC5860084097F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8BF5A82D263FBCD10084097F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */,
 				8B10020A262DAF55006E6CFC /* LogViewController.swift */,
 				8BF5A82B263EC5860084097F /* LoginViewController.swift */,
+				8BF5A82D263FBCD10084097F /* FirstViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				8B10020B262DAF55006E6CFC /* LogViewController.swift in Sources */,
 				8B1ACC9D2623544B000B8C87 /* AccountViewController.swift in Sources */,
 				8B2BF4742629B55E00E8BFA3 /* Extensions.swift in Sources */,
+				8BF5A82E263FBCD10084097F /* FirstViewController.swift in Sources */,
 				8B1ACCE0262461C3000B8C87 /* MapViewController.swift in Sources */,
 				8B1ACCE7262474B5000B8C87 /* SettingsViewController.swift in Sources */,
 				8B1ACC5F26234B13000B8C87 /* ViewController.swift in Sources */,

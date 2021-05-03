@@ -93,6 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 self.currentUser = authedUser
             } else {
                 print("Logged out.")
+                
             }
         }
     }
