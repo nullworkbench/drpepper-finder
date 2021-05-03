@@ -12,6 +12,8 @@ import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     @IBOutlet weak var SignInWithGoogleButton: UIButton!
 
     override func viewDidLoad() {
@@ -27,7 +29,13 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signInAsAnonymous() {
-        
+        Auth.auth().signInAnonymously() {(authResult, err) in
+            if let err = err {
+                print("Error logging in as Anonymoous: \(err)")
+            } else {
+                // success
+            }
+        }
     }
 
 }

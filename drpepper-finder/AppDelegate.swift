@@ -88,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         authStateHandle = Auth.auth().addStateDidChangeListener() { (auth, user) in
             
             if let authedUser = user {
-                print("Logged in as \(authedUser.displayName!)")
+                print("Logged in as \(authedUser.uid)")
                 
                 self.currentUser = authedUser
             } else {
