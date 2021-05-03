@@ -21,6 +21,7 @@
 		8B2BF4582629950E00E8BFA3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BF4572629950E00E8BFA3 /* DetailViewController.swift */; };
 		8B2BF4742629B55E00E8BFA3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BF4732629B55E00E8BFA3 /* Extensions.swift */; };
 		8BDC519D262B485B003A03D4 /* addNewPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */; };
+		8BF5A82C263EC5860084097F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5A82B263EC5860084097F /* LoginViewController.swift */; };
 		F4AA94513DEB29E98A95327F /* Pods_drpepper_finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301AF65694C63676EC7652AF /* Pods_drpepper_finder.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		8B2BF4572629950E00E8BFA3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8B2BF4732629B55E00E8BFA3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNewPinViewController.swift; sourceTree = "<group>"; };
+		8BF5A82B263EC5860084097F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				8B2BF4572629950E00E8BFA3 /* DetailViewController.swift */,
 				8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */,
 				8B10020A262DAF55006E6CFC /* LogViewController.swift */,
+				8BF5A82B263EC5860084097F /* LoginViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				8B1ACC5D26234B13000B8C87 /* SceneDelegate.swift in Sources */,
 				8B2BF4582629950E00E8BFA3 /* DetailViewController.swift in Sources */,
 				8BDC519D262B485B003A03D4 /* addNewPinViewController.swift in Sources */,
+				8BF5A82C263EC5860084097F /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
