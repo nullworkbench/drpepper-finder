@@ -22,6 +22,11 @@ class LoginViewController: UIViewController {
         changeAllSignInButtonStyle()
     }
     
+    func performToMapView() {
+        self.dismiss(animated: true, completion: nil)
+        self.presentingViewController?.performSegue(withIdentifier: "toMapView", sender: nil)
+    }
+    
     @IBAction func signInWithGoogle() {
         GIDSignIn.sharedInstance().signIn()
     }
@@ -32,7 +37,7 @@ class LoginViewController: UIViewController {
                 print("Error logging in as Anonymoous: \(err)")
             } else {
                 // success
-                self.dismiss(animated: true, completion: nil)
+                self.performToMapView()
             }
         }
     }

@@ -14,14 +14,14 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="4Zb-Ha-lUh" customClass="MapViewController" customModule="drpepper_finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cdV-Go-tOd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bcc-xv-9QQ">
-                                <rect key="frame" x="0.0" y="56" width="414" height="786"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="arF-D3-9Kf">
-                                <rect key="frame" x="363" y="66" width="41" height="163"/>
+                                <rect key="frame" x="363" y="98" width="41" height="163"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FP8-24-BDz">
                                         <rect key="frame" x="0.0" y="0.0" width="41" height="41"/>
@@ -64,7 +64,7 @@
                                 <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hyk-0y-Rqq">
-                                <rect key="frame" x="196.5" y="422" width="21.5" height="21"/>
+                                <rect key="frame" x="196.5" y="465" width="21.5" height="21"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hyk-0y-Rqq" secondAttribute="height" multiplier="1:1" id="dx8-tS-N1V"/>
@@ -72,7 +72,7 @@
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="regular"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCu-F2-apc">
-                                <rect key="frame" x="176" y="729" width="62" height="59"/>
+                                <rect key="frame" x="176" y="783" width="62" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fCu-F2-apc" secondAttribute="height" multiplier="1.05:1" id="sCE-mA-b2o"/>
                                 </constraints>
@@ -115,11 +115,11 @@
             <objects>
                 <viewController title="Settings" id="hf9-oq-N73" customClass="SettingsViewController" customModule="drpepper_finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nXw-bj-2vV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gfd-62-vFr">
-                                <rect key="frame" x="0.0" y="76" width="414" height="232"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="254"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="0Rd-fw-3ud">
@@ -159,12 +159,24 @@
                     <view key="view" contentMode="scaleToFill" id="yT9-tL-LpO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FirstView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIO-uc-Uqu">
+                                <rect key="frame" x="172" y="437.5" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="LOP-On-GFD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TIO-uc-Uqu" firstAttribute="centerX" secondItem="yT9-tL-LpO" secondAttribute="centerX" id="YB1-gM-5Lv"/>
+                            <constraint firstItem="TIO-uc-Uqu" firstAttribute="centerY" secondItem="yT9-tL-LpO" secondAttribute="centerY" id="mjU-yy-QZi"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <segue destination="1cY-bT-gfW" kind="show" identifier="toLoginView" animates="NO" id="WZr-l7-Piu"/>
-                        <segue destination="JHx-S0-KPY" kind="show" identifier="toMapView" animates="NO" id="ThP-Ug-dVj"/>
+                        <segue destination="1cY-bT-gfW" kind="presentation" identifier="toLoginView" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="WZr-l7-Piu"/>
+                        <segue destination="JHx-S0-KPY" kind="presentation" identifier="toMapView" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="ThP-Ug-dVj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="04e-Ws-5DH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -471,11 +483,11 @@
             <objects>
                 <viewController id="RY3-vg-KJB" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ScJ-m2-Vxq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Nn9-TW-DMn">
-                                <rect key="frame" x="0.0" y="56" width="414" height="51"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -498,7 +510,7 @@
             <objects>
                 <viewController id="MD0-wk-1hr" customClass="AccountViewController" customModule="drpepper_finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="foA-1L-aaF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="th2-QY-Mj6">
@@ -521,14 +533,14 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Z04-Ti-aYN">
-                                <rect key="frame" x="145" y="106.5" width="124" height="123"/>
+                                <rect key="frame" x="145" y="138.5" width="124" height="123"/>
                                 <color key="tintColor" systemColor="systemGray2Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Z04-Ti-aYN" secondAttribute="height" multiplier="1:1" id="bwP-7X-l83"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user.displayName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQD-c9-GQd">
-                                <rect key="frame" x="126" y="255" width="162" height="25.5"/>
+                                <rect key="frame" x="126" y="287" width="162" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -627,7 +639,7 @@ Dr. Pepper Finder!</string>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="hHr-jC-gBm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="87i-X7-2WR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
