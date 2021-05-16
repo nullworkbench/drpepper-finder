@@ -275,13 +275,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="265"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ドクターペッパー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjQ-NZ-lrP">
-                                <rect key="frame" x="40" y="359" width="334" height="24"/>
+                                <rect key="frame" x="40" y="359" width="334" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odd-RB-OVm">
-                                <rect key="frame" x="40" y="530" width="334" height="228"/>
+                                <rect key="frame" x="40" y="557" width="334" height="201"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -295,13 +295,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最近の更新：まだあった！at xxxx/xx/xx xx:xx:xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyS-kx-3QB">
-                                <rect key="frame" x="40" y="403" width="309" height="17"/>
+                                <rect key="frame" x="40" y="430" width="309" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.62494091277426866" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="発見日時：xxxx/xx/xx xx:xx:xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ial-oe-Tix">
-                                <rect key="frame" x="40" y="430" width="193" height="17"/>
+                                <rect key="frame" x="40" y="457" width="193" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.62494091277426866" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -339,7 +339,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vU4-UW-XfN">
-                                <rect key="frame" x="40" y="452" width="135" height="27"/>
+                                <rect key="frame" x="40" y="479" width="135" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="さらに詳細なログを確認"/>
                                 <connections>
@@ -347,8 +347,15 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aU-5F-he0">
-                                <rect key="frame" x="40" y="499" width="34" height="21"/>
+                                <rect key="frame" x="40" y="526" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="価格：¥110" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BfZ-h3-ez1">
+                                <rect key="frame" x="40" y="391" width="238" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -365,7 +372,7 @@
                             <constraint firstItem="XuX-Qj-RbK" firstAttribute="top" secondItem="0ez-zl-pOn" secondAttribute="bottom" constant="25" id="GEP-K2-c4h"/>
                             <constraint firstItem="ZjQ-NZ-lrP" firstAttribute="top" secondItem="xqv-Qd-Exv" secondAttribute="bottom" constant="40" id="Hwu-Lm-RAl"/>
                             <constraint firstItem="PyS-kx-3QB" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="IAD-DT-FvB"/>
-                            <constraint firstItem="PyS-kx-3QB" firstAttribute="top" secondItem="ZjQ-NZ-lrP" secondAttribute="bottom" constant="20" id="QR4-G0-a2I"/>
+                            <constraint firstItem="PyS-kx-3QB" firstAttribute="top" secondItem="BfZ-h3-ez1" secondAttribute="bottom" constant="15" id="QR4-G0-a2I"/>
                             <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="Odd-RB-OVm" secondAttribute="trailing" constant="40" id="RhU-49-bpC"/>
                             <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="0ez-zl-pOn" secondAttribute="trailing" id="UgA-15-bpe"/>
                             <constraint firstItem="xqv-Qd-Exv" firstAttribute="top" secondItem="0ez-zl-pOn" secondAttribute="top" constant="195" id="VIr-li-0lH"/>
@@ -382,6 +389,7 @@
                             <constraint firstItem="xqv-Qd-Exv" firstAttribute="leading" secondItem="6mE-o6-q9f" secondAttribute="trailing" constant="16" id="q5e-z6-AII"/>
                             <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="ZjQ-NZ-lrP" secondAttribute="trailing" constant="40" id="s4y-o3-DAe"/>
                             <constraint firstItem="vU4-UW-XfN" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="s7n-ob-ryc"/>
+                            <constraint firstItem="BfZ-h3-ez1" firstAttribute="top" secondItem="ZjQ-NZ-lrP" secondAttribute="bottom" constant="10" id="sfT-wm-X53"/>
                             <constraint firstItem="ZjQ-NZ-lrP" firstAttribute="top" secondItem="XuX-Qj-RbK" secondAttribute="bottom" constant="35" id="u1C-l4-f5o"/>
                             <constraint firstItem="Odd-RB-OVm" firstAttribute="top" secondItem="9aU-5F-he0" secondAttribute="bottom" constant="10" id="v5r-al-yjm"/>
                             <constraint firstItem="9aU-5F-he0" firstAttribute="top" secondItem="vU4-UW-XfN" secondAttribute="bottom" constant="20" id="xii-VZ-Zej"/>
