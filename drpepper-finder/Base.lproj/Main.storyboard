@@ -353,7 +353,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="価格：¥110" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BfZ-h3-ez1">
-                                <rect key="frame" x="40" y="391" width="238" height="24"/>
+                                <rect key="frame" x="40" y="391" width="334" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -403,6 +403,7 @@
                         <outlet property="mapView" destination="0ez-zl-pOn" id="89H-LD-QBy"/>
                         <outlet property="notStillThereButton" destination="6mE-o6-q9f" id="ZeG-DI-inZ"/>
                         <outlet property="noteTextView" destination="Odd-RB-OVm" id="dPi-49-qwB"/>
+                        <outlet property="priceLabel" destination="BfZ-h3-ez1" id="npp-nU-5Y4"/>
                         <outlet property="stillThereButton" destination="XuX-Qj-RbK" id="BjU-nr-OyJ"/>
                     </connections>
                 </viewController>

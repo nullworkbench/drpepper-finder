@@ -19,6 +19,7 @@ class DetailViewController: UIViewController {
     let db = Firestore.firestore()
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var latestUpdateLabel: UILabel!
     @IBOutlet weak var foundDateLabel: UILabel!
     @IBOutlet weak var noteTextView: UITextView!
@@ -38,6 +39,10 @@ class DetailViewController: UIViewController {
                 // Map
                 let geopoint = data["coordinate"] as! GeoPoint
                 self.setMapCenter(CLLocationCoordinate2DMake(geopoint.latitude, geopoint.longitude)) // Mapの中心点を設定してピンを置く
+                
+                // 価格
+                let price = data["price"] as! Int
+                self.priceLabel.text = "価格：¥\(price)"
                 
                 // 発見日時
                 let createdAt = (data["createdAt"] as! Timestamp).dateValue()
