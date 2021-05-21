@@ -99,7 +99,18 @@ extension MapViewController {
     // 現在地にセット
     func setToCurrentLocation() {
         if locationManager.authorizationStatus == .denied || locationManager.authorizationStatus == .restricted || locationManager.authorizationStatus == .notDetermined {
-            locationManager.requestWhenInUseAuthorization()
+            let alert = UIAlertController(title: "位置情報サービスが必要です", message: "アプリのご利用には位置情報利用の許可が必要です。設定アプリから許可してください。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "閉じる", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "設定へ移動", style: .default, handler: {action in
+                // 設定画面を開く
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                    return
+                }
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
+                }
+            }))
+            present(alert, animated: true, completion: nil)
         }
         // Mapを現在地にセット
         let mapSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
