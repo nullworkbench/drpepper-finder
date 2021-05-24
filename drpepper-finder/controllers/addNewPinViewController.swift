@@ -19,6 +19,7 @@ class addNewPinViewController: UIViewController, UITextViewDelegate {
     let db = Firestore.firestore()
     
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet var priceTextField: UITextField!
     @IBOutlet var noteTextView: UITextView!
     
     let placeholderText = "駅前の自動販売機にあった！など"
@@ -67,6 +68,7 @@ class addNewPinViewController: UIViewController, UITextViewDelegate {
         var ref: DocumentReference?
         ref = db.collection("pins").addDocument(data: [
             "coordinate": GeoPoint(latitude: coordinate.latitude, longitude: coordinate.longitude),
+            "price": Int(priceTextField.text!)!,
             "createdAt": FieldValue.serverTimestamp(),
             "note": noteTextView.text!
         ]) { err in
@@ -81,10 +83,17 @@ class addNewPinViewController: UIViewController, UITextViewDelegate {
     }
     
     
-    
     @IBAction func postButton() {
-        self.postToFireStore()
-        self.dismiss(animated: true, completion: nil)
+        // 未入力項目を確認
+        if priceTextField.text == "" {
+            let alert = UIAlertController(title: "未入力項目があります", message: "価格を入力してください", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        } else {
+            // FireStoreへ登録
+            self.postToFireStore()
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func dismissButton() {

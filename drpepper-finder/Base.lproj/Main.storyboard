@@ -273,6 +273,7 @@
                     <connections>
                         <outlet property="mapView" destination="Mcw-5E-5rB" id="dbI-5W-0cC"/>
                         <outlet property="noteTextView" destination="MYL-Pf-iw2" id="vkY-x1-tFz"/>
+                        <outlet property="priceTextField" destination="wm3-nw-kZL" id="bDR-sJ-mS6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZR-WY-P64" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
