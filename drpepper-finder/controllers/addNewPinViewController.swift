@@ -20,13 +20,15 @@ class addNewPinViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var noteTextView: UITextView!
-
+    
+    let placeholderText = "駅前の自動販売機にあった！など"
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // placeholder設定
         noteTextView.delegate = self
-        noteTextView.text = "駅前の自動販売機にあった！など"
+        noteTextView.text = placeholderText
         noteTextView.textColor = .lightGray
 
         self.setMapCenter(coordinate)
@@ -34,8 +36,11 @@ class addNewPinViewController: UIViewController, UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.selectedRange.location = 0
-        noteTextView.text = ""
-        noteTextView.textColor = .label
+        // placeholder削除
+        if noteTextView.text == placeholderText {
+            noteTextView.text = ""
+            noteTextView.textColor = .label
+        }
     }
     
     func textViewDidChange(_ textView: UITextView) {
@@ -54,6 +59,10 @@ class addNewPinViewController: UIViewController, UITextViewDelegate {
     }
 
     func postToFireStore() {
+        // placeholder削除
+        if noteTextView.text == placeholderText {
+            noteTextView.text = ""
+        }
         // Firestoreに登録
         var ref: DocumentReference?
         ref = db.collection("pins").addDocument(data: [
