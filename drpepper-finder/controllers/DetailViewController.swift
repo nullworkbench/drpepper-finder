@@ -29,7 +29,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var notStillThereButton: UIButton!
     
     // 住所保存用
-    var addressString = String()
+    var addressString = ""
     
     
     override func viewDidLoad() {
@@ -175,13 +175,16 @@ extension DetailViewController {
         
         // Google Mapで開く
         actionSheet.addAction(UIAlertAction(title: "Google Map", style: .default, handler: { action in
-            let url = URL(string: "comgooglemaps://?q=\(self.addressString)")!
-            UIApplication.shared.open(url)
+            let urlString = "comgooglemaps://?q=\(self.addressString)"
+            let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+            UIApplication.shared.open(url!)
         }))
         
         // 純正のマップアプリで開く
         actionSheet.addAction(UIAlertAction(title: "純正マップ", style: .default, handler: { action in
-            
+            let urlString = "http://maps.apple.com/?q=\(self.addressString)"
+            let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+            UIApplication.shared.open(url!)
         }))
         
         // 住所をコピー
