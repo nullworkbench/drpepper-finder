@@ -20,12 +20,16 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var latestUpdateLabel: UILabel!
     @IBOutlet weak var foundDateLabel: UILabel!
     @IBOutlet weak var noteTextView: UITextView!
     
     @IBOutlet weak var stillThereButton: UIButton!
     @IBOutlet weak var notStillThereButton: UIButton!
+    
+    // 住所保存用
+    var addressString = String()
     
     
     override func viewDidLoad() {
@@ -38,7 +42,9 @@ class DetailViewController: UIViewController {
                 
                 // Map
                 let geopoint = data["coordinate"] as! GeoPoint
-                self.setMapCenter(CLLocationCoordinate2DMake(geopoint.latitude, geopoint.longitude)) // Mapの中心点を設定してピンを置く
+                let coordinate = CLLocationCoordinate2DMake(geopoint.latitude, geopoint.longitude)
+                self.setMapCenter(coordinate) // Mapの中心点を設定してピンを置く
+                self.setAddressLabel(coordinate) // 住所を設定
                 
                 // 価格
                 let price = data["price"] as! Int
@@ -105,6 +111,73 @@ class DetailViewController: UIViewController {
         mapView.addAnnotation(pin)
     }
     
+}
+
+
+// MARK: 住所
+extension DetailViewController {
+    // 住所を表示（非同期）
+    func setAddressLabel(_ coordinate: CLLocationCoordinate2D) {
+        var address = ""
+        
+        let setAddressLabelQueue = DispatchQueue(
+            label: "setAddressLabelQueue",
+            qos: .userInitiated,
+            attributes: [],
+            autoreleaseFrequency: .workItem
+            )
+        
+        setAddressLabelQueue.async {
+            let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            
+            let semaphore = DispatchSemaphore(value: 0)
+            
+            CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+                guard let placemark = placemarks?.first, error == nil else { return }
+                
+                // 都道府県
+                if let administractiveArea = placemark.administrativeArea {
+                    address += "\(administractiveArea) "
+                }
+                // 市町村
+                if let locality = placemark.locality {
+                    address += "\(locality) "
+                }
+                // 丁目
+                if let thoroughfare = placemark.thoroughfare {
+                    address += "\(thoroughfare) "
+                }
+                // 番地
+                if let subThoroughfare = placemark.subThoroughfare {
+                    address += subThoroughfare
+                }
+                
+                semaphore.signal()
+            }
+            
+            semaphore.wait()
+            DispatchQueue.main.async(execute: {
+                if address != "" {
+                    self.addressLabel.text = "住所：\(address)"
+                    // 住所コピー用に保存
+                    self.addressString = address
+                } else {
+                    self.addressLabel.text = "住所：見つかりませんでした…"
+                }
+            })
+        }
+    }
+    
+    // 住所をコピー
+    @IBAction func copyAddress() {
+        let actionSheet = UIAlertController(title: "どのアプリで開きますか？", message: "", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "住所をコピー", style: .default, handler: { action in
+            // クリップボードにコピー
+            UIPasteboard.general.string = self.addressString
+        }))
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
 }
 
 

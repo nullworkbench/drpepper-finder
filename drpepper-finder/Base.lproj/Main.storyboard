@@ -308,7 +308,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odd-RB-OVm">
-                                <rect key="frame" x="40" y="557" width="334" height="201"/>
+                                <rect key="frame" x="40" y="589" width="334" height="169"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -322,13 +322,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最近の更新：まだあった！at xxxx/xx/xx xx:xx:xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyS-kx-3QB">
-                                <rect key="frame" x="40" y="430" width="309" height="17"/>
+                                <rect key="frame" x="40" y="462" width="334" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="0.62494091277426866" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="発見日時：xxxx/xx/xx xx:xx:xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ial-oe-Tix">
-                                <rect key="frame" x="40" y="457" width="193" height="17"/>
+                                <rect key="frame" x="40" y="489" width="334" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.62494091277426866" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -366,7 +366,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vU4-UW-XfN">
-                                <rect key="frame" x="40" y="479" width="135" height="27"/>
+                                <rect key="frame" x="40" y="511" width="135" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="さらに詳細なログを確認"/>
                                 <connections>
@@ -374,7 +374,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aU-5F-he0">
-                                <rect key="frame" x="40" y="526" width="34" height="21"/>
+                                <rect key="frame" x="40" y="558" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -386,10 +386,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="住所：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAl-cr-Al4">
+                                <rect key="frame" x="40" y="425" width="239" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10S-uX-9LM">
+                                <rect key="frame" x="289" y="425" width="85" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="QxR-mX-ZSS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="マップで開く"/>
+                                <connections>
+                                    <action selector="copyAddress" destination="uox-hE-tek" eventType="touchUpInside" id="mzU-vz-vSf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yAC-Wh-qdA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="10S-uX-9LM" secondAttribute="trailing" constant="40" id="4Dz-0y-CT9"/>
+                            <constraint firstItem="10S-uX-9LM" firstAttribute="leading" secondItem="zAl-cr-Al4" secondAttribute="trailing" constant="10" id="4Nx-Af-609"/>
                             <constraint firstItem="xqv-Qd-Exv" firstAttribute="top" secondItem="0ez-zl-pOn" secondAttribute="bottom" constant="-70" id="4Qw-yH-4a1"/>
                             <constraint firstItem="9aU-5F-he0" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="4bg-6h-6cp"/>
                             <constraint firstItem="ZjQ-NZ-lrP" firstAttribute="top" secondItem="6mE-o6-q9f" secondAttribute="bottom" constant="35" id="7Qc-yy-YQD"/>
@@ -399,13 +417,18 @@
                             <constraint firstItem="XuX-Qj-RbK" firstAttribute="top" secondItem="0ez-zl-pOn" secondAttribute="bottom" constant="25" id="GEP-K2-c4h"/>
                             <constraint firstItem="ZjQ-NZ-lrP" firstAttribute="top" secondItem="xqv-Qd-Exv" secondAttribute="bottom" constant="40" id="Hwu-Lm-RAl"/>
                             <constraint firstItem="PyS-kx-3QB" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="IAD-DT-FvB"/>
-                            <constraint firstItem="PyS-kx-3QB" firstAttribute="top" secondItem="BfZ-h3-ez1" secondAttribute="bottom" constant="15" id="QR4-G0-a2I"/>
+                            <constraint firstItem="10S-uX-9LM" firstAttribute="top" secondItem="BfZ-h3-ez1" secondAttribute="bottom" constant="10" id="IrL-3i-nFc"/>
+                            <constraint firstItem="zAl-cr-Al4" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="PXC-cY-uOg"/>
+                            <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="PyS-kx-3QB" secondAttribute="trailing" constant="40" id="Qng-I1-rLR"/>
                             <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="Odd-RB-OVm" secondAttribute="trailing" constant="40" id="RhU-49-bpC"/>
+                            <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="ial-oe-Tix" secondAttribute="trailing" constant="40" id="S3F-7M-6CG"/>
                             <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="0ez-zl-pOn" secondAttribute="trailing" id="UgA-15-bpe"/>
                             <constraint firstItem="xqv-Qd-Exv" firstAttribute="top" secondItem="0ez-zl-pOn" secondAttribute="top" constant="195" id="VIr-li-0lH"/>
                             <constraint firstItem="0ez-zl-pOn" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" id="WVr-gX-h0X"/>
+                            <constraint firstItem="PyS-kx-3QB" firstAttribute="top" secondItem="10S-uX-9LM" secondAttribute="bottom" constant="10" id="cyV-op-8eS"/>
                             <constraint firstItem="ial-oe-Tix" firstAttribute="top" secondItem="PyS-kx-3QB" secondAttribute="bottom" constant="10" id="dHu-64-qvV"/>
                             <constraint firstItem="xqv-Qd-Exv" firstAttribute="centerX" secondItem="7Iu-xT-7kF" secondAttribute="centerX" id="g3G-mj-nhG"/>
+                            <constraint firstItem="PyS-kx-3QB" firstAttribute="top" secondItem="zAl-cr-Al4" secondAttribute="bottom" constant="10" id="hp9-SU-YKL"/>
                             <constraint firstItem="yAC-Wh-qdA" firstAttribute="bottom" secondItem="Odd-RB-OVm" secondAttribute="bottom" constant="50" id="ixX-dX-FbT"/>
                             <constraint firstItem="6mE-o6-q9f" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="20" id="jZd-6a-tbP"/>
                             <constraint firstItem="ZjQ-NZ-lrP" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="l1z-Gg-IdA"/>
@@ -421,10 +444,12 @@
                             <constraint firstItem="Odd-RB-OVm" firstAttribute="top" secondItem="9aU-5F-he0" secondAttribute="bottom" constant="10" id="v5r-al-yjm"/>
                             <constraint firstItem="9aU-5F-he0" firstAttribute="top" secondItem="vU4-UW-XfN" secondAttribute="bottom" constant="20" id="xii-VZ-Zej"/>
                             <constraint firstItem="Odd-RB-OVm" firstAttribute="centerX" secondItem="7Iu-xT-7kF" secondAttribute="centerX" id="y2u-JN-MGp"/>
+                            <constraint firstItem="zAl-cr-Al4" firstAttribute="top" secondItem="BfZ-h3-ez1" secondAttribute="bottom" constant="10" id="zI0-Hy-DCa"/>
                             <constraint firstItem="XuX-Qj-RbK" firstAttribute="leading" secondItem="xqv-Qd-Exv" secondAttribute="trailing" constant="16" id="zil-k3-plY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="zAl-cr-Al4" id="agR-M7-fN7"/>
                         <outlet property="foundDateLabel" destination="ial-oe-Tix" id="aQi-E1-Kzx"/>
                         <outlet property="latestUpdateLabel" destination="PyS-kx-3QB" id="eci-70-cCh"/>
                         <outlet property="mapView" destination="0ez-zl-pOn" id="89H-LD-QBy"/>
