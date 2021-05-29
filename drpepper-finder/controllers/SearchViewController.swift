@@ -84,15 +84,36 @@ extension SearchViewController: UISearchBarDelegate {
 
 // TableView
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
+    // cellの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResult.count;
     }
     
+    // cellの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.text = searchResult[indexPath.row].name
         return cell
     }
     
-    
+    // cellがタップされた時
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 前の画面
+        let navigationController = self.navigationController!
+        let mapViewcontroller = navigationController.viewControllers[navigationController.viewControllers.count - 2] as! MapViewController
+        
+        // 前の画面のmapView
+        let mapView = mapViewcontroller.mapView!
+        
+        // 検索結果のcoordinate
+        let coordinate = (searchResult[indexPath.row].location?.coordinate)!
+        
+        // mapViewの中心を変更
+        let mapSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let mapRegion = MKCoordinateRegion(center: coordinate, span: mapSpan)
+        mapView.setRegion(mapRegion, animated: true)
+        
+        // mapViewControllerへ戻る
+        self.navigationController?.popViewController(animated: true)
+    }
 }
