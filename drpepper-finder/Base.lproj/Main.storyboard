@@ -675,11 +675,40 @@ Dr. Pepper Finder!</string>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="WSS-od-Z2K">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="61.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WSS-od-Z2K" id="Z3g-dx-czz">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="61.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWo-iz-eSF">
+                                                    <rect key="frame" x="20" y="10" width="374" height="21.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="art-bA-MfJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eH-hC-rLa">
+                                                    <rect key="frame" x="20" y="34.5" width="374" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="YSt-eX-XRu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1eH-hC-rLa" firstAttribute="leading" secondItem="Z3g-dx-czz" secondAttribute="leading" constant="20" id="9il-pG-ZZt"/>
+                                                <constraint firstAttribute="bottom" secondItem="1eH-hC-rLa" secondAttribute="bottom" constant="10" id="Dbw-oT-L94"/>
+                                                <constraint firstItem="JWo-iz-eSF" firstAttribute="top" secondItem="Z3g-dx-czz" secondAttribute="top" constant="10" id="OQ7-Gk-b75"/>
+                                                <constraint firstItem="JWo-iz-eSF" firstAttribute="leading" secondItem="Z3g-dx-czz" secondAttribute="leading" constant="20" id="cLg-m9-O2f"/>
+                                                <constraint firstAttribute="trailing" secondItem="JWo-iz-eSF" secondAttribute="trailing" constant="20" id="fly-ny-s6Z"/>
+                                                <constraint firstItem="1eH-hC-rLa" firstAttribute="top" secondItem="JWo-iz-eSF" secondAttribute="bottom" constant="3" id="kfI-Lu-6Ei"/>
+                                                <constraint firstAttribute="trailing" secondItem="1eH-hC-rLa" secondAttribute="trailing" constant="20" id="rGN-6V-OkB"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>

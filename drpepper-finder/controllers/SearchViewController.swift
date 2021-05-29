@@ -67,18 +67,62 @@ extension SearchViewController: UISearchBarDelegate {
                     self.table.reloadData()
                 }
             })
-            
-    //        CLGeocoder().geocodeAddressString(address) { placemarks, error in
-    //            let lat = placemarks?.first?.location?.coordinate.latitude
-    //            let lng = placemarks?.first?.location?.coordinate.longitude
-    //        }
-            
         } else {
             // 検索窓が空なら終了
             return
         }
+    }
+    
+    func coordinateToAddressString(_ coordinate: CLLocationCoordinate2D) -> String {
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         
+        var address = ""
         
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+            guard let placemark = placemarks?.first, error == nil else { return }
+            
+            // 都道府県
+            if let administractiveArea = placemark.administrativeArea {
+                address += administractiveArea
+            } else { return }
+            // 市町村
+            if let locality = placemark.locality {
+                address += locality
+            } else { return }
+            // 丁目
+            if let thoroughfare = placemark.thoroughfare {
+                address += thoroughfare
+            } else { return }
+            // 番地
+            if let subThoroughfare = placemark.subThoroughfare {
+                address += subThoroughfare
+            } else { return }
+        }
+        
+        return address
+    }
+    
+    func placemarkToAddressString(_ placemark: CLPlacemark) -> String {
+        var address = ""
+        
+        // 都道府県
+        if let administractiveArea = placemark.administrativeArea {
+            address += administractiveArea
+        } else { return address }
+        // 市町村
+        if let locality = placemark.locality {
+            address += locality
+        } else { return address }
+        // 丁目
+        if let thoroughfare = placemark.thoroughfare {
+            address += thoroughfare
+        } else { return address }
+        // 番地
+        if let subThoroughfare = placemark.subThoroughfare {
+            address += subThoroughfare
+        } else { return address }
+        
+        return address
     }
 }
 
@@ -92,7 +136,10 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     // cellの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        cell.textLabel?.text = searchResult[indexPath.row].name
+        // タイトル
+        (cell.viewWithTag(1) as! UILabel).text = searchResult[indexPath.row].name
+        // 住所
+        (cell.viewWithTag(2) as! UILabel).text = self.placemarkToAddressString(searchResult[indexPath.row])
         return cell
     }
     
