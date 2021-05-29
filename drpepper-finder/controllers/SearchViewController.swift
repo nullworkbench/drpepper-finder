@@ -73,34 +73,6 @@ extension SearchViewController: UISearchBarDelegate {
         }
     }
     
-    func coordinateToAddressString(_ coordinate: CLLocationCoordinate2D) -> String {
-        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        
-        var address = ""
-        
-        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
-            guard let placemark = placemarks?.first, error == nil else { return }
-            
-            // 都道府県
-            if let administractiveArea = placemark.administrativeArea {
-                address += administractiveArea
-            } else { return }
-            // 市町村
-            if let locality = placemark.locality {
-                address += locality
-            } else { return }
-            // 丁目
-            if let thoroughfare = placemark.thoroughfare {
-                address += thoroughfare
-            } else { return }
-            // 番地
-            if let subThoroughfare = placemark.subThoroughfare {
-                address += subThoroughfare
-            } else { return }
-        }
-        
-        return address
-    }
     
     func placemarkToAddressString(_ placemark: CLPlacemark) -> String {
         var address = ""

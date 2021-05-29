@@ -12,13 +12,14 @@ import FirebaseFirestoreSwift
 import CoreLocation
 import MapKit
 
-class addNewPinViewController: UIViewController, UITextViewDelegate {
+class addNewPinViewController: UIViewController {
     
     var coordinate: CLLocationCoordinate2D!
     
     let db = Firestore.firestore()
     
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet var addressLabel: UILabel!
     @IBOutlet var priceTextField: UITextField!
     @IBOutlet var noteTextView: UITextView!
     
@@ -33,19 +34,10 @@ class addNewPinViewController: UIViewController, UITextViewDelegate {
         noteTextView.textColor = .lightGray
 
         self.setMapCenter(coordinate)
+        
+        self.setAddressLabel()
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        textView.selectedRange.location = 0
-        // placeholder削除
-        if noteTextView.text == placeholderText {
-            noteTextView.text = ""
-            noteTextView.textColor = .label
-        }
-    }
-    
-    func textViewDidChange(_ textView: UITextView) {
-    }
     
     func setMapCenter(_ coordinate: CLLocationCoordinate2D) {
         // マップの中心点設定
@@ -58,7 +50,100 @@ class addNewPinViewController: UIViewController, UITextViewDelegate {
         pin.coordinate = coordinate
         mapView.addAnnotation(pin)
     }
+    
+    
+    @IBAction func postButton() {
+        // 未入力項目を確認
+        if priceTextField.text == "" {
+            let alert = UIAlertController(title: "未入力項目があります", message: "価格を入力してください", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        } else {
+            // FireStoreへ登録
+            self.postToFireStore()
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func dismissButton() {
+        self.dismiss(animated: true, completion: nil)
+    }
 
+}
+
+// MARK: 住所を表示（非同期）
+extension addNewPinViewController {
+    // 住所を表示
+    func setAddressLabel() {
+        var address = ""
+        
+        let setAddressLabelQueue = DispatchQueue(
+            label: "setAddressLabelQueue",
+            qos: .userInitiated,
+            attributes: [],
+            autoreleaseFrequency: .workItem
+            )
+        
+        setAddressLabelQueue.async {
+            let location = CLLocation(latitude: self.coordinate.latitude, longitude: self.coordinate.longitude)
+            
+            let semaphore = DispatchSemaphore(value: 0)
+            
+            CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+                guard let placemark = placemarks?.first, error == nil else { return }
+                
+                // 都道府県
+                if let administractiveArea = placemark.administrativeArea {
+                    address += "\(administractiveArea) "
+                }
+                // 市町村
+                if let locality = placemark.locality {
+                    address += "\(locality) "
+                }
+                // 丁目
+                if let thoroughfare = placemark.thoroughfare {
+                    address += "\(thoroughfare) "
+                }
+                // 番地
+                if let subThoroughfare = placemark.subThoroughfare {
+                    address += subThoroughfare
+                }
+                
+                semaphore.signal()
+            }
+            
+            semaphore.wait()
+            DispatchQueue.main.async(execute: {
+                if address != "" {
+                    self.addressLabel.text = address
+                } else {
+                    self.addressLabel.text = "住所が見つかりませんでした…"
+                }
+            })
+        }
+    }
+}
+
+
+// MARK: textView関連
+extension addNewPinViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.selectedRange.location = 0
+        // placeholder削除
+        if noteTextView.text == placeholderText {
+            noteTextView.text = ""
+            noteTextView.textColor = .label
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+    }
+}
+
+
+// MARK: FireStore
+extension addNewPinViewController {
+    // FireStoreへ投稿
     func postToFireStore() {
         // placeholder削除
         if noteTextView.text == placeholderText {
@@ -81,23 +166,4 @@ class addNewPinViewController: UIViewController, UITextViewDelegate {
         // ログを保存
         Ex.loggingToFirestore(ref!.documentID, 0)
     }
-    
-    
-    @IBAction func postButton() {
-        // 未入力項目を確認
-        if priceTextField.text == "" {
-            let alert = UIAlertController(title: "未入力項目があります", message: "価格を入力してください", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-        } else {
-            // FireStoreへ登録
-            self.postToFireStore()
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
-    
-    @IBAction func dismissButton() {
-        self.dismiss(animated: true, completion: nil)
-    }
-
 }
