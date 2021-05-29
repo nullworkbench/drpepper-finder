@@ -44,7 +44,7 @@
                                             <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
                                         </state>
                                         <connections>
-                                            <segue destination="RY3-vg-KJB" kind="show" id="fDD-u1-iQ5"/>
+                                            <segue destination="xXv-cW-2Ln" kind="show" id="rTa-Z6-jdZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t78-Tf-2aK">
@@ -513,7 +513,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Nn9-TW-DMn">
-                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -657,6 +657,55 @@ Dr. Pepper Finder!</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gjs-7b-huo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-55" y="165"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="VcS-4P-krV">
+            <objects>
+                <viewController title="Search" id="xXv-cW-2Ln" customClass="SearchViewController" customModule="drpepper_finder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HOE-9f-RvH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tmX-ZG-RnT">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vRR-KZ-5Gk">
+                                <rect key="frame" x="0.0" y="139" width="414" height="723"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="WSS-od-Z2K">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WSS-od-Z2K" id="Z3g-dx-czz">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TWb-O7-cqL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tmX-ZG-RnT" firstAttribute="leading" secondItem="TWb-O7-cqL" secondAttribute="leading" id="7bU-LX-Xgx"/>
+                            <constraint firstItem="TWb-O7-cqL" firstAttribute="bottom" secondItem="vRR-KZ-5Gk" secondAttribute="bottom" id="ApT-3F-xJ2"/>
+                            <constraint firstItem="TWb-O7-cqL" firstAttribute="trailing" secondItem="vRR-KZ-5Gk" secondAttribute="trailing" id="ers-7d-x9V"/>
+                            <constraint firstItem="vRR-KZ-5Gk" firstAttribute="leading" secondItem="TWb-O7-cqL" secondAttribute="leading" id="sy3-b7-8ai"/>
+                            <constraint firstItem="tmX-ZG-RnT" firstAttribute="trailing" secondItem="TWb-O7-cqL" secondAttribute="trailing" id="uAu-nP-r3W"/>
+                            <constraint firstItem="tmX-ZG-RnT" firstAttribute="top" secondItem="TWb-O7-cqL" secondAttribute="top" id="xOM-Gx-MeR"/>
+                            <constraint firstItem="vRR-KZ-5Gk" firstAttribute="top" secondItem="tmX-ZG-RnT" secondAttribute="bottom" id="z0Z-bn-8BR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search" id="CQV-ur-Q6o"/>
+                    <connections>
+                        <outlet property="searchBar" destination="tmX-ZG-RnT" id="dzu-32-dU6"/>
+                        <outlet property="table" destination="vRR-KZ-5Gk" id="FWh-zt-4Zc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mDg-Dp-JU3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1499" y="181"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vkc-8k-mOD">

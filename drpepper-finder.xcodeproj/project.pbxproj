@@ -18,6 +18,7 @@
 		8B1ACC9D2623544B000B8C87 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACC9C2623544B000B8C87 /* AccountViewController.swift */; };
 		8B1ACCE0262461C3000B8C87 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACCDF262461C3000B8C87 /* MapViewController.swift */; };
 		8B1ACCE7262474B5000B8C87 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACCE6262474B5000B8C87 /* SettingsViewController.swift */; };
+		8B29F7272662556700462663 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B29F7262662556700462663 /* SearchViewController.swift */; };
 		8B2BF4582629950E00E8BFA3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BF4572629950E00E8BFA3 /* DetailViewController.swift */; };
 		8B2BF4742629B55E00E8BFA3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BF4732629B55E00E8BFA3 /* Extensions.swift */; };
 		8BDC519D262B485B003A03D4 /* addNewPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */; };
@@ -43,6 +44,7 @@
 		8B1ACC9C2623544B000B8C87 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		8B1ACCDF262461C3000B8C87 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8B1ACCE6262474B5000B8C87 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8B29F7262662556700462663 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8B2BF4572629950E00E8BFA3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8B2BF4732629B55E00E8BFA3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNewPinViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				8B10020A262DAF55006E6CFC /* LogViewController.swift */,
 				8BF5A82B263EC5860084097F /* LoginViewController.swift */,
 				8BF5A82D263FBCD10084097F /* FirstViewController.swift */,
+				8B29F7262662556700462663 /* SearchViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				8B1ACCE7262474B5000B8C87 /* SettingsViewController.swift in Sources */,
 				8B1ACC5F26234B13000B8C87 /* ViewController.swift in Sources */,
 				8B1ACC5B26234B13000B8C87 /* AppDelegate.swift in Sources */,
+				8B29F7272662556700462663 /* SearchViewController.swift in Sources */,
 				8B1ACC5D26234B13000B8C87 /* SceneDelegate.swift in Sources */,
 				8B2BF4582629950E00E8BFA3 /* DetailViewController.swift in Sources */,
 				8BDC519D262B485B003A03D4 /* addNewPinViewController.swift in Sources */,

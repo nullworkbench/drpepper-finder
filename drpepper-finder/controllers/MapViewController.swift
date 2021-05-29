@@ -55,7 +55,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.setToCurrentLocation()
     }
     
-    // 新規にピンを追加
+    // 新規登録
     @IBAction func addNewPinButton() {
         // MapViewの中心座標
         let coordinate = mapView.centerCoordinate
