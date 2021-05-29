@@ -170,12 +170,27 @@ extension DetailViewController {
     
     // 住所をコピー
     @IBAction func copyAddress() {
+        // actionSheet定義
         let actionSheet = UIAlertController(title: "どのアプリで開きますか？", message: "", preferredStyle: .actionSheet)
+        
+        // Google Mapで開く
+        actionSheet.addAction(UIAlertAction(title: "Google Map", style: .default, handler: { action in
+            let url = URL(string: "comgooglemaps://?q=\(self.addressString)")!
+            UIApplication.shared.open(url)
+        }))
+        
+        // 純正のマップアプリで開く
+        actionSheet.addAction(UIAlertAction(title: "純正マップ", style: .default, handler: { action in
+            
+        }))
+        
+        // 住所をコピー
         actionSheet.addAction(UIAlertAction(title: "住所をコピー", style: .default, handler: { action in
             // クリップボードにコピー
             UIPasteboard.general.string = self.addressString
         }))
         
+        // actionSheet発火
         present(actionSheet, animated: true, completion: nil)
     }
 }
