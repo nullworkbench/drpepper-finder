@@ -35,6 +35,11 @@ class addNewPinViewController: UIViewController {
         
         // Doneボタン追加
         self.addDoneButton()
+        
+        // キーボードを表示したときにViewもあげるように
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        // キーボードを閉じたらViewを戻す
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
         // マップの位置決定
         self.setMapCenter(coordinate)
@@ -177,6 +182,7 @@ extension addNewPinViewController {
 // MARK: Keyboard Function
 extension addNewPinViewController {
     
+    // Doneボタンを追加
     private func addDoneButton() {
         let toolBar = UIToolbar()
         toolBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40)
@@ -187,9 +193,26 @@ extension addNewPinViewController {
         self.priceTextField.inputAccessoryView = toolBar
         self.noteTextView.inputAccessoryView = toolBar
     }
-    
     @objc func doneButtonTapped() {
         self.view.endEditing(true)
         self.view.resignFirstResponder()
+    }
+    
+    // キーボードが出たら、キーボード分Viewの位置をあげる
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height / 2
+            } else {
+                let suggestionHeight = self.view.frame.origin.y + keyboardSize.height / 2
+                self.view.frame.origin.y -= suggestionHeight
+            }
+        }
+    }
+    // キーボードが閉じたらViewを戻す
+    @objc func keyboardWillHide(notification: Notification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
 }
