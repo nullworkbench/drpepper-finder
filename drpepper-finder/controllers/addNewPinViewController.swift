@@ -32,9 +32,14 @@ class addNewPinViewController: UIViewController {
         noteTextView.delegate = self
         noteTextView.text = placeholderText
         noteTextView.textColor = .lightGray
+        
+        // Doneボタン追加
+        self.addDoneButton()
 
+        // マップの位置決定
         self.setMapCenter(coordinate)
         
+        // 住所ラベル設定
         self.setAddressLabel()
     }
     
@@ -165,5 +170,26 @@ extension addNewPinViewController {
         }
         // ログを保存
         Ex.loggingToFirestore(ref!.documentID, 0)
+    }
+}
+
+
+// MARK: Keyboard Function
+extension addNewPinViewController {
+    
+    private func addDoneButton() {
+        let toolBar = UIToolbar()
+        toolBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40)
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.doneButtonTapped))
+        toolBar.items = [spacer, doneButton]
+        
+        self.priceTextField.inputAccessoryView = toolBar
+        self.noteTextView.inputAccessoryView = toolBar
+    }
+    
+    @objc func doneButtonTapped() {
+        self.view.endEditing(true)
+        self.view.resignFirstResponder()
     }
 }

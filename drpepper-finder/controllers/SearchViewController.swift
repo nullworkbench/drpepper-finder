@@ -21,8 +21,9 @@ class SearchViewController: UIViewController {
         
         // searchBar
         searchBar.delegate = self
+        self.addDoneButton()
 
-        // searchBar
+        // tableVIew
         table.dataSource = self
         table.delegate = self
     }
@@ -109,7 +110,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         // タイトル
-        (cell.viewWithTag(1) as! UILabel).text = searchResult[indexPath.row].name
+        (cell.viewWithTag(1) as! UILabel).text = searchResult[indexPath.row].name ?? ""
         // 住所
         (cell.viewWithTag(2) as! UILabel).text = self.placemarkToAddressString(searchResult[indexPath.row])
         return cell
@@ -134,5 +135,24 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         
         // mapViewControllerへ戻る
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+// MARK: Keyboard Function
+extension SearchViewController {
+    
+    private func addDoneButton() {
+        let toolBar = UIToolbar()
+        toolBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40)
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.doneButtonTapped))
+        toolBar.items = [spacer, doneButton]
+        
+        self.searchBar.inputAccessoryView = toolBar
+    }
+    
+    @objc func doneButtonTapped() {
+        self.view.endEditing(true)
+        self.view.resignFirstResponder()
     }
 }
