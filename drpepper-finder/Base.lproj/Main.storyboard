@@ -565,33 +565,6 @@
             </objects>
             <point key="canvasLocation" x="1499" y="2307"/>
         </scene>
-        <!--Search-->
-        <scene sceneID="gZr-Jq-RGg">
-            <objects>
-                <viewController id="RY3-vg-KJB" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ScJ-m2-Vxq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Nn9-TW-DMn">
-                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Rpa-KD-J2T"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Nn9-TW-DMn" firstAttribute="leading" secondItem="Rpa-KD-J2T" secondAttribute="leading" id="FDR-58-G16"/>
-                            <constraint firstItem="Nn9-TW-DMn" firstAttribute="top" secondItem="Rpa-KD-J2T" secondAttribute="top" id="Frm-bc-jHY"/>
-                            <constraint firstItem="Nn9-TW-DMn" firstAttribute="trailing" secondItem="Rpa-KD-J2T" secondAttribute="trailing" id="h6c-wC-YVC"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Search" id="D38-sJ-IAn"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8hS-4t-mdY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1499" y="1572"/>
-        </scene>
         <!--Account-->
         <scene sceneID="zuv-SU-Bw3">
             <objects>
@@ -600,9 +573,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="th2-QY-Mj6">
-                                <rect key="frame" x="101" y="560" width="216" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="th2-QY-Mj6">
+                                <rect key="frame" x="99" y="614" width="216" height="48"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Sign in with Google   " image="Google">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -611,9 +583,8 @@
                                     <action selector="signInWithGoogle" destination="MD0-wk-1hr" eventType="touchUpInside" id="fXz-xg-xIZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jV3-Qn-6JD">
-                                <rect key="frame" x="179" y="668" width="56" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jV3-Qn-6JD">
+                                <rect key="frame" x="179" y="732" width="56" height="30"/>
                                 <state key="normal" title="SignOut"/>
                                 <connections>
                                     <action selector="signOut" destination="MD0-wk-1hr" eventType="touchUpInside" id="07O-DF-e8N"/>
@@ -636,11 +607,15 @@
                         <viewLayoutGuide key="safeArea" id="QJn-RZ-vFy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="QJn-RZ-vFy" firstAttribute="bottom" secondItem="jV3-Qn-6JD" secondAttribute="bottom" constant="100" id="3k3-yE-XoZ"/>
                             <constraint firstItem="Z04-Ti-aYN" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="DYH-D6-pVP"/>
+                            <constraint firstItem="jV3-Qn-6JD" firstAttribute="top" secondItem="th2-QY-Mj6" secondAttribute="bottom" constant="70" id="LLn-ti-Ojr"/>
                             <constraint firstItem="KQD-c9-GQd" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="ROn-Px-MHp"/>
                             <constraint firstItem="Z04-Ti-aYN" firstAttribute="top" secondItem="QJn-RZ-vFy" secondAttribute="top" constant="50" id="S4F-TD-39R"/>
                             <constraint firstItem="KQD-c9-GQd" firstAttribute="top" secondItem="Z04-Ti-aYN" secondAttribute="bottom" constant="25" id="TMJ-ri-cXR"/>
                             <constraint firstItem="Z04-Ti-aYN" firstAttribute="width" secondItem="foA-1L-aaF" secondAttribute="width" multiplier="0.3" id="eQr-pp-oZc"/>
+                            <constraint firstItem="jV3-Qn-6JD" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="gPh-ea-iIx"/>
+                            <constraint firstItem="th2-QY-Mj6" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="sV9-uF-gZR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Account" id="22i-XM-w8i"/>
