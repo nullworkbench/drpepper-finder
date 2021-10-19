@@ -66,8 +66,8 @@ class DetailViewController: UIViewController {
             }
         }
         
-        // logを取得
-        db.collection("pins").document(docId).collection("logs").order(by: "timestamp").limit(to: 1).getDocuments { (querySnapshot, error) in
+        // 最新のlogを取得
+        db.collection("pins").document(docId).collection("logs").order(by: "timestamp", descending: true).limit(to: 1).getDocuments { (querySnapshot, error) in
             if let err = error {
                 print("Error getting documents: \(err)")
             } else {
