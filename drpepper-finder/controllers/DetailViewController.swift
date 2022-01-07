@@ -111,6 +111,12 @@ class DetailViewController: UIViewController {
         mapView.addAnnotation(pin)
     }
     
+    // モーダルを閉じるボタン
+    @IBAction func closeModal(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
+    
 }
 
 
