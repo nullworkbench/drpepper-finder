@@ -168,10 +168,10 @@ extension DetailViewController {
         }
     }
     
-    // 住所をコピー
-    @IBAction func copyAddress() {
+    // 住所をマップアプリで開く
+    @IBAction func openInMap() {
         // actionSheet定義
-        let actionSheet = UIAlertController(title: "どのアプリで開きますか？", message: "", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "どのアプリで開きますか？", message: addressString, preferredStyle: .actionSheet)
         
         // Google Mapで開く
         actionSheet.addAction(UIAlertAction(title: "Google Map", style: .default, handler: { action in
@@ -181,7 +181,7 @@ extension DetailViewController {
         }))
         
         // 純正のマップアプリで開く
-        actionSheet.addAction(UIAlertAction(title: "純正マップ", style: .default, handler: { action in
+        actionSheet.addAction(UIAlertAction(title: "マップ", style: .default, handler: { action in
             let urlString = "http://maps.apple.com/?q=\(self.addressString)"
             let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
             UIApplication.shared.open(url!)
@@ -192,6 +192,9 @@ extension DetailViewController {
             // クリップボードにコピー
             UIPasteboard.general.string = self.addressString
         }))
+        
+        // キャンセルボタン
+        actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
         
         // actionSheet発火
         present(actionSheet, animated: true, completion: nil)

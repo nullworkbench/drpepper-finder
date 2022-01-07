@@ -423,7 +423,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="マップで開く"/>
                                 <connections>
-                                    <action selector="copyAddress" destination="uox-hE-tek" eventType="touchUpInside" id="mzU-vz-vSf"/>
+                                    <action selector="openInMap" destination="uox-hE-tek" eventType="touchUpInside" id="kgf-r6-YpF"/>
                                 </connections>
                             </button>
                         </subviews>
