@@ -76,15 +76,18 @@ extension MapViewController {
     // 位置情報の権限が更新された時
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
+        // 位置情報の利用を未選択
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
             break
+        // 使用中は許可
         case .authorizedWhenInUse:
             // 位置情報の取得開始
             locationManager.startUpdatingLocation()
             // 現在地セット
             self.setToCurrentLocation()
             break
+        // 拒否
         case .restricted, .denied:
             break
         default:
@@ -98,6 +101,7 @@ extension MapViewController {
     }
     // 現在地にセット
     func setToCurrentLocation() {
+        // 位置情報への権限を確認
         if locationManager.authorizationStatus == .denied || locationManager.authorizationStatus == .restricted || locationManager.authorizationStatus == .notDetermined {
             let alert = UIAlertController(title: "位置情報サービスが必要です", message: "アプリのご利用には位置情報利用の許可が必要です。設定アプリから許可してください。", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "閉じる", style: .cancel, handler: nil))
@@ -111,10 +115,11 @@ extension MapViewController {
                 }
             }))
             present(alert, animated: true, completion: nil)
+            return
         }
         // Mapを現在地にセット
         let mapSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-        let mapRegion = MKCoordinateRegion(center: mapView.userLocation.coordinate, span: mapSpan)
+        let mapRegion = MKCoordinateRegion(center: locationManager.location!.coordinate, span: mapSpan)
         mapView.setRegion(mapRegion, animated: true)
     }
 }
