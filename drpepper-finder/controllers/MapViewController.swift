@@ -155,10 +155,9 @@ extension MapViewController {
     // MARK: カスタムピンの取得＆表示
     // Firestoreに保存されているピンを表示
     func showAllCustomPins() {
-        
         for pin in self.getAllPins() {
-            pin.title = "test"
-            pin.subtitle = "Jollibeeうまい"
+            // pin.title = "title"
+            // pin.subtitle = "subtitle"
             pin.pinImage = UIImage(named: "drpepper")
             self.mapView.addAnnotation(pin)
         }
