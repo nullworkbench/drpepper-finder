@@ -32,7 +32,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.showAllCustomPins()
     }
     
-    // 画面遷移準備
+    // MARK: 画面遷移準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         // 新規追加画面
