@@ -29,9 +29,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.delegate = self
         
         // カスタムピン取得＆表示
-        DispatchQueue(label: "showAllCustomPins", qos: .default).async {
-            self.showAllCustomPins()
-        }
+        self.showAllCustomPins()
     }
     
     // 画面遷移準備
@@ -149,14 +147,15 @@ extension MapViewController {
     // MARK: カスタムピンの取得＆表示
     // Firestoreに保存されているピンを表示
     func showAllCustomPins() {
-        let pins = DB.getAllAnnotations(limit: 50)
-        print(pins)
-        for pin in pins {
-            // pin.title = "title"
-            // pin.subtitle = "subtitle"
-            // UIの更新はmainスレッドで
-            DispatchQueue.main.async {
-                self.mapView.addAnnotation(pin)
+        DispatchQueue(label: "showAllCustomPins", qos: .default).async {
+            let pins = DB.getAllAnnotations(limit: 50)
+            for pin in pins {
+                // pin.title = "title"
+                // pin.subtitle = "subtitle"
+                // UIの更新はmainスレッドで
+                DispatchQueue.main.async {
+                    self.mapView.addAnnotation(pin)
+                }
             }
         }
         
