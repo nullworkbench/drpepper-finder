@@ -132,7 +132,7 @@ extension MapViewController {
         let anotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
         
         // pinImageがあればピンに画像をつける
-        if let pin = annotation as? CustomPin {
+        if let pin = annotation as? CustomAnnotation {
             if let pinImage = pin.pinImage {
                 // pinImage設定
                 anotationView.image = pinImage // リサイズより先に画像設定
@@ -149,46 +149,18 @@ extension MapViewController {
     // MARK: カスタムピンの取得＆表示
     // Firestoreに保存されているピンを表示
     func showAllCustomPins() {
-        let pins = self.getAllPins()
+        let pins = DB.getAllAnnotations(limit: 50)
+        print(pins)
         for pin in pins {
             // pin.title = "title"
             // pin.subtitle = "subtitle"
-            pin.pinImage = UIImage(named: "drpepper")
-            self.mapView.addAnnotation(pin)
-        }
-    }
-    
-    // Firestoreに保存されているピンを取得
-    func getAllPins() -> [CustomPin] {
-        
-        let semaphore = DispatchSemaphore(value: 0)
-        
-        var pins = [CustomPin]()
-        print("query will start")
-        db.collection("pins").limit(to: 50).getDocuments() { (querySnapshot, err) in
-            print("firestore query started")
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let newCustomPin = CustomPin()
-                    // id設定
-                    newCustomPin.docId = document.documentID
-                    // 座標設定
-                    let geoPoint = document["coordinate"] as! GeoPoint
-                    newCustomPin.coordinate = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude)
-                    
-                    pins.append(newCustomPin)
-                }
-                semaphore.signal()
+            // UIの更新はmainスレッドで
+            DispatchQueue.main.async {
+                self.mapView.addAnnotation(pin)
             }
         }
-        print("start waiting")
-        semaphore.wait()
-        print("pins downloaded")
-        return pins
+        
     }
-    
     
     // MARK: ピンをタップしたときの設定
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
@@ -197,7 +169,7 @@ extension MapViewController {
         } else {
             print("pin tapped")
             // docIdをsenderへ渡す
-            let docId = (view.annotation as! CustomPin).docId
+            let docId = (view.annotation as! CustomAnnotation).docID
             
             // 画面遷移
             performSegue(withIdentifier: "toDetailView", sender: docId)

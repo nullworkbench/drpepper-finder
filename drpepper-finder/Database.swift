@@ -11,6 +11,39 @@ import FirebaseFirestoreSwift
 import CoreLocation
 
 class DB {
+    // MARK: 指定された数を上限として全てのピンのAnnotationを取得
+    class func getAllAnnotations(limit: Int) -> [CustomAnnotation] {
+        let db = Firestore.firestore()
+        // 非同期処理のSemaphore
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        // 取得したピンを保存する配列
+        var pins: [CustomAnnotation] = []
+        
+        // print("query will start")
+        db.collection("pins").limit(to: limit).getDocuments() { (querySnapshot, err) in
+            // print("firestore query started")
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for doc in querySnapshot!.documents {
+                    // 座標
+                    let geoPoint = doc["coordinate"] as! GeoPoint
+                    let coordinate = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude)
+                    // CustomAnnotation定義
+                    let annotation = CustomAnnotation(docID: doc.documentID, coordinate: coordinate)
+                    
+                    pins.append(annotation)
+                }
+                semaphore.signal()
+            }
+        }
+        // print("start waiting")
+        semaphore.wait()
+        // print("pins downloaded")
+        return pins
+    }
+    
     // MARK: docIDから単一のピンを取得する
     class func getPinFromID(docID: String) -> Pin? {
         let db = Firestore.firestore()
