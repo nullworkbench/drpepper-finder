@@ -22,16 +22,13 @@ class addNewPinViewController: UIViewController {
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var priceTextField: UITextField!
     @IBOutlet var noteTextView: UITextView!
-    
-    let placeholderText = "駅前の自動販売機にあった！など"
+    @IBOutlet weak var noteTextViewPlaceholder: UILabel!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // placeholder設定
         noteTextView.delegate = self
-        noteTextView.text = placeholderText
-        noteTextView.textColor = .lightGray
         
         // Doneボタン追加
         self.addDoneButton()
@@ -137,16 +134,14 @@ extension addNewPinViewController {
 
 // MARK: textView関連
 extension addNewPinViewController: UITextViewDelegate {
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        textView.selectedRange.location = 0
-        // placeholder削除
-        if noteTextView.text == placeholderText {
-            noteTextView.text = ""
-            noteTextView.textColor = .label
-        }
-    }
-    
     func textViewDidChange(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            // placeholder設置
+            noteTextViewPlaceholder.isHidden = false
+        } else {
+            // placeholder削除
+            noteTextViewPlaceholder.isHidden = true
+        }
     }
 }
 
@@ -155,10 +150,6 @@ extension addNewPinViewController: UITextViewDelegate {
 extension addNewPinViewController {
     // FireStoreへ投稿
     func postToFireStore() {
-        // placeholder削除
-        if noteTextView.text == placeholderText {
-            noteTextView.text = ""
-        }
         // Firestoreに登録
         var ref: DocumentReference?
         ref = db.collection("pins").addDocument(data: [
