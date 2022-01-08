@@ -11,10 +11,9 @@ import FirebaseFirestoreSwift
 import CoreLocation
 
 class DB {
-    let db = Firestore.firestore()
-    
     // docIDから単一のピンを取得する
     class func getPinFromID(docID: String) -> Pin? {
+        let db = Firestore.firestore()
         // 非同期処理用
         let semaphore = DispatchSemaphore(value: 0)
         // pinの値保持用
@@ -22,6 +21,10 @@ class DB {
         // Firestoreから値の取得
         let docRef = db.collection("pins").document(docID)
         docRef.getDocument {(doc, err) in
+            if (err != nil) {
+                semaphore.signal()
+                return
+            }
             if let doc = doc, doc.exists {
                 let data = doc.data()!
                 
@@ -32,7 +35,7 @@ class DB {
                 // 発見日時
                 let createdAt = (data["createdAt"] as! Timestamp).dateValue()
                 // note
-                let note = (data["note"] as? String) ?? "メモは書かれていません…"
+                let note = (data["note"] as? String) ?? ""
                 // Pinオブジェクトの作成
                 let obj = Pin(docID: doc.documentID, geoPoint: geopoint, price: price, createdAt: createdAt, note: note)
                 

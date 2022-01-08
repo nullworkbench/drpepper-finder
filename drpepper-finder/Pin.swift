@@ -27,7 +27,7 @@ class Pin {
         self.coordinate = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude)
         self.price = price
         self.createdAt = createdAt
-        self.note = note
+        self.note = note.isEmpty ? "メモは書かれていません…" : note
     }
     
 }

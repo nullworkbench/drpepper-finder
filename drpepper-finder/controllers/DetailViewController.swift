@@ -35,34 +35,28 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // docIdからピンの詳細を取得
-        db.collection("pins").document(docId).getDocument { (document, error) in
-            if let document = document, document.exists {
-                let data = document.data()!
-                
-                // Map
-                let geopoint = data["coordinate"] as! GeoPoint
-                let coordinate = CLLocationCoordinate2DMake(geopoint.latitude, geopoint.longitude)
-                self.setMapCenter(coordinate) // Mapの中心点を設定してピンを置く
-                self.setAddressLabel(coordinate) // 住所を設定
-                
-                // 価格
-                let price = data["price"] as! Int
-                self.priceLabel.text = "価格：¥\(price)"
-                
-                // 発見日時
-                let createdAt = (data["createdAt"] as! Timestamp).dateValue()
-                self.foundDateLabel.text = "発見日時: \(Ex.dateToString(createdAt))"
-                
-                // note
-                let note = (data["note"] as? String)!
-                if note.isEmpty {
-                    self.noteTextView.text = "メモは書かれていません…"
-                } else {
-                    self.noteTextView.text = note
+        DispatchQueue.global(qos: .default).async {
+            // docIdからピンの詳細を取得
+            if let pin = DB.getPinFromID(docID: self.docId) {
+                DispatchQueue.main.async {
+                    // Mapの中心点を設定してピンを置く
+                    self.setMapCenter(pin.coordinate)
+                    // 住所を設定
+                    self.setAddressLabel(pin.coordinate)
+                    // 価格
+                    self.priceLabel.text = "価格：¥\(String(pin.price))"
+                    // 発見日時
+                    self.foundDateLabel.text = "発見日時: \(Ex.dateToString(pin.createdAt))"
+                    // note
+                    self.noteTextView.text = pin.note
                 }
             } else {
-                print("Document does not exist")
+                // ピンの取得に失敗
+                let alert = UIAlertController(title: "情報の取得に失敗", message: "情報の取得に失敗してしまいました…また後ほどお試しください。", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alert, animated: true, completion: nil)
             }
         }
         
