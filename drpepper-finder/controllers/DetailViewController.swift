@@ -111,6 +111,7 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func editBtnTapped(_ sender: Any) {
+        editPin()
     }
     @IBAction func deleteBtnTapped(_ sender: Any) {
         deletePin()
@@ -256,6 +257,12 @@ extension DetailViewController {
 
 // MARK: 編集・削除
 extension DetailViewController {
+    // 編集メソッド
+    func editPin() {
+        let alert = UIAlertController(title: "まだ開発中です、！", message: "投稿の編集機能は開発中です。今しばらくお待ちくださいませ！", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
     // 削除メソッド
     func deletePin() {
         // alertを定義
