@@ -110,6 +110,10 @@ class DetailViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    @IBAction func editBtnTapped(_ sender: Any) {
+    }
+    @IBAction func deleteBtnTapped(_ sender: Any) {
+    }
     
 }
 
@@ -246,5 +250,13 @@ extension DetailViewController {
     // なくなってた
     @IBAction func notStillThere() {
         self.addLogToFireStore(2)
+    }
+}
+
+// MARK: 編集・削除
+extension DetailViewController {
+    // 削除メソッド
+    func deletePin() {
+        
     }
 }
