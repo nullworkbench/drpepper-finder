@@ -23,6 +23,7 @@
 		8B2BF4742629B55E00E8BFA3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BF4732629B55E00E8BFA3 /* Extensions.swift */; };
 		8B89FC33278873B7008B7875 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89FC32278873B7008B7875 /* Database.swift */; };
 		8B89FC35278874DF008B7875 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89FC34278874DF008B7875 /* Pin.swift */; };
+		8B89FC372789FE11008B7875 /* CustomMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89FC362789FE11008B7875 /* CustomMKPointAnnotation.swift */; };
 		8BDC519D262B485B003A03D4 /* addNewPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */; };
 		8BF5A82C263EC5860084097F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5A82B263EC5860084097F /* LoginViewController.swift */; };
 		8BF5A82E263FBCD10084097F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5A82D263FBCD10084097F /* FirstViewController.swift */; };
@@ -51,6 +52,7 @@
 		8B2BF4732629B55E00E8BFA3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8B89FC32278873B7008B7875 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		8B89FC34278874DF008B7875 /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Pin.swift; path = "drpepper-finder/Pin.swift"; sourceTree = SOURCE_ROOT; };
+		8B89FC362789FE11008B7875 /* CustomMKPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomMKPointAnnotation.swift; path = "drpepper-finder/CustomMKPointAnnotation.swift"; sourceTree = SOURCE_ROOT; };
 		8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNewPinViewController.swift; sourceTree = "<group>"; };
 		8BF5A82B263EC5860084097F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8BF5A82D263FBCD10084097F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -103,11 +105,11 @@
 				8B1ACC5C26234B13000B8C87 /* SceneDelegate.swift */,
 				8B1ACC6026234B13000B8C87 /* Main.storyboard */,
 				8B2BF4732629B55E00E8BFA3 /* Extensions.swift */,
+				8B89FC32278873B7008B7875 /* Database.swift */,
 				8B1ACC6326234B14000B8C87 /* Assets.xcassets */,
 				8B1ACC6526234B14000B8C87 /* LaunchScreen.storyboard */,
 				8B1ACC6826234B14000B8C87 /* Info.plist */,
 				8B1ACC7426234CCD000B8C87 /* GoogleService-Info.plist */,
-				8B89FC32278873B7008B7875 /* Database.swift */,
 			);
 			path = "drpepper-finder";
 			sourceTree = "<group>";
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				8B89FC34278874DF008B7875 /* Pin.swift */,
+				8B89FC362789FE11008B7875 /* CustomMKPointAnnotation.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B89FC372789FE11008B7875 /* CustomMKPointAnnotation.swift in Sources */,
 				8B89FC35278874DF008B7875 /* Pin.swift in Sources */,
 				8B10020B262DAF55006E6CFC /* LogViewController.swift in Sources */,
 				8B1ACC9D2623544B000B8C87 /* AccountViewController.swift in Sources */,

@@ -65,12 +65,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 }
 
 
-// MARK: Custom Class
-class CustomPin: MKPointAnnotation {
-    var docId: String?
-    var pinImage: UIImage?
-}
-
 // MARK: 位置情報関係
 extension MapViewController {
     // 位置情報の権限が更新された時
@@ -155,7 +149,8 @@ extension MapViewController {
     // MARK: カスタムピンの取得＆表示
     // Firestoreに保存されているピンを表示
     func showAllCustomPins() {
-        for pin in self.getAllPins() {
+        let pins = self.getAllPins()
+        for pin in pins {
             // pin.title = "title"
             // pin.subtitle = "subtitle"
             pin.pinImage = UIImage(named: "drpepper")
