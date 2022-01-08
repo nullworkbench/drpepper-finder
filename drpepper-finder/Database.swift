@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 import CoreLocation
 
 class DB {
-    // docIDから単一のピンを取得する
+    // MARK: docIDから単一のピンを取得する
     class func getPinFromID(docID: String) -> Pin? {
         let db = Firestore.firestore()
         // 非同期処理用
@@ -51,4 +51,24 @@ class DB {
         semaphore.wait()
         return pin
     }
+    
+    // MARK: Firestoreからピンの削除を要求する
+    class func requestPinDelation(docID: String) {
+        // GoogleFormへ投稿
+        func postToGoogleForm() {
+            let formURL = URL(string: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSex-lV1JXvBdgeck34e3TqJLAbMoDjKeI9F8qitSSID67i2TQ/formResponse")!
+            var request = URLRequest(url: formURL)
+            let params = "entry.489974167=\(docID)"
+            
+            request.httpBody = params.data(using: .utf8)
+            request.httpMethod = "POST"
+            
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                //print((response as! HTTPURLResponse).statusCode)
+            }
+            task.resume()
+        }
+        postToGoogleForm()
+    }
+    
 }

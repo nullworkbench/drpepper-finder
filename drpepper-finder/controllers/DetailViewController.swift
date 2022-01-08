@@ -113,6 +113,7 @@ class DetailViewController: UIViewController {
     @IBAction func editBtnTapped(_ sender: Any) {
     }
     @IBAction func deleteBtnTapped(_ sender: Any) {
+        deletePin()
     }
     
 }
@@ -257,6 +258,13 @@ extension DetailViewController {
 extension DetailViewController {
     // 削除メソッド
     func deletePin() {
-        
+        // alertを定義
+        let alert = UIAlertController(title: "投稿の削除を要請しますか？", message: "間違えて投稿した場合、不適切な内容が含まれる場合などは投稿の削除を要請することができます。", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "削除を要請", style: .destructive, handler: {_ in
+            DB.requestPinDelation(docID: self.docId)
+        }))
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
+        // alert発火
+        present(alert, animated: true, completion: nil)
     }
 }
