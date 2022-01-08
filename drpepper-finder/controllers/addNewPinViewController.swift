@@ -67,7 +67,7 @@ class addNewPinViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         } else {
             // FireStoreへ登録
-            self.postToFireStore()
+            DB.postNewPin(coordinate: coordinate, price: Int(priceTextField.text!)!, note: noteTextView.text ?? "")
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -142,30 +142,6 @@ extension addNewPinViewController: UITextViewDelegate {
             // placeholder削除
             noteTextViewPlaceholder.isHidden = true
         }
-    }
-}
-
-
-// MARK: FireStore
-extension addNewPinViewController {
-    // FireStoreへ投稿
-    func postToFireStore() {
-        // Firestoreに登録
-        var ref: DocumentReference?
-        ref = db.collection("pins").addDocument(data: [
-            "coordinate": GeoPoint(latitude: coordinate.latitude, longitude: coordinate.longitude),
-            "price": Int(priceTextField.text!)!,
-            "createdAt": FieldValue.serverTimestamp(),
-            "note": noteTextView.text!
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-            }
-        }
-        // ログを保存
-        Ex.loggingToFirestore(ref!.documentID, 0)
     }
 }
 
