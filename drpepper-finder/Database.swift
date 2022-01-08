@@ -100,10 +100,10 @@ class DB {
                 print("Error adding document: \(err)")
             } else {
                 print("Document added with ID: \(ref!.documentID)")
+                // ログを保存
+                self.loggingToFirestore(docId: ref!.documentID, type: 0)
             }
         }
-        // ログを保存
-        Ex.loggingToFirestore(ref!.documentID, 0)
     }
     
     // MARK: Firestoreからピンの削除を要求する
@@ -123,6 +123,22 @@ class DB {
             task.resume()
         }
         postToGoogleForm()
+    }
+    
+    
+    // MARK: Firestoreにログを保存する。
+    class func loggingToFirestore(docId: String, type: Int) {
+        let db = Firestore.firestore()
+        db.collection("pins").document(docId).collection("logs").addDocument(data: [
+            "type": type,
+            "timestamp": FieldValue.serverTimestamp()
+        ]) { err in
+            if let err = err {
+                print("Error logging to Firestore: \(err)")
+            } else {
+                // success
+            }
+        }
     }
     
 }
