@@ -180,14 +180,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYL-Pf-iw2">
-                                <rect key="frame" x="20" y="494" width="374" height="314"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eb5-cu-gPK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
@@ -231,6 +223,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="例）110" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wm3-nw-kZL">
                                 <rect key="frame" x="145" y="407" width="124" height="34"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
@@ -246,34 +239,59 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bcX-cu-XCu" userLabel="NoteTextView PaddingView">
+                                <rect key="frame" x="20" y="497" width="374" height="301"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYL-Pf-iw2">
+                                        <rect key="frame" x="10" y="5" width="354" height="291"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="MYL-Pf-iw2" firstAttribute="leading" secondItem="bcX-cu-XCu" secondAttribute="leading" constant="10" id="1Ix-kN-laG"/>
+                                    <constraint firstItem="MYL-Pf-iw2" firstAttribute="top" secondItem="bcX-cu-XCu" secondAttribute="top" constant="5" id="Cfq-mq-EvJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="MYL-Pf-iw2" secondAttribute="bottom" constant="5" id="JWJ-rk-cJw"/>
+                                    <constraint firstAttribute="trailing" secondItem="MYL-Pf-iw2" secondAttribute="trailing" constant="10" id="Rwz-aP-we5"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v1X-BC-Rba"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="C4P-Ax-UXv" firstAttribute="leading" secondItem="v1X-BC-Rba" secondAttribute="leading" constant="20" id="2EP-cg-KVf"/>
                             <constraint firstItem="C4P-Ax-UXv" firstAttribute="top" secondItem="Mcw-5E-5rB" secondAttribute="bottom" constant="10" id="4qV-lZ-vyL"/>
-                            <constraint firstItem="v1X-BC-Rba" firstAttribute="trailing" secondItem="MYL-Pf-iw2" secondAttribute="trailing" constant="20" id="Djh-7s-MVB"/>
+                            <constraint firstItem="v1X-BC-Rba" firstAttribute="trailing" secondItem="bcX-cu-XCu" secondAttribute="trailing" constant="20" id="8Dd-vb-z4v"/>
                             <constraint firstItem="wm3-nw-kZL" firstAttribute="top" secondItem="cZv-u9-Q93" secondAttribute="bottom" constant="5" id="EGw-3g-g2x"/>
                             <constraint firstItem="Eb5-cu-gPK" firstAttribute="trailing" secondItem="v1X-BC-Rba" secondAttribute="trailing" id="F7n-XB-XFW"/>
                             <constraint firstItem="n0o-3f-SeT" firstAttribute="leading" secondItem="wm3-nw-kZL" secondAttribute="trailing" constant="8" id="Gvf-RA-No4"/>
-                            <constraint firstItem="v1X-BC-Rba" firstAttribute="bottom" secondItem="MYL-Pf-iw2" secondAttribute="bottom" id="KCn-Hg-igO"/>
                             <constraint firstItem="wm3-nw-kZL" firstAttribute="centerX" secondItem="eFk-yq-KTN" secondAttribute="centerX" id="MWL-yK-GGV"/>
                             <constraint firstItem="cZv-u9-Q93" firstAttribute="centerX" secondItem="eFk-yq-KTN" secondAttribute="centerX" id="UcC-8M-tVW"/>
                             <constraint firstItem="n0o-3f-SeT" firstAttribute="centerY" secondItem="wm3-nw-kZL" secondAttribute="centerY" id="ZGd-u0-eE0"/>
                             <constraint firstItem="cZv-u9-Q93" firstAttribute="top" secondItem="C4P-Ax-UXv" secondAttribute="bottom" constant="25" id="e8O-60-fxE"/>
-                            <constraint firstItem="MYL-Pf-iw2" firstAttribute="leading" secondItem="v1X-BC-Rba" secondAttribute="leading" constant="20" id="fEa-IJ-cwq"/>
                             <constraint firstItem="Eb5-cu-gPK" firstAttribute="top" secondItem="v1X-BC-Rba" secondAttribute="top" id="gS8-LL-2ZK"/>
-                            <constraint firstItem="MYL-Pf-iw2" firstAttribute="top" secondItem="hAu-H5-vOE" secondAttribute="bottom" constant="2" id="goS-ub-hmI"/>
                             <constraint firstItem="hAu-H5-vOE" firstAttribute="centerX" secondItem="eFk-yq-KTN" secondAttribute="centerX" id="hkQ-7u-BJL"/>
                             <constraint firstItem="hAu-H5-vOE" firstAttribute="top" secondItem="wm3-nw-kZL" secondAttribute="bottom" constant="30" id="i34-bn-utG"/>
                             <constraint firstItem="Yu4-A8-N2j" firstAttribute="centerX" secondItem="eFk-yq-KTN" secondAttribute="centerX" id="kIy-F0-xTa"/>
                             <constraint firstItem="v1X-BC-Rba" firstAttribute="trailing" secondItem="C4P-Ax-UXv" secondAttribute="trailing" constant="20" id="lWM-1Q-vsr"/>
+                            <constraint firstItem="v1X-BC-Rba" firstAttribute="bottom" secondItem="bcX-cu-XCu" secondAttribute="bottom" constant="10" id="mdU-oO-bRb"/>
+                            <constraint firstItem="bcX-cu-XCu" firstAttribute="top" secondItem="hAu-H5-vOE" secondAttribute="bottom" constant="5" id="mwT-hC-dv8"/>
                             <constraint firstItem="Yu4-A8-N2j" firstAttribute="top" secondItem="Eb5-cu-gPK" secondAttribute="bottom" constant="30" id="nE5-bp-pDq"/>
                             <constraint firstItem="Mcw-5E-5rB" firstAttribute="leading" secondItem="v1X-BC-Rba" secondAttribute="leading" id="rJp-iA-9K7"/>
                             <constraint firstItem="Eb5-cu-gPK" firstAttribute="leading" secondItem="v1X-BC-Rba" secondAttribute="leading" id="s3M-3B-Mcu"/>
                             <constraint firstItem="v1X-BC-Rba" firstAttribute="trailing" secondItem="Mcw-5E-5rB" secondAttribute="trailing" id="tAb-0Q-M7B"/>
                             <constraint firstItem="Mcw-5E-5rB" firstAttribute="top" secondItem="Yu4-A8-N2j" secondAttribute="bottom" constant="15" id="tqs-KM-rqk"/>
                             <constraint firstItem="wm3-nw-kZL" firstAttribute="width" secondItem="eFk-yq-KTN" secondAttribute="width" multiplier="0.3" id="wa9-8E-bin"/>
+                            <constraint firstItem="bcX-cu-XCu" firstAttribute="leading" secondItem="v1X-BC-Rba" secondAttribute="leading" constant="20" id="zU3-Pm-HQO"/>
                         </constraints>
                     </view>
                     <connections>
