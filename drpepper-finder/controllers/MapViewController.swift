@@ -161,6 +161,15 @@ extension MapViewController {
         
     }
     
+    // MARK: カスタムピンの更新
+    func refreshAnnotations() {
+        // 現在表示中のAnnotationを一度全削除
+        let currentAnnotations = mapView.annotations
+        mapView.removeAnnotations(currentAnnotations)
+        // Firestoreから取得し直して再表示
+        self.showAllCustomPins()
+    }
+    
     // MARK: ピンをタップしたときの設定
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if view.annotation is MKUserLocation {
