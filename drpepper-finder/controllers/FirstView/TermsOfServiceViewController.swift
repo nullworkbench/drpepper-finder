@@ -15,5 +15,11 @@ class TermsOfServiceViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    // 同意しない
+    @IBAction func disagreeBtnTapped(_ sender: Any) {
+    }
+    // 同意する
+    @IBAction func agreeBtnTapped(_ sender: Any) {
+    }
+    
 }

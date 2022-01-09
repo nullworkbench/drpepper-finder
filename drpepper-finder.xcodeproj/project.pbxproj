@@ -24,6 +24,7 @@
 		8B89FC35278874DF008B7875 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89FC34278874DF008B7875 /* Pin.swift */; };
 		8B89FC372789FE11008B7875 /* CustomMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89FC362789FE11008B7875 /* CustomMKPointAnnotation.swift */; };
 		8BBFDD60278AECFA003D4D6C /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFDD5F278AECFA003D4D6C /* TermsOfServiceViewController.swift */; };
+		8BBFDD62278AEFA2003D4D6C /* TermsOfServiceWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFDD61278AEFA2003D4D6C /* TermsOfServiceWebViewController.swift */; };
 		8BDC519D262B485B003A03D4 /* addNewPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */; };
 		8BF5A82C263EC5860084097F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5A82B263EC5860084097F /* LoginViewController.swift */; };
 		8BF5A82E263FBCD10084097F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5A82D263FBCD10084097F /* FirstViewController.swift */; };
@@ -53,6 +54,7 @@
 		8B89FC34278874DF008B7875 /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Pin.swift; path = "drpepper-finder/Pin.swift"; sourceTree = SOURCE_ROOT; };
 		8B89FC362789FE11008B7875 /* CustomMKPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomMKPointAnnotation.swift; path = "drpepper-finder/CustomMKPointAnnotation.swift"; sourceTree = SOURCE_ROOT; };
 		8BBFDD5F278AECFA003D4D6C /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
+		8BBFDD61278AEFA2003D4D6C /* TermsOfServiceWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceWebViewController.swift; sourceTree = "<group>"; };
 		8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNewPinViewController.swift; sourceTree = "<group>"; };
 		8BF5A82B263EC5860084097F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8BF5A82D263FBCD10084097F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				8BF5A82D263FBCD10084097F /* FirstViewController.swift */,
 				8BF5A82B263EC5860084097F /* LoginViewController.swift */,
 				8BBFDD5F278AECFA003D4D6C /* TermsOfServiceViewController.swift */,
+				8BBFDD61278AEFA2003D4D6C /* TermsOfServiceWebViewController.swift */,
 			);
 			path = FirstView;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				8B89FC372789FE11008B7875 /* CustomMKPointAnnotation.swift in Sources */,
 				8BBFDD60278AECFA003D4D6C /* TermsOfServiceViewController.swift in Sources */,
 				8B89FC35278874DF008B7875 /* Pin.swift in Sources */,
+				8BBFDD62278AEFA2003D4D6C /* TermsOfServiceWebViewController.swift in Sources */,
 				8B10020B262DAF55006E6CFC /* LogViewController.swift in Sources */,
 				8B1ACC9D2623544B000B8C87 /* AccountViewController.swift in Sources */,
 				8B2BF4742629B55E00E8BFA3 /* Extensions.swift in Sources */,

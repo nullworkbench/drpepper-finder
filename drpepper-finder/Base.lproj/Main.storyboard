@@ -722,10 +722,10 @@
             </objects>
             <point key="canvasLocation" x="2274" y="842"/>
         </scene>
-        <!--View Controller-->
+        <!--Terms Of Service View Controller-->
         <scene sceneID="k4b-Mt-u5n">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="kag-e8-ZGU" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="kag-e8-ZGU" customClass="TermsOfServiceViewController" customModule="drpepper_finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0X0-Um-qFC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -757,6 +757,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="2hU-9T-Orh" kind="presentation" id="UiB-vZ-lHq"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="利用規約へ同意してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4K2-jU-hgO">
                                 <rect key="frame" x="94.5" y="410.5" width="225.5" height="20.5"/>
@@ -782,6 +785,9 @@
                                                 <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="disagreeBtnTapped:" destination="kag-e8-ZGU" eventType="touchUpInside" id="9SD-FK-KtL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uV-Xt-zon">
                                         <rect key="frame" x="167" y="0.0" width="147" height="49"/>
@@ -798,6 +804,9 @@
                                                 <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="agreeBtnTapped:" destination="kag-e8-ZGU" eventType="touchUpInside" id="NhX-Lw-SKb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -829,6 +838,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ed-zi-tFf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-55.072463768115945" y="-523.66071428571422"/>
+        </scene>
+        <!--Terms Of Service Web View Controller-->
+        <scene sceneID="RUe-tg-rcl">
+            <objects>
+                <viewController id="2hU-9T-Orh" customClass="TermsOfServiceWebViewController" customModule="drpepper_finder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="58E-hY-ELb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2k5-s0-Yyz">
+                                <rect key="frame" x="0.0" y="41.5" width="414" height="800.5"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gk-hl-U0A">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="41.5"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6Gk-hl-U0A" secondAttribute="height" multiplier="10:1" id="3pd-gi-4o8"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="この画面を閉じる">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeWebView:" destination="2hU-9T-Orh" eventType="touchUpInside" id="scD-et-fwe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CKT-ix-LkV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Gk-hl-U0A" firstAttribute="leading" secondItem="CKT-ix-LkV" secondAttribute="leading" id="4N6-YH-1Tf"/>
+                            <constraint firstItem="2k5-s0-Yyz" firstAttribute="leading" secondItem="CKT-ix-LkV" secondAttribute="leading" id="9oF-4Q-gEr"/>
+                            <constraint firstItem="6Gk-hl-U0A" firstAttribute="top" secondItem="CKT-ix-LkV" secondAttribute="top" id="ChD-aF-6UK"/>
+                            <constraint firstItem="CKT-ix-LkV" firstAttribute="trailing" secondItem="2k5-s0-Yyz" secondAttribute="trailing" id="XC5-t3-CbY"/>
+                            <constraint firstAttribute="bottom" secondItem="2k5-s0-Yyz" secondAttribute="bottom" id="cMv-sG-HWG"/>
+                            <constraint firstItem="CKT-ix-LkV" firstAttribute="trailing" secondItem="6Gk-hl-U0A" secondAttribute="trailing" id="u6t-Ma-qZj"/>
+                            <constraint firstItem="2k5-s0-Yyz" firstAttribute="top" secondItem="6Gk-hl-U0A" secondAttribute="bottom" id="xF4-IV-Cdc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="2k5-s0-Yyz" id="JC8-cb-58w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bm8-BS-Vir" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="699" y="-524"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="F5d-QO-2tE">
@@ -1026,6 +1086,9 @@ Dr. Pepper Finder!</string>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
