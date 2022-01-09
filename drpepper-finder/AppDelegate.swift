@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         return true
     }
     
+    // Google認証後に正常にURLを受け取るためのお作法
     func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
       -> Bool {
       return GIDSignIn.sharedInstance().handle(url)
@@ -50,8 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
 
         guard let authentication = user.authentication else { return }
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                        accessToken: authentication.accessToken)
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
         
         Auth.auth().signIn(with: credential) { (authResult, error) in
             if let err = error {
@@ -68,6 +68,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Perform any operations when the user disconnects from app here.
         // ...
     }
+    
+    
 
     // MARK: UISceneSession Lifecycle
 
@@ -83,21 +85,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
+    // アプリの起動中（画面に表示中）
     func applicationWillEnterForeground(_ application: UIApplication) {
         // FirebaseAuthの認証状態をリッスン
         authStateHandle = Auth.auth().addStateDidChangeListener() { (auth, user) in
             
             if let authedUser = user {
                 print("Logged in as \(authedUser.uid)")
-                
                 self.currentUser = authedUser
             } else {
                 print("Logged out.")
+                self.currentUser = nil
                 
             }
         }
     }
     
+    // アプリの終了時
     func applicationDidEnterBackground(_ application: UIApplication) {
         // FirebaseAuthの認証状態のリッスンを解除
         Auth.auth().removeStateDidChangeListener(authStateHandle!)
