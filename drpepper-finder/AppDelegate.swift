@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 print(err)
             } else {
                 // 成功
-//                print(authResult?.additionalUserInfo?.profile!)
+                // print(authResult?.additionalUserInfo?.profile!)
             }
         }
     }

@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.delegate = self
         
         changeAllSignInButtonStyle()
     }
@@ -43,6 +44,33 @@ class LoginViewController: UIViewController {
     }
 
 }
+
+// MARK: GIDSignIn
+extension LoginViewController: GIDSignInDelegate {
+    // ログインボタンタップ後起動したブラウザの応答を受け取る
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let err = error {
+            print(err.localizedDescription)
+            return
+        }
+        
+        guard let auth = user.authentication else {
+            return
+        }
+        
+        let credential = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
+        
+        Auth.auth().signIn(with: credential, completion: {(authResult, error) in
+            if let err = error {
+                print(err.localizedDescription)
+            } else {
+                // ログイン成功
+                self.performToMapView()
+            }
+        })
+    }
+}
+
 
 // MARK: SignInButton Style
 extension LoginViewController {
