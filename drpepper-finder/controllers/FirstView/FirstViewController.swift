@@ -17,7 +17,7 @@ class FirstViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         // 初回起動なら利用規約に同意してもらう
-        if true {
+        if isFirstLaunch() {
             performSegue(withIdentifier: "toTermsOfServiceView", sender: nil)
         } else {
             // ログインしていない場合はLoginViewへ
