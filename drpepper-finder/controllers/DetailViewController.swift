@@ -49,6 +49,8 @@ class DetailViewController: UIViewController {
                     self.foundDateLabel.text = "発見日時: \(Ex.dateToString(pin.createdAt))"
                     // note
                     self.noteTextView.text = pin.note
+                    // Log
+                    self.getRecentLog()
                 }
             } else {
                 // ピンの取得に失敗
@@ -59,29 +61,36 @@ class DetailViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
-        
-        // 最新のlogを取得
+    }
+    
+    // 最新のlogを取得
+    func getRecentLog() {
         db.collection("pins").document(docId).collection("logs").order(by: "timestamp", descending: true).limit(to: 1).getDocuments { (querySnapshot, error) in
             if let err = error {
                 print("Error getting documents: \(err)")
             } else {
-                let data = querySnapshot?.documents[0].data()
-                let timestamp = Ex.dateToString((data!["timestamp"] as! Timestamp).dateValue())
-
-                switch data!["type"] as! Int {
-                case 0:
-                    self.latestUpdateLabel.text = "最近の更新: 発見 \(timestamp)"
-                case 1:
-                    self.latestUpdateLabel.text = "最近の更新: まだあった！ \(timestamp)"
-                case 2:
-                    self.latestUpdateLabel.text = "最近の更新: なくなってた… \(timestamp)"
-                default:
-                    break
+                if let doc = querySnapshot?.documents[0] {
+                    let data = doc.data()
+                    let timestamp = Ex.dateToString((data["timestamp"] as! Timestamp).dateValue())
+                    
+                    switch data["type"] as! Int {
+                    case 0:
+                        self.latestUpdateLabel.text = "最近の更新: 発見 \(timestamp)"
+                    case 1:
+                        self.latestUpdateLabel.text = "最近の更新: まだあった！ \(timestamp)"
+                    case 2:
+                        self.latestUpdateLabel.text = "最近の更新: なくなってた… \(timestamp)"
+                    default:
+                        break
+                    }
+                } else {
+                    print("Log does not exists.")
                 }
             }
         }
     }
     
+    // MARK: 画面遷移準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "toLogView":
