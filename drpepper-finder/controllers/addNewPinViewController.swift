@@ -27,7 +27,8 @@ class addNewPinViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // placeholder設定
+        // delegate設定
+        priceTextField.delegate = self
         noteTextView.delegate = self
         
         // Doneボタン追加
@@ -136,6 +137,19 @@ extension addNewPinViewController {
     }
 }
 
+// MARK: textField関連
+extension addNewPinViewController: UITextFieldDelegate {
+    // 文字が入力されたとき
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // priceTextFieldで数字以外が入力された場合はリジェクトする
+        if textField == priceTextField {
+            let allowedCharacters = CharacterSet(charactersIn:"0123456789")
+            let characterSet = CharacterSet(charactersIn: string)
+            return allowedCharacters.isSuperset(of: characterSet)
+        }
+        return true
+    }
+}
 
 // MARK: textView関連
 extension addNewPinViewController: UITextViewDelegate {
