@@ -166,6 +166,7 @@
                     <connections>
                         <segue destination="1cY-bT-gfW" kind="presentation" identifier="toLoginView" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="WZr-l7-Piu"/>
                         <segue destination="JHx-S0-KPY" kind="presentation" identifier="toMapView" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="ThP-Ug-dVj"/>
+                        <segue destination="kag-e8-ZGU" kind="show" identifier="toTermsOfServiceView" id="urJ-sv-Kzm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="04e-Ws-5DH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -721,6 +722,114 @@
             </objects>
             <point key="canvasLocation" x="2274" y="842"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="k4b-Mt-u5n">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="kag-e8-ZGU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0X0-Um-qFC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ow-Hu-ZDV">
+                                <rect key="frame" x="50" y="167.5" width="314" height="57.5"/>
+                                <string key="text">Dr. Pepper Finderを
+ご利用いただく前に</string>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ダウンロードありがとうございます。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eF-CH-daZ">
+                                <rect key="frame" x="50" y="144" width="191.5" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iit-yz-H5S">
+                                <rect key="frame" x="124" y="481" width="166" height="55"/>
+                                <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iit-yz-H5S" secondAttribute="height" multiplier="3:1" id="qnI-L1-FDe"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="利用規約を読む"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="利用規約へ同意してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4K2-jU-hgO">
+                                <rect key="frame" x="94.5" y="410.5" width="225.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wq5-Qx-weI">
+                                <rect key="frame" x="50" y="716.5" width="314" height="49"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JZ-0y-hJL">
+                                        <rect key="frame" x="0.0" y="0.0" width="147" height="49"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="1JZ-0y-hJL" secondAttribute="height" multiplier="3:1" id="oSR-20-ouV"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="同意しない">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uV-Xt-zon">
+                                        <rect key="frame" x="167" y="0.0" width="147" height="49"/>
+                                        <color key="backgroundColor" red="0.22495209672611829" green="0.871510525627615" blue="0.3865917039514925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="1uV-Xt-zon" secondAttribute="height" multiplier="3:1" id="GWh-xs-Ply"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="同意する">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1uV-Xt-zon" firstAttribute="width" secondItem="1uV-Xt-zon" secondAttribute="height" multiplier="3:1" id="QUf-zB-xve"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Hf-mo-WFK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4ow-Hu-ZDV" firstAttribute="leading" secondItem="4Hf-mo-WFK" secondAttribute="leading" constant="50" id="6Mz-W1-H4G"/>
+                            <constraint firstItem="wq5-Qx-weI" firstAttribute="top" secondItem="iit-yz-H5S" secondAttribute="bottom" multiplier="1.15" constant="100" id="D5E-5l-qYL"/>
+                            <constraint firstItem="4ow-Hu-ZDV" firstAttribute="top" secondItem="3eF-CH-daZ" secondAttribute="bottom" constant="10" id="Gig-FY-LD5"/>
+                            <constraint firstItem="wq5-Qx-weI" firstAttribute="centerX" secondItem="0X0-Um-qFC" secondAttribute="centerX" id="Lud-bG-RAG"/>
+                            <constraint firstItem="4Hf-mo-WFK" firstAttribute="trailing" secondItem="wq5-Qx-weI" secondAttribute="trailing" constant="50" id="N5Z-DK-xvu"/>
+                            <constraint firstItem="iit-yz-H5S" firstAttribute="centerX" secondItem="0X0-Um-qFC" secondAttribute="centerX" id="OfJ-9n-IvC"/>
+                            <constraint firstItem="iit-yz-H5S" firstAttribute="width" secondItem="0X0-Um-qFC" secondAttribute="width" multiplier="0.4" id="SQx-uc-dSu"/>
+                            <constraint firstItem="4Hf-mo-WFK" firstAttribute="bottom" secondItem="wq5-Qx-weI" secondAttribute="bottom" multiplier="1.1" constant="20" id="Wcq-SP-39i"/>
+                            <constraint firstItem="iit-yz-H5S" firstAttribute="top" secondItem="4K2-jU-hgO" secondAttribute="bottom" constant="50" id="eI8-xY-27f"/>
+                            <constraint firstItem="3eF-CH-daZ" firstAttribute="top" secondItem="4Hf-mo-WFK" secondAttribute="top" constant="100" id="fMX-XW-i8R"/>
+                            <constraint firstItem="4K2-jU-hgO" firstAttribute="centerX" secondItem="0X0-Um-qFC" secondAttribute="centerX" id="kwQ-iY-loN"/>
+                            <constraint firstItem="4Hf-mo-WFK" firstAttribute="trailing" secondItem="4ow-Hu-ZDV" secondAttribute="trailing" constant="50" id="tp2-Xo-VdJ"/>
+                            <constraint firstItem="wq5-Qx-weI" firstAttribute="leading" secondItem="4Hf-mo-WFK" secondAttribute="leading" constant="50" id="xBz-5O-QDZ"/>
+                            <constraint firstItem="3eF-CH-daZ" firstAttribute="leading" secondItem="4Hf-mo-WFK" secondAttribute="leading" constant="50" id="z2S-9v-ALQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QCV-Ls-S6x"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ed-zi-tFf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55.072463768115945" y="-523.66071428571422"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="F5d-QO-2tE">
             <objects>
@@ -923,6 +1032,9 @@ Dr. Pepper Finder!</string>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
