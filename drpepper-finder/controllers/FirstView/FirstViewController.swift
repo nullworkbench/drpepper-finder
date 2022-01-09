@@ -39,8 +39,6 @@ class FirstViewController: UIViewController {
             return false
         } else {
             // 存在しない場合
-            // 初回起動なので値をセット
-            UserDefaults.standard.set(false, forKey: "isFirstLaunch")
             return true
         }
     }

@@ -23,6 +23,9 @@ class TermsOfServiceViewController: UIViewController {
     }
     // 同意する
     @IBAction func agreeBtnTapped(_ sender: Any) {
+        // 次回以降は初回起動ではない値をセット
+        UserDefaults.standard.set(false, forKey: "isFirstLaunch")
+        // 画面を閉じる
         self.dismiss(animated: true, completion: nil)
     }
     
