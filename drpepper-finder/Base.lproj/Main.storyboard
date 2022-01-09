@@ -13,7 +13,7 @@
         <!--Map-->
         <scene sceneID="sVu-vr-AOx">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="4Zb-Ha-lUh" customClass="MapViewController" customModule="drpepper_finder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" modalPresentationStyle="fullScreen" id="4Zb-Ha-lUh" customClass="MapViewController" customModule="drpepper_finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cdV-Go-tOd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,7 +104,7 @@
                     <connections>
                         <outlet property="mapView" destination="bcc-xv-9QQ" id="Z5S-Rb-rMf"/>
                         <segue destination="uox-hE-tek" kind="presentation" identifier="toDetailView" id="10x-BY-9cx"/>
-                        <segue destination="Njx-4b-C6S" kind="presentation" identifier="toAddNewPinView" id="GiP-N4-OVo"/>
+                        <segue destination="Njx-4b-C6S" kind="presentation" identifier="toAddNewPinView" id="BS3-9t-TZO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7q-Pw-cVA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -301,6 +301,7 @@
                             <constraint firstItem="bcX-cu-XCu" firstAttribute="leading" secondItem="v1X-BC-Rba" secondAttribute="leading" constant="20" id="zU3-Pm-HQO"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="sJE-u3-QNc"/>
                     <connections>
                         <outlet property="addressLabel" destination="C4P-Ax-UXv" id="Drv-21-eca"/>
                         <outlet property="mapView" destination="Mcw-5E-5rB" id="dbI-5W-0cC"/>

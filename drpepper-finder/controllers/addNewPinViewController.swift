@@ -68,7 +68,12 @@ class addNewPinViewController: UIViewController {
         } else {
             // FireStoreへ登録
             DB.postNewPin(coordinate: coordinate, price: Int(priceTextField.text!)!, note: noteTextView.text ?? "")
+            // 前の画面に戻る
             self.dismiss(animated: true, completion: nil)
+            // Annotationを更新
+            let navVC = self.presentingViewController as! UINavigationController
+            let parentVC = navVC.viewControllers.first as! MapViewController
+            parentVC.refreshAnnotations()
         }
     }
     

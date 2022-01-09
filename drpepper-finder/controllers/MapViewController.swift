@@ -18,7 +18,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation?
     
-    @IBOutlet var mapView: MKMapView!
+    @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -164,8 +164,8 @@ extension MapViewController {
     // MARK: カスタムピンの更新
     func refreshAnnotations() {
         // 現在表示中のAnnotationを一度全削除
-        let currentAnnotations = mapView.annotations
-        mapView.removeAnnotations(currentAnnotations)
+        let currentAnnotations = self.mapView.annotations
+        self.mapView.removeAnnotations(currentAnnotations)
         // Firestoreから取得し直して再表示
         self.showAllCustomPins()
     }
@@ -187,4 +187,12 @@ extension MapViewController {
         }
     }
 
+}
+
+// presentしたViewが閉じたことを検知
+extension MapViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        // ChildViewControllerのDismissを検知
+        print("Closed.")
+    }
 }
