@@ -10,7 +10,6 @@
 		8B10020B262DAF55006E6CFC /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B10020A262DAF55006E6CFC /* LogViewController.swift */; };
 		8B1ACC5B26234B13000B8C87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACC5A26234B13000B8C87 /* AppDelegate.swift */; };
 		8B1ACC5D26234B13000B8C87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACC5C26234B13000B8C87 /* SceneDelegate.swift */; };
-		8B1ACC5F26234B13000B8C87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1ACC5E26234B13000B8C87 /* ViewController.swift */; };
 		8B1ACC6226234B13000B8C87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1ACC6026234B13000B8C87 /* Main.storyboard */; };
 		8B1ACC6426234B14000B8C87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1ACC6326234B14000B8C87 /* Assets.xcassets */; };
 		8B1ACC6726234B14000B8C87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1ACC6526234B14000B8C87 /* LaunchScreen.storyboard */; };
@@ -24,6 +23,7 @@
 		8B89FC33278873B7008B7875 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89FC32278873B7008B7875 /* Database.swift */; };
 		8B89FC35278874DF008B7875 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89FC34278874DF008B7875 /* Pin.swift */; };
 		8B89FC372789FE11008B7875 /* CustomMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89FC362789FE11008B7875 /* CustomMKPointAnnotation.swift */; };
+		8BBFDD60278AECFA003D4D6C /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFDD5F278AECFA003D4D6C /* TermsOfServiceViewController.swift */; };
 		8BDC519D262B485B003A03D4 /* addNewPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */; };
 		8BF5A82C263EC5860084097F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5A82B263EC5860084097F /* LoginViewController.swift */; };
 		8BF5A82E263FBCD10084097F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5A82D263FBCD10084097F /* FirstViewController.swift */; };
@@ -38,7 +38,6 @@
 		8B1ACC5726234B13000B8C87 /* drpepper-finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "drpepper-finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1ACC5A26234B13000B8C87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B1ACC5C26234B13000B8C87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B1ACC5E26234B13000B8C87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B1ACC6126234B13000B8C87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B1ACC6326234B14000B8C87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B1ACC6626234B14000B8C87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		8B89FC32278873B7008B7875 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		8B89FC34278874DF008B7875 /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Pin.swift; path = "drpepper-finder/Pin.swift"; sourceTree = SOURCE_ROOT; };
 		8B89FC362789FE11008B7875 /* CustomMKPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomMKPointAnnotation.swift; path = "drpepper-finder/CustomMKPointAnnotation.swift"; sourceTree = SOURCE_ROOT; };
+		8BBFDD5F278AECFA003D4D6C /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNewPinViewController.swift; sourceTree = "<group>"; };
 		8BF5A82B263EC5860084097F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8BF5A82D263FBCD10084097F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -126,18 +126,42 @@
 		8B1ACCDE2624618C000B8C87 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8B1ACC5E26234B13000B8C87 /* ViewController.swift */,
-				8B1ACC9C2623544B000B8C87 /* AccountViewController.swift */,
+				8BBFDD5E278AECAC003D4D6C /* FirstView */,
+				8BBFDD5D278AEC91003D4D6C /* SettingsView */,
+				8BBFDD5C278AEC79003D4D6C /* DetailView */,
 				8B1ACCDF262461C3000B8C87 /* MapViewController.swift */,
-				8B1ACCE6262474B5000B8C87 /* SettingsViewController.swift */,
-				8B2BF4572629950E00E8BFA3 /* DetailViewController.swift */,
 				8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */,
-				8B10020A262DAF55006E6CFC /* LogViewController.swift */,
-				8BF5A82B263EC5860084097F /* LoginViewController.swift */,
-				8BF5A82D263FBCD10084097F /* FirstViewController.swift */,
 				8B29F7262662556700462663 /* SearchViewController.swift */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		8BBFDD5C278AEC79003D4D6C /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				8B2BF4572629950E00E8BFA3 /* DetailViewController.swift */,
+				8B10020A262DAF55006E6CFC /* LogViewController.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		8BBFDD5D278AEC91003D4D6C /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				8B1ACC9C2623544B000B8C87 /* AccountViewController.swift */,
+				8B1ACCE6262474B5000B8C87 /* SettingsViewController.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		8BBFDD5E278AECAC003D4D6C /* FirstView */ = {
+			isa = PBXGroup;
+			children = (
+				8BF5A82D263FBCD10084097F /* FirstViewController.swift */,
+				8BF5A82B263EC5860084097F /* LoginViewController.swift */,
+				8BBFDD5F278AECFA003D4D6C /* TermsOfServiceViewController.swift */,
+			);
+			path = FirstView;
 			sourceTree = "<group>";
 		};
 		CBE0454E4297DD42C2739BEA /* Pods */ = {
@@ -283,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B89FC372789FE11008B7875 /* CustomMKPointAnnotation.swift in Sources */,
+				8BBFDD60278AECFA003D4D6C /* TermsOfServiceViewController.swift in Sources */,
 				8B89FC35278874DF008B7875 /* Pin.swift in Sources */,
 				8B10020B262DAF55006E6CFC /* LogViewController.swift in Sources */,
 				8B1ACC9D2623544B000B8C87 /* AccountViewController.swift in Sources */,
@@ -290,7 +315,6 @@
 				8BF5A82E263FBCD10084097F /* FirstViewController.swift in Sources */,
 				8B1ACCE0262461C3000B8C87 /* MapViewController.swift in Sources */,
 				8B1ACCE7262474B5000B8C87 /* SettingsViewController.swift in Sources */,
-				8B1ACC5F26234B13000B8C87 /* ViewController.swift in Sources */,
 				8B1ACC5B26234B13000B8C87 /* AppDelegate.swift in Sources */,
 				8B29F7272662556700462663 /* SearchViewController.swift in Sources */,
 				8B1ACC5D26234B13000B8C87 /* SceneDelegate.swift in Sources */,
