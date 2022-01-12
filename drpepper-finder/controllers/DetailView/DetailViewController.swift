@@ -277,7 +277,15 @@ extension DetailViewController {
         // alertを定義
         let alert = UIAlertController(title: "投稿の削除を要請しますか？", message: "間違えて投稿した場合、不適切な内容が含まれる場合などは投稿の削除を要請することができます。", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "削除を要請", style: .destructive, handler: {_ in
+            // 削除フォームを送信
             DB.requestPinDelation(docID: self.docId)
+            // 感謝アラート
+            let thxAlert = UIAlertController(title: "申請ありがとうございました！", message: "削除申請を受け付けました。", preferredStyle: .alert)
+            thxAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+                // 詳細モーダルを閉じる
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(thxAlert, animated: true, completion: nil)
         }))
         alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
         // alert発火
