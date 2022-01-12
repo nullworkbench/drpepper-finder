@@ -69,8 +69,10 @@ class DB {
                 let createdAt = (data["createdAt"] as! Timestamp).dateValue()
                 // note
                 let note = (data["note"] as? String) ?? ""
+                // uid
+                let userId = data["userId"] as! String
                 // Pinオブジェクトの作成
-                let obj = Pin(docID: doc.documentID, geoPoint: geopoint, price: price, createdAt: createdAt, note: note)
+                let obj = Pin(docID: doc.documentID, geoPoint: geopoint, price: price, createdAt: createdAt, note: note, userId: userId)
                 
                 pin = obj
                 semaphore.signal()
