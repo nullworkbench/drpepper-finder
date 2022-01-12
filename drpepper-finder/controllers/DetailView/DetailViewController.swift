@@ -122,6 +122,9 @@ class DetailViewController: UIViewController {
     @IBAction func editBtnTapped(_ sender: Any) {
         editPin()
     }
+    @IBAction func reportBtnTapped(_ sender: Any) {
+        deletePin()
+    }
     @IBAction func deleteBtnTapped(_ sender: Any) {
         deletePin()
     }
