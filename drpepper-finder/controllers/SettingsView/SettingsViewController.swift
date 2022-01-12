@@ -10,6 +10,9 @@ import UIKit
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView1: UITableView!
+    
+    // 項目
+    let items = ["アカウント", "利用規約"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,19 +23,27 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     // セルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return items.count
     }
     
     // セルの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = "Account"
+        cell?.textLabel?.text = items[indexPath.row]
         return cell!
     }
     
     // セルを選択した時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toAccountView", sender: nil)
+        switch indexPath.row {
+        case 0:
+            performSegue(withIdentifier: "toAccountView", sender: nil)
+        case 1:
+            performSegue(withIdentifier: "toTermsOfServiceWebView", sender: nil)
+        default:
+            break
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }

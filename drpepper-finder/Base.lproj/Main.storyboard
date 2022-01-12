@@ -147,6 +147,7 @@
                     <connections>
                         <outlet property="tableView1" destination="Gfd-62-vFr" id="hxf-LM-abv"/>
                         <segue destination="MD0-wk-1hr" kind="show" identifier="toAccountView" id="pjU-Bt-jHP"/>
+                        <segue destination="2hU-9T-Orh" kind="presentation" identifier="toTermsOfServiceWebView" id="kOT-i7-2rK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2YY-fK-KHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -907,6 +908,7 @@
                             <constraint firstItem="2k5-s0-Yyz" firstAttribute="top" secondItem="6Gk-hl-U0A" secondAttribute="bottom" id="xF4-IV-Cdc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="UTl-7h-ObN"/>
                     <connections>
                         <outlet property="webView" destination="2k5-s0-Yyz" id="JC8-cb-58w"/>
                     </connections>
@@ -1096,6 +1098,9 @@ Dr. Pepper Finder!</string>
             <point key="canvasLocation" x="-55" y="2307"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kOT-i7-2rK"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Google" width="48" height="48"/>
         <image name="drpepper" width="1024" height="1024"/>
