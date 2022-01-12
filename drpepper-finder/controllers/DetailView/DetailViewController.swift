@@ -123,7 +123,7 @@ class DetailViewController: UIViewController {
         editPin()
     }
     @IBAction func reportBtnTapped(_ sender: Any) {
-        deletePin()
+        reportPin()
     }
     @IBAction func deleteBtnTapped(_ sender: Any) {
         deletePin()
@@ -273,6 +273,24 @@ extension DetailViewController {
     func editPin() {
         let alert = UIAlertController(title: "まだ開発中です、！", message: "投稿の編集機能は開発中です。今しばらくお待ちくださいませ！", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    // 通報メソッド
+    func reportPin() {
+        let alert = UIAlertController(title: "投稿を通報しますか？", message: "不適切な内容、間違った情報などが含まれる場合は投稿を通報し、削除要請をすることができます。", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "通報", style: .destructive, handler: {_ in
+            // 削除フォームを送信
+            DB.requestPinDelation(docID: self.docId)
+            // 感謝アラート
+            let thxAlert = UIAlertController(title: "通報ありがとうございました！", message: "通報を受け付けました。", preferredStyle: .alert)
+            thxAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+                // 詳細モーダルを閉じる
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(thxAlert, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
+        // alert発火
         present(alert, animated: true, completion: nil)
     }
     // 削除メソッド
