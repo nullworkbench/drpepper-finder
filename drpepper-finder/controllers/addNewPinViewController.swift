@@ -66,6 +66,11 @@ class addNewPinViewController: UIViewController {
             let alert = UIAlertController(title: "未入力項目があります", message: "価格を入力してください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
+        } else if Ex.checkRestrictionWord(noteTextView.text) {
+            // 不適切な単語が含まれる場合
+            let alert = UIAlertController(title: "不適切な表現が含まれています", message: "他のユーザーに不快感を与える表現、投稿に関係のない表現はご遠慮ください。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
         } else {
             // FireStoreへ登録
             DB.postNewPin(coordinate: coordinate, price: Int(priceTextField.text!)!, note: noteTextView.text ?? "")
