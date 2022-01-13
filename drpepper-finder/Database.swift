@@ -123,24 +123,29 @@ class DB {
         }
     }
     
-    // MARK: ブロックリストが存在するか
-    class func createBlockListIfNotExists() -> Bool {
+    // MARK: ブロックリストを取得
+    class func getBlockList() -> [String] {
         let key = "blockListArray"
         // ブロックリストの存在確認
         if UserDefaults.standard.object(forKey: key) != nil {
             // 存在している場合
-            return true
+            return UserDefaults.standard.array(forKey: key) as! [String]
         } else {
             // 存在していない場合
             // ブロックリストを作成
             let blockList: [String] = []
             UserDefaults.standard.set(blockList, forKey: key)
-            return false
+            return []
         }
     }
     // MARK: ユーザーをブロック
     class func blockUser(userId: String) {
-        
+        // 現在のブロックリストを取得
+        var blockList = self.getBlockList()
+        // ユーザーを追加
+        blockList.append(userId)
+        // ブロックリストを更新
+        UserDefaults.standard.set(blockList, forKey: "blockListArray")
     }
     
 }
