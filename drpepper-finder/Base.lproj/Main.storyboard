@@ -555,6 +555,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="uiduiduiduid"/>
+                                <connections>
+                                    <action selector="userIdBtnTapped:" destination="uox-hE-tek" eventType="touchUpInside" id="1rW-Ea-amK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yAC-Wh-qdA"/>
@@ -619,6 +622,7 @@
                         <outlet property="noteTextView" destination="Odd-RB-OVm" id="dPi-49-qwB"/>
                         <outlet property="priceLabel" destination="BfZ-h3-ez1" id="npp-nU-5Y4"/>
                         <outlet property="stillThereButton" destination="XuX-Qj-RbK" id="BjU-nr-OyJ"/>
+                        <outlet property="userIdButton" destination="6Mf-p6-0ID" id="KJy-qr-fFy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scn-pj-BXk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

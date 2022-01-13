@@ -24,6 +24,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var latestUpdateLabel: UILabel!
     @IBOutlet weak var foundDateLabel: UILabel!
     @IBOutlet weak var noteTextView: UITextView!
+    @IBOutlet weak var userIdButton: UIButton!
     
     @IBOutlet weak var stillThereButton: UIButton!
     @IBOutlet weak var notStillThereButton: UIButton!
@@ -49,6 +50,8 @@ class DetailViewController: UIViewController {
                     self.foundDateLabel.text = "発見日時: \(Ex.dateToString(pin.createdAt))"
                     // note
                     self.noteTextView.text = pin.note
+                    // usreId（先頭の８文字を切り出して表示）
+                    self.userIdButton.setTitle("\(pin.userId.prefix(8))", for: .normal)
                     // Log
                     self.getRecentLog()
                 }
@@ -119,14 +122,16 @@ class DetailViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    @IBAction func editBtnTapped(_ sender: Any) {
-        editPin()
-    }
     @IBAction func reportBtnTapped(_ sender: Any) {
         reportPin()
     }
+    @IBAction func editBtnTapped(_ sender: Any) {
+        editPin()
+    }
     @IBAction func deleteBtnTapped(_ sender: Any) {
         deletePin()
+    }
+    @IBAction func userIdBtnTapped(_ sender: Any) {
     }
     
 }
