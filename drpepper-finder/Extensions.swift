@@ -13,7 +13,7 @@ import FirebaseFirestoreSwift
 // グローバル関数
 class Ex {
     
-    // Date型をString型に変換する
+    // MARK: Date型をString型に変換する
     class func dateToString(_ date: Date) -> String {
         let f = DateFormatter()
         f.timeStyle = .medium
@@ -23,7 +23,7 @@ class Ex {
         return f.string(from: date)
     }
     
-    // 禁止ワード確認
+    // MARK: 禁止ワード確認
     class func checkRestrictionWord(_ target: String) -> Bool {
         // 禁止ワード
         let restrictionWords = ["fuck", "nigger", "cunt", "死", "しね", "しぬ", "しにたい", "殺", "ころす", "ばか", "馬鹿", "バカ", "あほ", "アホ"]

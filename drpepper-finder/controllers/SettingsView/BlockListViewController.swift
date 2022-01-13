@@ -36,6 +36,14 @@ extension BlockListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     // MARK: セルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if blockList.count == 0 {
+            let alert = UIAlertController(title: "ブロック中のユーザーはいません。", message: "ブロックしたユーザーはここに表示されます。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+                self.navigationController?.popViewController(animated: true)
+            }))
+            present(alert, animated: true, completion: nil)
+        }
+        
         return blockList.count
     }
     
