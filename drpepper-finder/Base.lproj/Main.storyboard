@@ -135,7 +135,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J3W-uQ-LHn"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="J3W-uQ-LHn" firstAttribute="trailing" secondItem="Gfd-62-vFr" secondAttribute="trailing" id="6LU-43-hxX"/>
                             <constraint firstItem="Gfd-62-vFr" firstAttribute="leading" secondItem="J3W-uQ-LHn" secondAttribute="leading" id="LmI-ug-hJh"/>
@@ -1200,9 +1200,6 @@ Dr. Pepper Finder!</string>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
