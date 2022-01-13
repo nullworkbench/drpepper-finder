@@ -9,6 +9,7 @@ import UIKit
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import FirebaseAuth
 import CoreLocation
 import MapKit
 
@@ -73,13 +74,7 @@ class addNewPinViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         } else {
             // FireStoreへ登録
-            DB.postNewPin(coordinate: coordinate, price: Int(priceTextField.text!)!, note: noteTextView.text ?? "")
-            // 前の画面に戻る
-            self.dismiss(animated: true, completion: nil)
-            // Annotationを更新
-            let navVC = self.presentingViewController as! UINavigationController
-            let parentVC = navVC.viewControllers.first as! MapViewController
-            parentVC.refreshAnnotations()
+            postNewPin(coordinate: coordinate, price: Int(priceTextField.text!)!, note: noteTextView.text ?? "")
         }
     }
     
@@ -89,6 +84,49 @@ class addNewPinViewController: UIViewController {
 
 }
 
+// MARK: 新規投稿
+extension addNewPinViewController {
+    func postNewPin(coordinate: CLLocationCoordinate2D, price: Int, note: String) {
+        // ログイン確認
+        guard let user = Auth.auth().currentUser else {
+            // エラー
+            let alert = UIAlertController(title: "ログインしていません", message: "投稿するには設定画面からログインしてください", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        // Firestoreに追加
+        let db = Firestore.firestore()
+        var ref: DocumentReference? = nil
+        ref = db.collection("pins").addDocument(data: [
+            "coordinate": GeoPoint(latitude: coordinate.latitude, longitude: coordinate.longitude),
+            "price": price,
+            "note": note,
+            "createdAt": FieldValue.serverTimestamp(),
+            "userId": user.uid
+        ]) { error in
+            if let err = error {
+                // エラー
+                print("Error adding document: \(err)")
+                let alert = UIAlertController(title: "エラーが発生しました", message: "ネットワーク接続や、アプリの更新が来ていないかを確認してください。", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                // 投稿成功
+                print("Document added with ID: \(ref!.documentID)")
+                // ログを保存
+                DB.loggingToFirestore(docId: ref!.documentID, type: 0)
+                // 前の画面に戻る
+                self.dismiss(animated: true, completion: nil)
+                // Annotationを更新
+                let navVC = self.presentingViewController as! UINavigationController
+                let parentVC = navVC.viewControllers.first as! MapViewController
+                parentVC.refreshAnnotations()
+            }
+        }
+    }
+}
 // MARK: 住所を表示（非同期）
 extension addNewPinViewController {
     // 住所を表示

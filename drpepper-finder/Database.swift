@@ -87,26 +87,6 @@ class DB {
         return pin
     }
     
-    // MARK: 新規投稿
-    class func postNewPin(coordinate: CLLocationCoordinate2D, price: Int, note: String) {
-        let db = Firestore.firestore()
-        
-        var ref: DocumentReference? = nil
-        ref = db.collection("pins").addDocument(data: [
-            "coordinate": GeoPoint(latitude: coordinate.latitude, longitude: coordinate.longitude),
-            "price": price,
-            "createdAt": FieldValue.serverTimestamp(),
-            "note": note
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-                // ログを保存
-                self.loggingToFirestore(docId: ref!.documentID, type: 0)
-            }
-        }
-    }
     
     // MARK: Firestoreからピンの削除を要求する
     class func requestPinDelation(docID: String) {
