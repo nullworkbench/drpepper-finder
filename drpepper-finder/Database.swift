@@ -123,4 +123,24 @@ class DB {
         }
     }
     
+    // MARK: ブロックリストが存在するか
+    class func createBlockListIfNotExists() -> Bool {
+        let key = "blockListArray"
+        // ブロックリストの存在確認
+        if UserDefaults.standard.object(forKey: key) != nil {
+            // 存在している場合
+            return true
+        } else {
+            // 存在していない場合
+            // ブロックリストを作成
+            let blockList: [String] = []
+            UserDefaults.standard.set(blockList, forKey: key)
+            return false
+        }
+    }
+    // MARK: ユーザーをブロック
+    class func blockUser(userId: String) {
+        
+    }
+    
 }
