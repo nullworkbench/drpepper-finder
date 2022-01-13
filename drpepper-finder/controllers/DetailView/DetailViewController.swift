@@ -137,7 +137,13 @@ class DetailViewController: UIViewController {
     @IBAction func userIdBtnTapped(_ sender: Any) {
         let actionSheet = UIAlertController(title: "ユーザー: \(userIdButton.currentTitle ?? "")", message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "ブロック", style: .destructive, handler: {_ in
-            // ブロック処理
+            // ブロック確認アラート
+            let alert = UIAlertController(title: "このユーザーをブロックしますか？", message: "ブロックするとこのユーザーの投稿は表示されなくなります。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ブロック", style: .destructive, handler: {_ in
+                // ブロック処理
+            }))
+            alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }))
         actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
         present(actionSheet, animated: true, completion: nil)
