@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var tableView1: UITableView!
     
     // 項目
-    let items = ["アカウント", "利用規約"]
+    let items = ["アカウント", "ブロックしたユーザー", "利用規約"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +39,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         case 0:
             performSegue(withIdentifier: "toAccountView", sender: nil)
         case 1:
+            performSegue(withIdentifier: "toBlockListView", sender: nil)
+        case 2:
             performSegue(withIdentifier: "toTermsOfServiceWebView", sender: nil)
         default:
             break

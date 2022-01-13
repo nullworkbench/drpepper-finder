@@ -148,11 +148,12 @@
                         <outlet property="tableView1" destination="Gfd-62-vFr" id="hxf-LM-abv"/>
                         <segue destination="MD0-wk-1hr" kind="show" identifier="toAccountView" id="pjU-Bt-jHP"/>
                         <segue destination="2hU-9T-Orh" kind="presentation" identifier="toTermsOfServiceWebView" id="kOT-i7-2rK"/>
+                        <segue destination="tj4-4g-b51" kind="show" identifier="toBlockListView" id="li2-WA-6zx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2YY-fK-KHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1499" y="842"/>
+            <point key="canvasLocation" x="1499" y="165"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="87g-GC-fnP">
@@ -767,7 +768,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t44-KX-RaL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2274" y="842"/>
+            <point key="canvasLocation" x="2572" y="165"/>
+        </scene>
+        <!--ブロックしたユーザー-->
+        <scene sceneID="fVP-FE-IUK">
+            <objects>
+                <viewController id="tj4-4g-b51" customClass="BlockListViewController" customModule="drpepper_finder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3CX-pM-xcb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7nL-Hb-KBH">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="hU6-uT-lPB">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hU6-uT-lPB" id="99S-QF-eYm">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="M52-O1-qrH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="M52-O1-qrH" firstAttribute="trailing" secondItem="7nL-Hb-KBH" secondAttribute="trailing" id="d9r-RF-Lm3"/>
+                            <constraint firstAttribute="bottom" secondItem="7nL-Hb-KBH" secondAttribute="bottom" id="gpq-Bp-qhw"/>
+                            <constraint firstItem="7nL-Hb-KBH" firstAttribute="top" secondItem="M52-O1-qrH" secondAttribute="top" id="kya-Jv-zr9"/>
+                            <constraint firstItem="7nL-Hb-KBH" firstAttribute="leading" secondItem="M52-O1-qrH" secondAttribute="leading" id="t34-gM-IFS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ブロックしたユーザー" id="jv3-HG-rnV"/>
+                    <connections>
+                        <outlet property="tableView" destination="7nL-Hb-KBH" id="zg6-uV-DnT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vbb-h7-RUR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2572" y="842"/>
         </scene>
         <!--Terms Of Service View Controller-->
         <scene sceneID="k4b-Mt-u5n">
@@ -884,7 +926,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ed-zi-tFf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55.072463768115945" y="-523.66071428571422"/>
+            <point key="canvasLocation" x="-55" y="-524"/>
         </scene>
         <!--Terms Of Service Web View Controller-->
         <scene sceneID="RUe-tg-rcl">
@@ -936,7 +978,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bm8-BS-Vir" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="699" y="-524"/>
+            <point key="canvasLocation" x="2572" y="-524"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="F5d-QO-2tE">
@@ -1079,7 +1121,7 @@ Dr. Pepper Finder!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDg-Dp-JU3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1499" y="181"/>
+            <point key="canvasLocation" x="1499" y="842"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vkc-8k-mOD">

@@ -25,6 +25,7 @@
 		8B89FC372789FE11008B7875 /* CustomMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89FC362789FE11008B7875 /* CustomMKPointAnnotation.swift */; };
 		8BBFDD60278AECFA003D4D6C /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFDD5F278AECFA003D4D6C /* TermsOfServiceViewController.swift */; };
 		8BBFDD62278AEFA2003D4D6C /* TermsOfServiceWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFDD61278AEFA2003D4D6C /* TermsOfServiceWebViewController.swift */; };
+		8BBFDD64279018A7003D4D6C /* BlockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFDD63279018A7003D4D6C /* BlockListViewController.swift */; };
 		8BDC519D262B485B003A03D4 /* addNewPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */; };
 		8BF5A82C263EC5860084097F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5A82B263EC5860084097F /* LoginViewController.swift */; };
 		8BF5A82E263FBCD10084097F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5A82D263FBCD10084097F /* FirstViewController.swift */; };
@@ -55,6 +56,7 @@
 		8B89FC362789FE11008B7875 /* CustomMKPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomMKPointAnnotation.swift; path = "drpepper-finder/CustomMKPointAnnotation.swift"; sourceTree = SOURCE_ROOT; };
 		8BBFDD5F278AECFA003D4D6C /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		8BBFDD61278AEFA2003D4D6C /* TermsOfServiceWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceWebViewController.swift; sourceTree = "<group>"; };
+		8BBFDD63279018A7003D4D6C /* BlockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewController.swift; sourceTree = "<group>"; };
 		8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNewPinViewController.swift; sourceTree = "<group>"; };
 		8BF5A82B263EC5860084097F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8BF5A82D263FBCD10084097F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -150,8 +152,9 @@
 		8BBFDD5D278AEC91003D4D6C /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
-				8B1ACC9C2623544B000B8C87 /* AccountViewController.swift */,
 				8B1ACCE6262474B5000B8C87 /* SettingsViewController.swift */,
+				8B1ACC9C2623544B000B8C87 /* AccountViewController.swift */,
+				8BBFDD63279018A7003D4D6C /* BlockListViewController.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				8B2BF4582629950E00E8BFA3 /* DetailViewController.swift in Sources */,
 				8BDC519D262B485B003A03D4 /* addNewPinViewController.swift in Sources */,
 				8B89FC33278873B7008B7875 /* Database.swift in Sources */,
+				8BBFDD64279018A7003D4D6C /* BlockListViewController.swift in Sources */,
 				8BF5A82C263EC5860084097F /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
