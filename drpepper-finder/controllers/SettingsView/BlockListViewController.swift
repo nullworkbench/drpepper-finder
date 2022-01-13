@@ -11,7 +11,7 @@ class BlockListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let blockList = DB.getBlockList()
+    var blockList = DB.getBlockList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,5 +34,28 @@ extension BlockListViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: セルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return blockList.count
+    }
+    
+    // MARK: tableView全体の更新
+    func refreshTableView() {
+        blockList = DB.getBlockList()
+        // アニメーション付きでtableViewを更新
+        UIView.transition(with: tableView, duration: 0.2, options: .transitionCrossDissolve, animations: {self.tableView.reloadData()}, completion: nil)
+    }
+    
+    // MARK: スワイプアクション
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        // MARK: 解除ボタン
+        let unblockAction = UIContextualAction(style: .destructive, title: "ブロック解除", handler: {(action, view, completionHandler) in
+            // 削除処理
+            DB.unblockuser(userId: self.blockList[indexPath.row])
+            // tableViewを更新
+            self.refreshTableView()
+            // お作法
+            completionHandler(true)
+        })
+        
+        // スワイプアクションたちをreturn
+        return UISwipeActionsConfiguration(actions: [unblockAction])
     }
 }

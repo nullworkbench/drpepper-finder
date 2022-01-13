@@ -154,5 +154,15 @@ class DB {
         // ブロックリストを更新
         UserDefaults.standard.set(blockList, forKey: key)
     }
+    // MARK: ブロック解除
+    class func unblockuser(userId: String) {
+        let key = keys.blockList.rawValue
+        // 現在のブロックリストを取得
+        let blockList = self.getBlockList()
+        // 指定したユーザーを配列から除外
+        let newBlockList = blockList.filter { $0 != userId }
+        // 配列を上書き保存
+        UserDefaults.standard.set(newBlockList, forKey: key)
+    }
     
 }
