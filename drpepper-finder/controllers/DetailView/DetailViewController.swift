@@ -147,7 +147,10 @@ class DetailViewController: UIViewController {
                 resultAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
                     // 詳細画面を閉じる
                     self.dismiss(animated: true, completion: nil)
-                    // MapViewのピン一覧を更新する
+                    // MapViewのAnnotaionを更新する
+                    let navVC = self.presentingViewController as! UINavigationController
+                    let parentVC = navVC.viewControllers.first as! MapViewController
+                    parentVC.refreshAnnotations()
                 }))
                 self.present(resultAlert, animated: true, completion: nil)
             }))
