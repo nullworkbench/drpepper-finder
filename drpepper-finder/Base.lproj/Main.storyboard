@@ -823,7 +823,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ow-Hu-ZDV">
                                 <rect key="frame" x="50" y="167.5" width="314" height="57.5"/>
-                                <string key="text">Dr. Pepper Finderを
+                                <string key="text">DP Finderを
 ご利用いただく前に</string>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <nil key="textColor"/>
@@ -994,16 +994,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1G-rh-RVG">
-                                <rect key="frame" x="31" y="164" width="352" height="55"/>
-                                <string key="text">Welcome to
-Dr. Pepper Finder!</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to DP Finder!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1G-rh-RVG">
+                                <rect key="frame" x="31" y="164" width="352" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Od-N9-ZqS">
-                                <rect key="frame" x="99" y="619" width="216" height="48"/>
+                                <rect key="frame" x="99" y="606" width="216" height="48"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="216" id="Bjc-FJ-mlj"/>
@@ -1016,7 +1014,7 @@ Dr. Pepper Finder!</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pe1-KM-Pgk">
-                                <rect key="frame" x="99" y="697" width="216" height="45"/>
+                                <rect key="frame" x="99" y="684" width="216" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Pe1-KM-Pgk" secondAttribute="height" multiplier="4.8:1" id="N12-cM-IYo"/>
                                     <constraint firstAttribute="width" constant="216" id="w9F-wx-Mom"/>
@@ -1037,7 +1035,7 @@ Dr. Pepper Finder!</string>
                             <constraint firstItem="Pe1-KM-Pgk" firstAttribute="centerX" secondItem="3o3-AM-j5u" secondAttribute="centerX" id="3uI-6m-gUP"/>
                             <constraint firstItem="2Od-N9-ZqS" firstAttribute="centerX" secondItem="3o3-AM-j5u" secondAttribute="centerX" id="9f1-vV-OBZ"/>
                             <constraint firstItem="Pe1-KM-Pgk" firstAttribute="top" secondItem="2Od-N9-ZqS" secondAttribute="bottom" constant="30" id="L8F-PY-yGz"/>
-                            <constraint firstItem="Bg9-e3-cet" firstAttribute="bottom" secondItem="Pe1-KM-Pgk" secondAttribute="bottom" constant="120" id="UNA-b0-lv6"/>
+                            <constraint firstItem="Bg9-e3-cet" firstAttribute="bottom" secondItem="Pe1-KM-Pgk" secondAttribute="bottom" multiplier="1.1" constant="60" id="UNA-b0-lv6"/>
                             <constraint firstItem="g1G-rh-RVG" firstAttribute="centerX" secondItem="3o3-AM-j5u" secondAttribute="centerX" id="VF6-Ix-4kQ"/>
                             <constraint firstItem="g1G-rh-RVG" firstAttribute="width" secondItem="3o3-AM-j5u" secondAttribute="width" multiplier="0.85" id="iGP-Yh-Bjr"/>
                         </constraints>
