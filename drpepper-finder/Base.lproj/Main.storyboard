@@ -849,7 +849,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="2hU-9T-Orh" kind="presentation" id="UiB-vZ-lHq"/>
+                                    <action selector="readTermsOfServiceBtnTapped:" destination="kag-e8-ZGU" eventType="touchUpInside" id="ahv-Uy-gLn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="利用規約へ同意してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4K2-jU-hgO">
@@ -925,6 +925,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QCV-Ls-S6x"/>
+                    <connections>
+                        <outlet property="agreeButton" destination="1uV-Xt-zon" id="P5n-rQ-SSz"/>
+                        <segue destination="2hU-9T-Orh" kind="presentation" identifier="toTermsOfServiceWebView" id="fK2-JQ-K9i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ed-zi-tFf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1164,7 +1168,7 @@ Dr. Pepper Finder!</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kOT-i7-2rK"/>
+        <segue reference="fK2-JQ-K9i"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Google" width="48" height="48"/>

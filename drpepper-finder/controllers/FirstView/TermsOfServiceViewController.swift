@@ -8,11 +8,20 @@
 import UIKit
 
 class TermsOfServiceViewController: UIViewController {
+    
+    @IBOutlet weak var agreeButton: UIButton!
+    
+    var isUserReadTermsOfService = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    // 利用規約を読むボタン
+    @IBAction func readTermsOfServiceBtnTapped() {
+        performSegue(withIdentifier: "toTermsOfServiceWebView", sender: nil)
+        isUserReadTermsOfService = true
+        agreeButton.isEnabled = true
     }
     
     // 同意しない
@@ -23,10 +32,19 @@ class TermsOfServiceViewController: UIViewController {
     }
     // 同意する
     @IBAction func agreeBtnTapped(_ sender: Any) {
-        // 次回以降は初回起動ではない値をセット
-        UserDefaults.standard.set(false, forKey: "isFirstLaunch")
-        // 画面を閉じる
-        self.dismiss(animated: true, completion: nil)
+        if isUserReadTermsOfService {
+            // 次回以降は初回起動ではない値をセット
+            UserDefaults.standard.set(false, forKey: "isFirstLaunch")
+            // 画面を閉じる
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "利用規約をご覧ください", message: "利用規約を一読いただいてから再度同意ボタンをタップしてください。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "利用規約を読む", style: .default, handler: {_ in
+                self.readTermsOfServiceBtnTapped()
+            }))
+            alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
     }
     
 }
