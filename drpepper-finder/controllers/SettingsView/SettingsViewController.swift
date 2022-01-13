@@ -21,6 +21,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         tableView1.dataSource = self
     }
     
+    // ビューが消える前
+    override func viewWillDisappear(_ animated: Bool) {
+        // MapViewのAnnotaionを更新する
+        let navVC = self.navigationController!
+        let parentVC = navVC.viewControllers.first as! MapViewController
+        parentVC.refreshAnnotations()
+    }
+    
     // セルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
