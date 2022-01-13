@@ -142,6 +142,14 @@ class DetailViewController: UIViewController {
                    return
                 }
                 DB.blockUser(userId: userId)
+                // ブロック完了アラート
+                let resultAlert = UIAlertController(title: "ブロックしました", message: "ユーザー\(userId)をブロックしました", preferredStyle: .alert)
+                resultAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+                    // 詳細画面を閉じる
+                    self.dismiss(animated: true, completion: nil)
+                    // MapViewのピン一覧を更新する
+                }))
+                self.present(resultAlert, animated: true, completion: nil)
             }))
             alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)

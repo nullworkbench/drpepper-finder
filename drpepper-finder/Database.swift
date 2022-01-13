@@ -147,8 +147,10 @@ class DB {
         let key = keys.blockList.rawValue
         // 現在のブロックリストを取得
         var blockList = self.getBlockList()
-        // ユーザーを追加
-        blockList.append(userId)
+        // すでに追加済みでなければユーザーを追加
+        if !blockList.contains(userId) {
+            blockList.append(userId)
+        }
         // ブロックリストを更新
         UserDefaults.standard.set(blockList, forKey: key)
     }
