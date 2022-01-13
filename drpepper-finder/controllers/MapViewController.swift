@@ -154,7 +154,11 @@ extension MapViewController {
                 // pin.subtitle = "subtitle"
                 // UIの更新はmainスレッドで
                 DispatchQueue.main.async {
-                    self.mapView.addAnnotation(pin)
+                    // ブロックリストに含まれていないものだけ表示
+                    let blockList = DB.getBlockList()
+                    if !blockList.contains(pin.userId) {
+                        self.mapView.addAnnotation(pin)
+                    }
                 }
             }
         }

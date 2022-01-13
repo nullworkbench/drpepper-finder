@@ -34,8 +34,10 @@ class DB {
                     // 座標
                     let geoPoint = doc["coordinate"] as! GeoPoint
                     let coordinate = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude)
+                    // ユーザーID
+                    let userId = doc["userId"] as! String
                     // CustomAnnotation定義
-                    let annotation = CustomAnnotation(docID: doc.documentID, coordinate: coordinate)
+                    let annotation = CustomAnnotation(docID: doc.documentID, coordinate: coordinate, userId: userId)
                     
                     pins.append(annotation)
                 }
