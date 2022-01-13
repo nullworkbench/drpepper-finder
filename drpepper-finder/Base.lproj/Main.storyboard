@@ -120,7 +120,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gfd-62-vFr">
-                                <rect key="frame" x="0.0" y="108" width="414" height="254"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="764"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="0Rd-fw-3ud">
@@ -139,8 +139,8 @@
                         <constraints>
                             <constraint firstItem="J3W-uQ-LHn" firstAttribute="trailing" secondItem="Gfd-62-vFr" secondAttribute="trailing" id="6LU-43-hxX"/>
                             <constraint firstItem="Gfd-62-vFr" firstAttribute="leading" secondItem="J3W-uQ-LHn" secondAttribute="leading" id="LmI-ug-hJh"/>
-                            <constraint firstItem="J3W-uQ-LHn" firstAttribute="bottom" secondItem="Gfd-62-vFr" secondAttribute="bottom" constant="500" id="Oq4-FR-5DQ"/>
-                            <constraint firstItem="Gfd-62-vFr" firstAttribute="top" secondItem="J3W-uQ-LHn" secondAttribute="top" constant="20" id="qd4-Fu-KaN"/>
+                            <constraint firstItem="Gfd-62-vFr" firstAttribute="top" secondItem="J3W-uQ-LHn" secondAttribute="top" constant="10" id="iRc-ec-ScA"/>
+                            <constraint firstItem="J3W-uQ-LHn" firstAttribute="bottom" secondItem="Gfd-62-vFr" secondAttribute="bottom" id="kiB-eg-4vW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="zJO-li-2N2"/>
