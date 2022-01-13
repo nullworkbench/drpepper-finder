@@ -36,6 +36,11 @@ extension BlockListViewController: UITableViewDataSource, UITableViewDelegate {
         return blockList.count
     }
     
+    // MARK: セルを選択したとき
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     // MARK: tableView全体の更新
     func refreshTableView() {
         blockList = DB.getBlockList()
