@@ -31,6 +31,8 @@ class DetailViewController: UIViewController {
     
     // 住所保存用
     var addressString = ""
+    // ユーザーID保存
+    var userId = ""
     
     
     override func viewDidLoad() {
@@ -52,6 +54,7 @@ class DetailViewController: UIViewController {
                     self.noteTextView.text = pin.note
                     // usreId（先頭の８文字を切り出して表示）
                     self.userIdButton.setTitle("\(pin.userId.prefix(8))", for: .normal)
+                    self.userId = pin.userId
                     // Log
                     self.getRecentLog()
                 }
@@ -132,6 +135,12 @@ class DetailViewController: UIViewController {
         deletePin()
     }
     @IBAction func userIdBtnTapped(_ sender: Any) {
+        let actionSheet = UIAlertController(title: "ユーザー: \(userIdButton.currentTitle ?? "")", message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "ブロック", style: .destructive, handler: {_ in
+            // ブロック処理
+        }))
+        actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
+        present(actionSheet, animated: true, completion: nil)
     }
     
 }
