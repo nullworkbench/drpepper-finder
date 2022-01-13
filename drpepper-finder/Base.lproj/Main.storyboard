@@ -381,7 +381,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="..." translatesAutoresizingMaskIntoConstraints="NO" id="Odd-RB-OVm">
-                                <rect key="frame" x="40" y="546.5" width="334" height="184.5"/>
+                                <rect key="frame" x="40" y="546.5" width="334" height="152.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -468,11 +468,33 @@
                                     <action selector="closeModal:" destination="uox-hE-tek" eventType="touchUpInside" id="UAu-xB-owp"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="uRa-x2-ht5" userLabel="Control Stack View">
-                                <rect key="frame" x="47" y="761" width="320" height="32"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="uRa-x2-ht5" userLabel="Control Stack View">
+                                <rect key="frame" x="57" y="761" width="300" height="32"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rN-eC-6QW">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOO-ov-23A">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="32"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="9w9-z9-ebq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="通報">
+                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                            <imageReference key="image" image="exclamationmark.triangle.fill" catalog="system" symbolScale="medium"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="reportBtnTapped:" destination="uox-hE-tek" eventType="touchUpInside" id="mzt-W1-DB3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rN-eC-6QW">
+                                        <rect key="frame" x="110" y="0.0" width="80" height="32"/>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="6rN-eC-6QW" secondAttribute="height" multiplier="5:2" id="XK1-M4-OTq"/>
@@ -494,30 +516,8 @@
                                             <action selector="editBtnTapped:" destination="uox-hE-tek" eventType="touchUpInside" id="Dqv-fr-hOu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOO-ov-23A">
-                                        <rect key="frame" x="120" y="0.0" width="80" height="32"/>
-                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="9w9-z9-ebq"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="tintColor" systemColor="systemYellowColor"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="通報">
-                                            <color key="titleColor" systemColor="systemYellowColor"/>
-                                            <imageReference key="image" image="exclamationmark.triangle.fill" catalog="system" symbolScale="medium"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="reportBtnTapped:" destination="uox-hE-tek" eventType="touchUpInside" id="mzt-W1-DB3"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHg-Nj-20T">
-                                        <rect key="frame" x="240" y="0.0" width="80" height="32"/>
+                                        <rect key="frame" x="220" y="0.0" width="80" height="32"/>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="7Ei-Bf-GLY"/>
@@ -544,21 +544,36 @@
                                     <constraint firstItem="BOO-ov-23A" firstAttribute="width" secondItem="BOO-ov-23A" secondAttribute="height" multiplier="5:2" id="deD-WJ-U8U"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投稿者: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgA-iQ-6mY">
+                                <rect key="frame" x="40" y="719" width="37" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Mf-p6-0ID">
+                                <rect key="frame" x="79" y="713" width="295" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="uiduiduiduid"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yAC-Wh-qdA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="uRa-x2-ht5" firstAttribute="top" secondItem="pgA-iQ-6mY" secondAttribute="bottom" constant="30" id="0Vn-Tk-G5l"/>
                             <constraint firstItem="BfZ-h3-ez1" firstAttribute="top" secondItem="ZjQ-NZ-lrP" secondAttribute="bottom" constant="5" id="1Ti-Vg-jSY"/>
                             <constraint firstItem="BfZ-h3-ez1" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="1dp-xS-cba"/>
                             <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="BfZ-h3-ez1" secondAttribute="trailing" constant="40" id="1ht-9x-QnQ"/>
                             <constraint firstItem="ial-oe-Tix" firstAttribute="top" secondItem="PyS-kx-3QB" secondAttribute="bottom" constant="5" id="3AU-wE-tkH"/>
+                            <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="6Mf-p6-0ID" secondAttribute="trailing" constant="40" id="4K6-cN-xGX"/>
                             <constraint firstItem="0ez-zl-pOn" firstAttribute="trailing" secondItem="yAC-Wh-qdA" secondAttribute="trailing" id="6Ws-iX-9Wy"/>
+                            <constraint firstItem="6Mf-p6-0ID" firstAttribute="centerY" secondItem="pgA-iQ-6mY" secondAttribute="centerY" id="86f-hc-ZaA"/>
                             <constraint firstItem="ial-oe-Tix" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="9J8-uz-hVK"/>
-                            <constraint firstItem="uRa-x2-ht5" firstAttribute="top" secondItem="Odd-RB-OVm" secondAttribute="bottom" constant="30" id="9fT-2m-bFz"/>
                             <constraint firstItem="xqv-Qd-Exv" firstAttribute="centerX" secondItem="7Iu-xT-7kF" secondAttribute="centerX" id="A8p-RL-oGw"/>
                             <constraint firstItem="Odd-RB-OVm" firstAttribute="top" secondItem="9aU-5F-he0" secondAttribute="bottom" constant="2" id="BKf-fZ-aqK"/>
                             <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="ial-oe-Tix" secondAttribute="trailing" constant="40" id="Clm-ng-9gY"/>
                             <constraint firstItem="XuX-Qj-RbK" firstAttribute="leading" secondItem="xqv-Qd-Exv" secondAttribute="trailing" constant="9.5" id="DtL-iA-5uM"/>
+                            <constraint firstItem="pgA-iQ-6mY" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="FJD-cB-Iu9"/>
                             <constraint firstItem="Odd-RB-OVm" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="GY2-As-JsB"/>
                             <constraint firstItem="zAl-cr-Al4" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="Hcn-Ha-AJm"/>
                             <constraint firstItem="9aU-5F-he0" firstAttribute="top" secondItem="vU4-UW-XfN" secondAttribute="bottom" constant="20" id="ICY-53-hBZ"/>
@@ -579,12 +594,14 @@
                             <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="10S-uX-9LM" secondAttribute="trailing" constant="40" id="dvn-ar-nPo"/>
                             <constraint firstItem="uRa-x2-ht5" firstAttribute="centerX" secondItem="7Iu-xT-7kF" secondAttribute="centerX" id="eBl-gg-qIp"/>
                             <constraint firstItem="xqv-Qd-Exv" firstAttribute="top" secondItem="0ez-zl-pOn" secondAttribute="bottom" constant="-80" id="fpu-Lx-Qeo"/>
+                            <constraint firstItem="6Mf-p6-0ID" firstAttribute="leading" secondItem="pgA-iQ-6mY" secondAttribute="trailing" constant="2" id="g5c-LQ-beh"/>
                             <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="PyS-kx-3QB" secondAttribute="trailing" constant="40" id="gDR-eh-S24"/>
                             <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="9aU-5F-he0" secondAttribute="trailing" constant="300" id="jLW-1B-yGA"/>
                             <constraint firstItem="PyS-kx-3QB" firstAttribute="top" secondItem="zAl-cr-Al4" secondAttribute="bottom" constant="10" id="ktp-y4-SoI"/>
                             <constraint firstItem="0ez-zl-pOn" firstAttribute="top" secondItem="7Iu-xT-7kF" secondAttribute="top" id="lsf-6Z-Fnn"/>
                             <constraint firstItem="PyS-kx-3QB" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="nOm-84-qGc"/>
                             <constraint firstItem="vU4-UW-XfN" firstAttribute="leading" secondItem="yAC-Wh-qdA" secondAttribute="leading" constant="40" id="pvp-N0-zUT"/>
+                            <constraint firstItem="pgA-iQ-6mY" firstAttribute="top" secondItem="Odd-RB-OVm" secondAttribute="bottom" constant="20" id="q5h-wQ-ckD"/>
                             <constraint firstItem="yAC-Wh-qdA" firstAttribute="trailing" secondItem="VMx-sq-b92" secondAttribute="trailing" constant="20" id="qdT-gY-Kv2"/>
                             <constraint firstItem="10S-uX-9LM" firstAttribute="leading" secondItem="zAl-cr-Al4" secondAttribute="trailing" constant="10" id="rC6-9M-EnR"/>
                             <constraint firstItem="xqv-Qd-Exv" firstAttribute="width" secondItem="7Iu-xT-7kF" secondAttribute="width" multiplier="0.33" id="tyy-dy-6TH"/>
