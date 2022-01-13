@@ -18,6 +18,9 @@ class BlockListViewController: UIViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
+        
+        // 編集ボタンの設置
+        navigationItem.rightBarButtonItem = editButtonItem
     }
 
 }
@@ -62,5 +65,12 @@ extension BlockListViewController: UITableViewDataSource, UITableViewDelegate {
         
         // スワイプアクションたちをreturn
         return UISwipeActionsConfiguration(actions: [unblockAction])
+    }
+    
+    // MARK: 編集モード
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: true)
+        tableView.isEditing = editing
     }
 }

@@ -802,7 +802,9 @@
                             <constraint firstItem="7nL-Hb-KBH" firstAttribute="leading" secondItem="M52-O1-qrH" secondAttribute="leading" id="t34-gM-IFS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ブロックしたユーザー" id="jv3-HG-rnV"/>
+                    <navigationItem key="navigationItem" title="ブロックしたユーザー" id="jv3-HG-rnV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="5Kc-DY-b1R"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="7nL-Hb-KBH" id="zg6-uV-DnT"/>
                     </connections>
