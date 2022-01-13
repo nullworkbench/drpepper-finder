@@ -31,8 +31,6 @@ class DetailViewController: UIViewController {
     
     // 住所保存用
     var addressString = ""
-    // ユーザーID保存
-    var userId = ""
     
     
     override func viewDidLoad() {
@@ -53,8 +51,7 @@ class DetailViewController: UIViewController {
                     // note
                     self.noteTextView.text = pin.note
                     // usreId（先頭の８文字を切り出して表示）
-                    self.userIdButton.setTitle("\(pin.userId.prefix(8))", for: .normal)
-                    self.userId = pin.userId
+                    self.userIdButton.setTitle(pin.userId, for: .normal)
                     // Log
                     self.getRecentLog()
                 }
@@ -141,6 +138,10 @@ class DetailViewController: UIViewController {
             let alert = UIAlertController(title: "このユーザーをブロックしますか？", message: "ブロックするとこのユーザーの投稿は表示されなくなります。", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "ブロック", style: .destructive, handler: {_ in
                 // ブロック処理
+                guard let userId = self.userIdButton.currentTitle else {
+                   return
+                }
+                DB.blockUser(userId: userId)
             }))
             alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)

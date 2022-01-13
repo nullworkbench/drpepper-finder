@@ -11,6 +11,10 @@ import FirebaseFirestoreSwift
 import CoreLocation
 
 class DB {
+    enum keys: String {
+        case blockList = "blockListArray"
+    }
+    
     // MARK: 指定された数を上限として全てのピンのAnnotationを取得
     class func getAllAnnotations(limit: Int) -> [CustomAnnotation] {
         let db = Firestore.firestore()
@@ -125,7 +129,7 @@ class DB {
     
     // MARK: ブロックリストを取得
     class func getBlockList() -> [String] {
-        let key = "blockListArray"
+        let key = keys.blockList.rawValue
         // ブロックリストの存在確認
         if UserDefaults.standard.object(forKey: key) != nil {
             // 存在している場合
@@ -140,12 +144,13 @@ class DB {
     }
     // MARK: ユーザーをブロック
     class func blockUser(userId: String) {
+        let key = keys.blockList.rawValue
         // 現在のブロックリストを取得
         var blockList = self.getBlockList()
         // ユーザーを追加
         blockList.append(userId)
         // ブロックリストを更新
-        UserDefaults.standard.set(blockList, forKey: "blockListArray")
+        UserDefaults.standard.set(blockList, forKey: key)
     }
     
 }
