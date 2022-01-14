@@ -22,7 +22,7 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // ログイン状況によってボタンの表示を切り替え｀
+        // ログイン状況によってボタンの表示を切り替え
         if let currentUser = Auth.auth().currentUser{
             if !currentUser.isAnonymous {
                 // ログイン済み
