@@ -58,13 +58,21 @@ class AccountViewController: UIViewController {
 extension AccountViewController {
     func setUserData() {
         // ログインしているかによって分岐
-        if appDelegate.currentUser != nil && !appDelegate.currentUser!.isAnonymous {
-            userNameLabel.text = appDelegate.currentUser!.displayName
-            self.setUserImage(appDelegate.currentUser!.photoURL!)
+        if let user = appDelegate.currentUser {
+            // 匿名アカウントか
+            if !user.isAnonymous {
+                // 名前の表示（AppleIDは名前を提供しない場合がある）
+                userNameLabel.text = user.displayName ?? "Apple IDでログイン済み"
+                // ユーザー画像の表示（AppleIDは画像を提供しないので分岐）
+                if user.photoURL != nil {
+                    self.setUserImage(user.photoURL!)
+                }
+            }
         } else {
             userNameLabel.text = "ログインしていません"
         }
     }
+    // ユーザー画像の設定
     func setUserImage(_ url: URL) {
         let imageData = try! Data(contentsOf: url)
         userImageView.image = UIImage(data: imageData)
