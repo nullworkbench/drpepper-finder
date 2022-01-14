@@ -26,6 +26,7 @@
 		8BBFDD60278AECFA003D4D6C /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFDD5F278AECFA003D4D6C /* TermsOfServiceViewController.swift */; };
 		8BBFDD62278AEFA2003D4D6C /* TermsOfServiceWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFDD61278AEFA2003D4D6C /* TermsOfServiceWebViewController.swift */; };
 		8BBFDD64279018A7003D4D6C /* BlockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFDD63279018A7003D4D6C /* BlockListViewController.swift */; };
+		8BBFDD6627905661003D4D6C /* AppleIDSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFDD6527905661003D4D6C /* AppleIDSignIn.swift */; };
 		8BDC519D262B485B003A03D4 /* addNewPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */; };
 		8BF5A82C263EC5860084097F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5A82B263EC5860084097F /* LoginViewController.swift */; };
 		8BF5A82E263FBCD10084097F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5A82D263FBCD10084097F /* FirstViewController.swift */; };
@@ -57,6 +58,8 @@
 		8BBFDD5F278AECFA003D4D6C /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		8BBFDD61278AEFA2003D4D6C /* TermsOfServiceWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceWebViewController.swift; sourceTree = "<group>"; };
 		8BBFDD63279018A7003D4D6C /* BlockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewController.swift; sourceTree = "<group>"; };
+		8BBFDD6527905661003D4D6C /* AppleIDSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDSignIn.swift; sourceTree = "<group>"; };
+		8BBFDD67279057A8003D4D6C /* drpepper-finder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "drpepper-finder.entitlements"; sourceTree = "<group>"; };
 		8BDC519C262B485B003A03D4 /* addNewPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNewPinViewController.swift; sourceTree = "<group>"; };
 		8BF5A82B263EC5860084097F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8BF5A82D263FBCD10084097F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 		8B1ACC5926234B13000B8C87 /* drpepper-finder */ = {
 			isa = PBXGroup;
 			children = (
+				8BBFDD67279057A8003D4D6C /* drpepper-finder.entitlements */,
 				8B1ACCDE2624618C000B8C87 /* controllers */,
 				8B1ACCDA26245E76000B8C87 /* models */,
 				8B1ACC5A26234B13000B8C87 /* AppDelegate.swift */,
@@ -110,6 +114,7 @@
 				8B1ACC6026234B13000B8C87 /* Main.storyboard */,
 				8B2BF4732629B55E00E8BFA3 /* Extensions.swift */,
 				8B89FC32278873B7008B7875 /* Database.swift */,
+				8BBFDD6527905661003D4D6C /* AppleIDSignIn.swift */,
 				8B1ACC6326234B14000B8C87 /* Assets.xcassets */,
 				8B1ACC6526234B14000B8C87 /* LaunchScreen.storyboard */,
 				8B1ACC6826234B14000B8C87 /* Info.plist */,
@@ -313,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B89FC372789FE11008B7875 /* CustomMKPointAnnotation.swift in Sources */,
+				8BBFDD6627905661003D4D6C /* AppleIDSignIn.swift in Sources */,
 				8BBFDD60278AECFA003D4D6C /* TermsOfServiceViewController.swift in Sources */,
 				8B89FC35278874DF008B7875 /* Pin.swift in Sources */,
 				8BBFDD62278AEFA2003D4D6C /* TermsOfServiceWebViewController.swift in Sources */,
@@ -477,6 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "drpepper-finder/drpepper-finder.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 4R2WEKFX8S;
@@ -499,6 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "drpepper-finder/drpepper-finder.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 4R2WEKFX8S;

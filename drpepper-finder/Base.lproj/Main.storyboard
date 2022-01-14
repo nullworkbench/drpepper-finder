@@ -1000,49 +1000,49 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Od-N9-ZqS">
-                                <rect key="frame" x="99" y="606" width="216" height="48"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hoC-R0-e1o" userLabel="Sign In Stack View">
+                                <rect key="frame" x="97" y="654" width="220" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Od-N9-ZqS">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="48"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <state key="normal" title="Sign in with Google   " image="Google">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInWithGoogle" destination="1cY-bT-gfW" eventType="touchUpInside" id="AiK-4M-ObA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pe1-KM-Pgk">
+                                        <rect key="frame" x="0.0" y="78" width="220" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="ログインせずにはじめる">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInAsAnonymous" destination="1cY-bT-gfW" eventType="touchUpInside" id="K1w-7X-N6x"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="216" id="Bjc-FJ-mlj"/>
+                                    <constraint firstAttribute="width" constant="220" id="jtE-ru-Ade"/>
                                 </constraints>
-                                <state key="normal" title="Sign in with Google   " image="Google">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="signInWithGoogle" destination="1cY-bT-gfW" eventType="touchUpInside" id="AiK-4M-ObA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pe1-KM-Pgk">
-                                <rect key="frame" x="99" y="684" width="216" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Pe1-KM-Pgk" secondAttribute="height" multiplier="4.8:1" id="N12-cM-IYo"/>
-                                    <constraint firstAttribute="width" constant="216" id="w9F-wx-Mom"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="ログインせずにはじめる">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="signInAsAnonymous" destination="1cY-bT-gfW" eventType="touchUpInside" id="K1w-7X-N6x"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bg9-e3-cet"/>
                         <color key="backgroundColor" red="0.48193269970000002" green="0.095279298720000002" blue="0.17833918330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="g1G-rh-RVG" firstAttribute="top" secondItem="Bg9-e3-cet" secondAttribute="top" constant="120" id="1CF-5w-gZr"/>
-                            <constraint firstItem="Pe1-KM-Pgk" firstAttribute="centerX" secondItem="3o3-AM-j5u" secondAttribute="centerX" id="3uI-6m-gUP"/>
-                            <constraint firstItem="2Od-N9-ZqS" firstAttribute="centerX" secondItem="3o3-AM-j5u" secondAttribute="centerX" id="9f1-vV-OBZ"/>
-                            <constraint firstItem="Pe1-KM-Pgk" firstAttribute="top" secondItem="2Od-N9-ZqS" secondAttribute="bottom" constant="30" id="L8F-PY-yGz"/>
-                            <constraint firstItem="Bg9-e3-cet" firstAttribute="bottom" secondItem="Pe1-KM-Pgk" secondAttribute="bottom" multiplier="1.1" constant="60" id="UNA-b0-lv6"/>
+                            <constraint firstItem="Bg9-e3-cet" firstAttribute="bottom" secondItem="hoC-R0-e1o" secondAttribute="bottom" multiplier="1.05" constant="60" id="BZe-NY-6bM"/>
                             <constraint firstItem="g1G-rh-RVG" firstAttribute="centerX" secondItem="3o3-AM-j5u" secondAttribute="centerX" id="VF6-Ix-4kQ"/>
+                            <constraint firstItem="hoC-R0-e1o" firstAttribute="centerX" secondItem="3o3-AM-j5u" secondAttribute="centerX" id="fgE-gk-DLr"/>
                             <constraint firstItem="g1G-rh-RVG" firstAttribute="width" secondItem="3o3-AM-j5u" secondAttribute="width" multiplier="0.85" id="iGP-Yh-Bjr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="A55-QN-Get"/>
                     <connections>
                         <outlet property="SignInWithGoogleButton" destination="2Od-N9-ZqS" id="uX7-jq-dhd"/>
+                        <outlet property="signInBtnStackView" destination="hoC-R0-e1o" id="mmA-7r-5Ls"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gjs-7b-huo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
