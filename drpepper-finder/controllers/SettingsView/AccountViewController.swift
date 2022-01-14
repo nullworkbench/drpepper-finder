@@ -16,19 +16,35 @@ class AccountViewController: UIViewController {
     
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // ログイン状況によってボタンの表示を切り替え｀
+        if let currentUser = Auth.auth().currentUser{
+            if !currentUser.isAnonymous {
+                // ログイン済み
+                loginButton.isHidden = true
+            } else {
+                // 匿名アカウントでログイン済み
+                logoutButton.isHidden = true
+            }
+        } else {
+            // 未ログイン
+            logoutButton.isHidden = true
+        }
         
         // ユーザーの情報を代入
         self.setUserData()
     }
     
-    @IBAction func signOut() {
-        let alert = UIAlertController(title: "サインアウトしますか？", message: "", preferredStyle: .alert)
+    @IBAction func logout() {
+        let alert = UIAlertController(title: "ログアウトしますか？", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
         alert.addAction(
-            UIAlertAction(title: "サインアウト", style: .default) { (action) in
+            UIAlertAction(title: "ログアウト", style: .default) { (action) in
                 do {
                     try Auth.auth().signOut()
                     self.dismiss(animated: true, completion: nil)

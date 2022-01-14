@@ -714,13 +714,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jV3-Qn-6JD">
-                                <rect key="frame" x="168.5" y="732" width="77" height="30"/>
-                                <state key="normal" title="ログアウト"/>
-                                <connections>
-                                    <action selector="signOut" destination="MD0-wk-1hr" eventType="touchUpInside" id="07O-DF-e8N"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Z04-Ti-aYN">
                                 <rect key="frame" x="145" y="138.5" width="124" height="123"/>
                                 <color key="tintColor" systemColor="systemGray2Color"/>
@@ -735,7 +728,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIx-jL-urj">
-                                <rect key="frame" x="83" y="640" width="248" height="62"/>
+                                <rect key="frame" x="83" y="648" width="248" height="62"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kIx-jL-urj" secondAttribute="height" multiplier="4:1" id="WvR-OU-77Z"/>
@@ -749,24 +742,45 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8g-HE-oIb">
+                                <rect key="frame" x="83" y="740" width="248" height="62"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="d8g-HE-oIb" secondAttribute="height" multiplier="4:1" id="Qev-fF-fLP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="ログアウト"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logout" destination="MD0-wk-1hr" eventType="touchUpInside" id="1xJ-nO-jV5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QJn-RZ-vFy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="QJn-RZ-vFy" firstAttribute="bottom" secondItem="jV3-Qn-6JD" secondAttribute="bottom" constant="100" id="3k3-yE-XoZ"/>
+                            <constraint firstItem="QJn-RZ-vFy" firstAttribute="bottom" secondItem="d8g-HE-oIb" secondAttribute="bottom" constant="60" id="9BU-3S-ZS8"/>
                             <constraint firstItem="Z04-Ti-aYN" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="DYH-D6-pVP"/>
                             <constraint firstItem="KQD-c9-GQd" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="ROn-Px-MHp"/>
                             <constraint firstItem="Z04-Ti-aYN" firstAttribute="top" secondItem="QJn-RZ-vFy" secondAttribute="top" constant="50" id="S4F-TD-39R"/>
                             <constraint firstItem="KQD-c9-GQd" firstAttribute="top" secondItem="Z04-Ti-aYN" secondAttribute="bottom" constant="25" id="TMJ-ri-cXR"/>
                             <constraint firstItem="kIx-jL-urj" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="ZqI-oS-eld"/>
-                            <constraint firstItem="jV3-Qn-6JD" firstAttribute="top" secondItem="kIx-jL-urj" secondAttribute="bottom" constant="30" id="ab4-ze-i2A"/>
                             <constraint firstItem="Z04-Ti-aYN" firstAttribute="width" secondItem="foA-1L-aaF" secondAttribute="width" multiplier="0.3" id="eQr-pp-oZc"/>
-                            <constraint firstItem="jV3-Qn-6JD" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="gPh-ea-iIx"/>
+                            <constraint firstItem="d8g-HE-oIb" firstAttribute="width" secondItem="foA-1L-aaF" secondAttribute="width" multiplier="0.6" id="nRI-BX-0C4"/>
+                            <constraint firstItem="d8g-HE-oIb" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="qTk-EZ-AVG"/>
+                            <constraint firstItem="d8g-HE-oIb" firstAttribute="top" secondItem="kIx-jL-urj" secondAttribute="bottom" constant="30" id="qrw-JA-mvQ"/>
                             <constraint firstItem="kIx-jL-urj" firstAttribute="width" secondItem="foA-1L-aaF" secondAttribute="width" multiplier="0.6" id="wzW-1O-Zzu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Account" id="22i-XM-w8i"/>
                     <connections>
+                        <outlet property="loginButton" destination="kIx-jL-urj" id="CcK-Gv-xX4"/>
+                        <outlet property="logoutButton" destination="d8g-HE-oIb" id="4Ii-8n-vbg"/>
                         <outlet property="userImageView" destination="Z04-Ti-aYN" id="fnB-co-rKR"/>
                         <outlet property="userNameLabel" destination="KQD-c9-GQd" id="fRX-MN-xcm"/>
                     </connections>
