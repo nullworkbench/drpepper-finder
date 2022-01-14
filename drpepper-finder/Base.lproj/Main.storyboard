@@ -714,19 +714,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="th2-QY-Mj6">
-                                <rect key="frame" x="98.5" y="614" width="217" height="48"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <state key="normal" title="Sign in with Google   " image="Google">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="signInWithGoogle" destination="MD0-wk-1hr" eventType="touchUpInside" id="fXz-xg-xIZ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jV3-Qn-6JD">
-                                <rect key="frame" x="179" y="732" width="56" height="30"/>
-                                <state key="normal" title="SignOut"/>
+                                <rect key="frame" x="168.5" y="732" width="77" height="30"/>
+                                <state key="normal" title="ログアウト"/>
                                 <connections>
                                     <action selector="signOut" destination="MD0-wk-1hr" eventType="touchUpInside" id="07O-DF-e8N"/>
                                 </connections>
@@ -744,24 +734,39 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIx-jL-urj">
+                                <rect key="frame" x="83" y="640" width="248" height="62"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kIx-jL-urj" secondAttribute="height" multiplier="4:1" id="WvR-OU-77Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="ログイン"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QJn-RZ-vFy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="QJn-RZ-vFy" firstAttribute="bottom" secondItem="jV3-Qn-6JD" secondAttribute="bottom" constant="100" id="3k3-yE-XoZ"/>
                             <constraint firstItem="Z04-Ti-aYN" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="DYH-D6-pVP"/>
-                            <constraint firstItem="jV3-Qn-6JD" firstAttribute="top" secondItem="th2-QY-Mj6" secondAttribute="bottom" constant="70" id="LLn-ti-Ojr"/>
                             <constraint firstItem="KQD-c9-GQd" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="ROn-Px-MHp"/>
                             <constraint firstItem="Z04-Ti-aYN" firstAttribute="top" secondItem="QJn-RZ-vFy" secondAttribute="top" constant="50" id="S4F-TD-39R"/>
                             <constraint firstItem="KQD-c9-GQd" firstAttribute="top" secondItem="Z04-Ti-aYN" secondAttribute="bottom" constant="25" id="TMJ-ri-cXR"/>
+                            <constraint firstItem="kIx-jL-urj" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="ZqI-oS-eld"/>
+                            <constraint firstItem="jV3-Qn-6JD" firstAttribute="top" secondItem="kIx-jL-urj" secondAttribute="bottom" constant="30" id="ab4-ze-i2A"/>
                             <constraint firstItem="Z04-Ti-aYN" firstAttribute="width" secondItem="foA-1L-aaF" secondAttribute="width" multiplier="0.3" id="eQr-pp-oZc"/>
                             <constraint firstItem="jV3-Qn-6JD" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="gPh-ea-iIx"/>
-                            <constraint firstItem="th2-QY-Mj6" firstAttribute="centerX" secondItem="foA-1L-aaF" secondAttribute="centerX" id="sV9-uF-gZR"/>
+                            <constraint firstItem="kIx-jL-urj" firstAttribute="width" secondItem="foA-1L-aaF" secondAttribute="width" multiplier="0.6" id="wzW-1O-Zzu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Account" id="22i-XM-w8i"/>
                     <connections>
-                        <outlet property="SignInWithGoogleButton" destination="th2-QY-Mj6" id="7rQ-xs-s2e"/>
                         <outlet property="userImageView" destination="Z04-Ti-aYN" id="fnB-co-rKR"/>
                         <outlet property="userNameLabel" destination="KQD-c9-GQd" id="fRX-MN-xcm"/>
                     </connections>
