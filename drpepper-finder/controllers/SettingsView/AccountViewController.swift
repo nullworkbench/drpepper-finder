@@ -40,6 +40,27 @@ class AccountViewController: UIViewController {
         self.setUserData()
     }
     
+    // ログイン画面へ遷移
+    func performToLoginView() {
+        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func login(_ sender: Any) {
+        if let user = Auth.auth().currentUser {
+            // 匿名アカウントの場合は先にサインアウト
+            if user.isAnonymous {
+                do {
+                    try Auth.auth().signOut()
+                } catch let signOutError as NSError {
+                    print ("Error signing out: %@", signOutError)
+                }
+            }
+        }
+        performToLoginView()
+    }
+    
     @IBAction func logout() {
         let alert = UIAlertController(title: "ログアウトしますか？", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
@@ -47,11 +68,10 @@ class AccountViewController: UIViewController {
             UIAlertAction(title: "ログアウト", style: .default) { (action) in
                 do {
                     try Auth.auth().signOut()
-                    self.dismiss(animated: true, completion: nil)
-                    self.self.dismiss(animated: true, completion: nil)
                 } catch let signOutError as NSError {
                   print ("Error signing out: %@", signOutError)
                 }
+                self.performToLoginView()
         })
         
         present(alert, animated: true)
