@@ -107,7 +107,8 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
         // Apple SignInを準備
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
-        request.requestedScopes = [.fullName]
+        // リクエストする情報
+        request.requestedScopes = [.fullName, .email]
         // delegateなどの設定
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
         authorizationController.delegate = self

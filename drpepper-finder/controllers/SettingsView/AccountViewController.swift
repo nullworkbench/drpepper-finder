@@ -59,14 +59,27 @@ extension AccountViewController {
     func setUserData() {
         // ログインしているかによって分岐
         if let user = appDelegate.currentUser {
-            // 匿名アカウントか
-            if !user.isAnonymous {
-                // 名前の表示（AppleIDは名前を提供しない場合がある）
-                userNameLabel.text = user.displayName ?? "Apple IDでログイン済み"
-                // ユーザー画像の表示（AppleIDは画像を提供しないので分岐）
-                if user.photoURL != nil {
-                    self.setUserImage(user.photoURL!)
+            // 使用しているアカウントサービスによって分岐
+            if let providerID = user.providerData.first?.providerID {
+                switch providerID {
+                case "google.com":
+                    userNameLabel.text = user.displayName ?? "Googleでログイン済み"
+                    if user.photoURL != nil {
+                        self.setUserImage(user.photoURL!)
+                    }
+                    return
+                case "apple.com":
+                    userNameLabel.text = user.displayName ?? "Appleでログイン済み"
+                    if user.photoURL != nil {
+                        self.setUserImage(user.photoURL!)
+                    }
+                    return
+                default:
+                    userNameLabel.text = "ログインしていません"
+                    return
                 }
+            } else {
+                userNameLabel.text = "ログインしていません"
             }
         } else {
             userNameLabel.text = "ログインしていません"
