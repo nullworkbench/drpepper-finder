@@ -15,7 +15,6 @@ import CryptoKit
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var signInBtnStackView: UIStackView!
-    @IBOutlet weak var SignInWithGoogleButton: UIButton!
     
     // AppleSignIn用
     fileprivate var currentNonce: String?
@@ -26,10 +25,11 @@ class LoginViewController: UIViewController {
         // Appleでログインボタンを設置
         addAppleSignInBtn()
         
+        // Googleでログインボタンを設置
+        addGoogleSignInBtn()
+        
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.delegate = self
-        
-        changeAllSignInButtonStyle()
     }
     
     // MapViewへ遷移
@@ -45,11 +45,7 @@ class LoginViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    
-    @IBAction func signInWithGoogle() {
-        GIDSignIn.sharedInstance().signIn()
-    }
-    
+    // 匿名アカウントでログイン
     @IBAction func signInAsAnonymous() {
         Auth.auth().signInAnonymously() {(authResult, err) in
             if let err = err {
@@ -66,6 +62,11 @@ class LoginViewController: UIViewController {
 
 // MARK: GIDSignIn
 extension LoginViewController: GIDSignInDelegate {
+    // Googleでサインイン
+    @objc func signInWithGoogleBtnTapped() {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
     // ログインボタンタップ後起動したブラウザの応答を受け取る
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let err = error {
@@ -166,23 +167,24 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
 
 // MARK: SignInButton Style
 extension LoginViewController {
-    
-    func changeAllSignInButtonStyle() {
-        self.applySignInButtonStyle(SignInWithGoogleButton)
-    }
-    
+
     // Appleでログインボタンを追加
     func addAppleSignInBtn() {
-        let authorizationButton = ASAuthorizationAppleIDButton(type: .signIn, style: .black)
+        let authorizationButton = ASAuthorizationAppleIDButton(type: .signIn, style: .white)
         authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
-        self.signInBtnStackView.addArrangedSubview(authorizationButton)
+        // コードでAutoLayoutするためのお作法
+        authorizationButton.translatesAutoresizingMaskIntoConstraints = false
+        // UIStackViewに追加
+        self.signInBtnStackView.insertArrangedSubview(authorizationButton, at: 0)
+        // サイズ比率のAutoLayoutを記述
+        authorizationButton.widthAnchor.constraint(equalTo: authorizationButton.heightAnchor, multiplier: 11/2).isActive = true
     }
     
-    func applySignInButtonStyle(_ target: UIButton!) {
-        target.layer.cornerRadius = 5
-        target.layer.shadowColor = UIColor.gray.cgColor
-        target.layer.shadowRadius = 1
-        target.layer.shadowOffset = CGSize(width: 0, height: 1)
-        target.layer.shadowOpacity = 0.5
+    // Googleでログインボタンを追加
+    func addGoogleSignInBtn() {
+        let button = GIDSignInButton()
+        button.style = .wide
+        button.addTarget(self, action: #selector(signInWithGoogleBtnTapped), for: .touchUpInside)
+        self.signInBtnStackView.insertArrangedSubview(button, at: 0)
     }
 }

@@ -1020,20 +1020,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hoC-R0-e1o" userLabel="Sign In Stack View">
-                                <rect key="frame" x="97" y="654" width="220" height="110"/>
+                                <rect key="frame" x="97" y="732" width="220" height="32"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Od-N9-ZqS">
-                                        <rect key="frame" x="0.0" y="0.0" width="220" height="48"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <state key="normal" title="Sign in with Google   " image="Google">
-                                            <color key="titleColor" systemColor="labelColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="signInWithGoogle" destination="1cY-bT-gfW" eventType="touchUpInside" id="AiK-4M-ObA"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pe1-KM-Pgk">
-                                        <rect key="frame" x="0.0" y="78" width="220" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="ログインせずにはじめる">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1060,7 +1050,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="A55-QN-Get"/>
                     <connections>
-                        <outlet property="SignInWithGoogleButton" destination="2Od-N9-ZqS" id="uX7-jq-dhd"/>
                         <outlet property="signInBtnStackView" destination="hoC-R0-e1o" id="mmA-7r-5Ls"/>
                     </connections>
                 </viewController>
@@ -1188,7 +1177,6 @@
         <segue reference="fK2-JQ-K9i"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Google" width="48" height="48"/>
         <image name="drpepper" width="1024" height="1024"/>
         <image name="exclamationmark.triangle.fill" catalog="system" width="128" height="112"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
