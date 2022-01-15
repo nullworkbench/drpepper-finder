@@ -184,7 +184,6 @@ extension LoginViewController {
     func addGoogleSignInBtn() {
         let button = GIDSignInButton()
         button.style = .wide
-        button.addTarget(self, action: #selector(signInWithGoogleBtnTapped), for: .touchUpInside)
         self.signInBtnStackView.insertArrangedSubview(button, at: 0)
     }
 }
