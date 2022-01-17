@@ -871,7 +871,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="readTermsOfServiceBtnTapped:" destination="kag-e8-ZGU" eventType="touchUpInside" id="ahv-Uy-gLn"/>
+                                    <action selector="readTermsOfServiceBtnTapped" destination="kag-e8-ZGU" eventType="touchUpInside" id="dcG-Y2-Kzg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="利用規約へ同意してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4K2-jU-hgO">
