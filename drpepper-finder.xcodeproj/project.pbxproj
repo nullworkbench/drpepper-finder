@@ -485,7 +485,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "drpepper-finder/drpepper-finder.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 4R2WEKFX8S;
 				INFOPLIST_FILE = "drpepper-finder/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -508,7 +508,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "drpepper-finder/drpepper-finder.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 4R2WEKFX8S;
 				INFOPLIST_FILE = "drpepper-finder/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
