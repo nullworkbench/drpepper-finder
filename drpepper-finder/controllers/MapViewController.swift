@@ -110,9 +110,15 @@ extension MapViewController {
             return
         }
         // Mapを現在地にセット
+        if let location = locationManager.location {
+            // 現在地が取得できる
         let mapSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-        let mapRegion = MKCoordinateRegion(center: locationManager.location!.coordinate, span: mapSpan)
+        let mapRegion = MKCoordinateRegion(center: location.coordinate, span: mapSpan)
         mapView.setRegion(mapRegion, animated: true)
+        } else {
+            // 現在地が取得できない
+            return
+        }
     }
 }
 
