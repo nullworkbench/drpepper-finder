@@ -14,9 +14,7 @@ import FirebaseFirestoreSwift
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
-    let db = Firestore.firestore()
     let locationManager = CLLocationManager()
-    var currentLocation: CLLocation?
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -49,6 +47,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
+    // 現在地の戻るボタン
     @IBAction func setToCurrentLocationButton() {
         self.setToCurrentLocation()
     }
@@ -89,7 +88,6 @@ extension MapViewController {
     
     // 位置情報が更新された時
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        currentLocation = locations[0]
     }
     // 現在地にセット
     func setToCurrentLocation() {
@@ -132,8 +130,8 @@ extension MapViewController {
             return nil
         }
         
-        let identifier = "pin"
-        let anotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        // AnnotationViewを作成
+        let anotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "pin")
         
         // pinImageがあればピンに画像をつける
         if let pin = annotation as? CustomAnnotation {
@@ -141,8 +139,8 @@ extension MapViewController {
                 // pinImage設定
                 anotationView.image = pinImage // リサイズより先に画像設定
                 // pinImageをリサイズ
-                let screenWidth = UIScreen.main.bounds.width * 0.1
-                let pinImageSize = CGSize(width: screenWidth, height: screenWidth)
+                let screenWidth = UIScreen.main.bounds.width
+                let pinImageSize = CGSize(width: screenWidth * 0.1, height: screenWidth * 0.1)
                 anotationView.frame.size = pinImageSize
             }
         }
@@ -188,10 +186,8 @@ extension MapViewController {
             print("pin tapped")
             // docIdをsenderへ渡す
             let docId = (view.annotation as! CustomAnnotation).docID
-            
             // 画面遷移
             performSegue(withIdentifier: "toDetailView", sender: docId)
-            
             // 選択解除
             mapView.deselectAnnotation(view.annotation, animated: true)
         }
