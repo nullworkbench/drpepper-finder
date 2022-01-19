@@ -45,11 +45,11 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
             
             switch logs[indexPath.row].type {
             case 0:
-                cellLabel.text = "発見：\(timestamp)"
+                cellLabel.text = "\(timestamp): 発見"
             case 1:
-                cellLabel.text = "まだあった！：\(timestamp)"
+                cellLabel.text = "\(timestamp): まだあった！"
             case 2:
-                cellLabel.text = "なくなってた…：\(timestamp)"
+                cellLabel.text = "\(timestamp): なくなってた…"
             default:
                 break
             }
