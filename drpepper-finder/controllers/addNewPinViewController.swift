@@ -17,8 +17,6 @@ class addNewPinViewController: UIViewController {
     
     var coordinate: CLLocationCoordinate2D!
     
-    let db = Firestore.firestore()
-    
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var priceTextField: UITextField!
