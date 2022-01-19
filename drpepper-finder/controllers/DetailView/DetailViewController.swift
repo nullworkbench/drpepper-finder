@@ -31,6 +31,8 @@ class DetailViewController: UIViewController {
     
     // 住所保存用
     var addressString = ""
+    // 座標保存用
+    var coordinate: CLLocationCoordinate2D?
     
     
     override func viewDidLoad() {
@@ -42,6 +44,8 @@ class DetailViewController: UIViewController {
                 DispatchQueue.main.async {
                     // Mapの中心点を設定してピンを置く
                     self.setMapCenter(pin.coordinate)
+                    // マップで開く用に座標を保存
+                    self.coordinate = pin.coordinate
                     // 住所を設定
                     self.setAddressLabel(pin.coordinate)
                     // 価格
@@ -220,19 +224,24 @@ extension DetailViewController {
     
     // 住所をマップアプリで開く
     @IBAction func openInMap() {
+        // 座標が空なら早期リターン
+        guard let coor = coordinate else { return }
+        // 座標を文字列に
+        let coordinateString = "\(coor.latitude), \(coor.longitude)"
+        
         // actionSheet定義
         let actionSheet = UIAlertController(title: "どのアプリで開きますか？", message: addressString, preferredStyle: .actionSheet)
         
         // Google Mapで開く
         actionSheet.addAction(UIAlertAction(title: "Google Map", style: .default, handler: { action in
-            let urlString = "comgooglemaps://?q=\(self.addressString)"
+            let urlString = "comgooglemaps://?q=\(coordinateString)"
             let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
             UIApplication.shared.open(url!)
         }))
         
         // 純正のマップアプリで開く
         actionSheet.addAction(UIAlertAction(title: "マップ", style: .default, handler: { action in
-            let urlString = "http://maps.apple.com/?q=\(self.addressString)"
+            let urlString = "http://maps.apple.com/?q=\(coordinateString)"
             let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
             UIApplication.shared.open(url!)
         }))
